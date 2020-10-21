@@ -8,15 +8,15 @@ Notes to self NEED .pack() at the end of statements
 **Must HAVE double perentheses around pixels.fill((0, 0, 0)) to prevent arugment error
 #Trying to get a jpg also might try changing pack into grids? //Cannot have packs and grids at the same time
 '''
-import board
-import neopixel
+# import board
+# import neopixel
 #import Image 
 from tkinter import *
 import tkinter as tk
 
 
 
-pixels = neopixel.NeoPixel(board.D18, 150)
+# pixels = neopixel.NeoPixel(board.D18, 150)
 
 ############# FORMAT!!
 class SampleApp(tk.Tk):
