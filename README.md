@@ -1,6 +1,8 @@
 # Parts Inventory System
 ## Authors
 Dylan Carlson, Andrew Elliott, Will Halfmann, Gabe Shepherd, Evan Wheeler
+## Runtime
+Because of the behavior of Linux on the PiOS, all python scripts must be run as sudo.
 ## Installation
 
 ## Dependancies
