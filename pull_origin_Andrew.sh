@@ -3,8 +3,7 @@
 # move from Desktop to home
 cd ..
 # move from home to Documents (repo is here
-cd Documents/
-# git pull origin master
+cd Documents/Andrew/
 # fetch origin and reset hard
-git fetch --all
-git reset --hard origin/master
+git pull origin Andrew
+git reset --hard origin/Andrew
