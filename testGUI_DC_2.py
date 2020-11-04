@@ -1,3 +1,7 @@
+'''
+This Program Simply has the 5x5 array of buttons
+'''
+
 import tkinter as tk
 
 

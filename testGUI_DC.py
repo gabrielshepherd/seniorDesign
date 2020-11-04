@@ -1,3 +1,6 @@
+'''
+This Program tests out the scroll bar with buttons
+'''
 import tkinter as tkinter
 import tkinter.messagebox as messagebox
 

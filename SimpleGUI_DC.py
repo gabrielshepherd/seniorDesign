@@ -1,3 +1,6 @@
+'''
+This Program has 3 buttons on the home page, which all lead to 3 seperate pages.
+'''
 import tkinter as tkinter
 import tkinter.messagebox as messagebox
 
