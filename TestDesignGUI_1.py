@@ -43,6 +43,9 @@ class StartPage(tkinter.Frame):
         self.indButton = tkinter.Button(self, text="Inductors")
         self.indButton.grid(row=3, column=0, sticky="W"+"E" +"N" +"S")
 
+        #canvas = tkinter.Canvas(self, bg="Red")
+        #canvas.grid(row=0, column=1,rowspan=10,  sticky="news")
+
     def create_search(self):
         canvas = tkinter.Canvas(self, bg="Green")
         canvas.grid(row=0, column=2,rowspan=10,  sticky="news")
