@@ -1,19 +1,14 @@
 from flask import Flask, request
 app = Flask(__name__)
 
-from random import random
-
 @app.route('/')
-def hello_world():
-    return "my name jeff"
+def connect():
+    return "connection established"
 
-@app.route('/echo')
-def echo():
-    return request.json
-
-@app.route('/light_on')
-def light_on():
+@app.route('/transmit')
+def receive_data():
     location = request.json['location']
     color = request.json['color']
-    # andrew do your thing
-    return
+    print(location)
+    print(color)
+    return "data received"
