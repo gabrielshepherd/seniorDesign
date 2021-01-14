@@ -1,9 +1,10 @@
 #gui for sr design
 from tkinter import *
+import tkinter.font as tkFont
 #from PIL import ImageTk, Image
 root = Tk()
 root.title("NDSU ECE INVENTORY")
-#root.iconbitmap('c:/ndsuicon.ico')
+root.iconbitmap('c:/ndsuicon.ico')
 #frames for each GUI section
 frame_for_keypad = LabelFrame(root, text= "Enter Part Value Here", padx=5, pady=5,fg="green",bg="gold")
 frame_for_keypad.grid(row=1, column=0, padx=50, pady=50)
@@ -14,6 +15,7 @@ frame_for_units.grid(row=1, column=1, padx=50, pady=50)
 frame_for_features = LabelFrame(root, text= "Misc Features", padx=5, pady=5,fg="green",bg="gold")
 frame_for_features.grid(row=2, column=1, padx=50, pady=50)
 
+L1fontStyle = tkFont.Font(family = "Lucida Grande", size =20)
 
 #img = ImageTk.PhotoImage(image.open(bison.png))
 
@@ -92,7 +94,7 @@ Part = StringVar()
 Part.set("Resistors")
 
 for text, mode in MODES:
-    Radiobutton(frame_for_parts, text = text, variable = Part, value = mode, fg="black",bg="green").pack(anchor=W)
+    Radiobutton(frame_for_parts, text = text, font = L1fontStyle, variable = Part, width =25, height = 2, value = mode, fg="black",bg="green").pack(anchor=W)
 
 
 def clicked(value):
@@ -119,8 +121,10 @@ MODES = [
 Parts = StringVar()
 Parts.set("Resistors")
 
+
+
 for text, mode in MODES:
-    Radiobutton(frame_for_units, text = text, variable = Parts, value = mode, fg="black",bg="green").pack(anchor=W)
+    Radiobutton(frame_for_units, text = text, font = L1fontStyle, variable = Parts, width =25, height = 2, value = mode, fg="black",bg="green").pack(anchor=W)
 
 
 def clicked_(value):
