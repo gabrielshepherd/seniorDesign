@@ -3,7 +3,7 @@ from tkinter import *
 #from PIL import ImageTk, Image
 root = Tk()
 root.title("NDSU ECE INVENTORY")
-root.iconbitmap('c:/ndsuicon.ico')
+#root.iconbitmap('c:/ndsuicon.ico')
 #frames for each GUI section
 frame_for_keypad = LabelFrame(root, text= "Enter Part Value Here", padx=5, pady=5,fg="green",bg="gold")
 frame_for_keypad.grid(row=1, column=0, padx=50, pady=50)
