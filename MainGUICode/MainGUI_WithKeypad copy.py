@@ -5,7 +5,10 @@ import tkinter as tkinter
 import tkinter.font as tkFont
 import tkinter.messagebox as messagebox
 #root.iconbitmap('c:/ndsuicon.ico')
+#import PIL
+from PIL import ImageTk, Image
 
+#img = ImageTk.PhotoImage(Image.open("NDSU_Logo.png"))
 #-----------------------------Startup and Initialization----------------------------
 class Application(tkinter.Tk):
     def __init__(self):
@@ -34,6 +37,14 @@ class StartPage(tkinter.Frame):
     
         self.create_greenspace(1,0)
         self.create_greenspace(1,2)
+
+        img = Image.open(r"C:\NDSU_Logo.png")
+        img = img.resize((250,250), Image.ANTIALIAS)
+        test = ImageTk.PhotoImage(img)
+        test_label = tkinter.Label(self,image=test)
+        test_label.image = test
+        test_label.place(x=50, y =0)
+        
 
         #Making the Title and the admin button
         L1fontStyle = tkFont.Font(family = "Lucida Grande", size =20)
