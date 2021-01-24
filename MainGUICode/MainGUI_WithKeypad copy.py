@@ -21,39 +21,6 @@ class Application(tkinter.Tk):
         self._frame = new_frame
         self._frame.pack()
     
-#------------------------Code to Make the Keypad work---------------------------------
-
-def code(value, e):
-
-    # inform function to use external/global variable
-    global pin
-
-    if value == 'Backspace':
-        # remove last number from `pin`
-        pin = pin[:-1]
-        # remove all from `entry` and put new `pin`
-        e.delete('0', 'end')
-        e.insert('end', pin)
-
-    elif value == 'Enter':
-        # check pin
-
-        if pin == "0000":
-            print("PIN OK")
-        else:
-            print("PIN ERROR!", pin)
-            # clear `pin`
-            pin = ''
-            # clear `entry`
-            e.delete('0', 'end')
-
-    else:
-        # add number to pin
-        pin += value
-        # add number to `entry`
-        e.insert('end', value)
-
-    print("Current:", pin)
 
 #---------------------------------Start Page-----------------------------------------
 class StartPage(tkinter.Frame):
@@ -162,6 +129,13 @@ class Admin(tkinter.Frame):
         self.homeButton.grid(row=20, column=0, sticky="W"+"E", pady=4)
         self.create_keypad_and_search()
 
+    def switch_frame(self, frame_class):
+        new_frame = frame_class(self)
+        if self._frame is None:
+            self._frame.destroy()
+        self._frame = new_frame
+        self._frame.pack()
+
     def create_keypad_and_search(self):
         canvas = tkinter.Canvas(self)
         canvas.grid(row=1, column=0,rowspan=10,  sticky="news",pady=4)
@@ -181,8 +155,43 @@ class Admin(tkinter.Frame):
             for x, key in enumerate(row):
                 # `lambda` inside `for` has to use `val=key:code(val)` 
                 # instead of direct `code(key)`
-                b = tkinter.Button(canvas, text=key, width = 10, height =3, command=lambda val=key:code(val, e))
+                b = tkinter.Button(canvas, text=key, width = 10, height =3, command=lambda val=key:self.code(val, e))
                 b.grid(row=y, column=x, ipadx=10)
+    
+    #------------------------Code to Make the Keypad work---------------------------------
+
+    def code(self,value, e):
+
+        # inform function to use external/global variable
+        global pin
+
+        if value == 'Backspace':
+            # remove last number from `pin`
+            pin = pin[:-1]
+            # remove all from `entry` and put new `pin`
+            e.delete('0', 'end')
+            e.insert('end', pin)
+
+        elif value == 'Enter':
+            # check pin
+
+            if pin == "0000":
+                print("PIN OK")
+               # self.switch_frame(RecentSearches)
+            else:
+                print("PIN ERROR!", pin)
+                # clear `pin`
+                pin = ''
+                # clear `entry`
+                e.delete('0', 'end')
+
+        else:
+            # add number to pin
+            pin += value
+            # add number to `entry`
+            e.insert('end', value)
+
+        print("Current:", pin)
 
 #---------- Start of Main Function---------------
 
