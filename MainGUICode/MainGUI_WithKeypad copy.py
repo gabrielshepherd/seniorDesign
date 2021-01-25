@@ -32,46 +32,56 @@ class StartPage(tkinter.Frame):
         self.master = master
         self.pack()
         # Edit this value once we test on actual display
-        master.geometry('800x400')
+        master.geometry('800x350')
         master.title('Parts Inventory Display')
     
         self.create_greenspace(1,0)
         self.create_greenspace(1,2)
 
-        img = Image.open(r"C:\NDSU_Logo.png")
-        img = img.resize((250,250), Image.ANTIALIAS)
-        test = ImageTk.PhotoImage(img)
-        test_label = tkinter.Label(self,image=test)
-        test_label.image = test
-        test_label.place(x=50, y =0)
+        img1 = Image.open(r"C:\NDSU_Logo.png")
+        img1 = img1.resize((100,50), Image.ANTIALIAS)
+        Logo1 = ImageTk.PhotoImage(img1)
+        Logo1_label = tkinter.Label(self,image=Logo1)
+        Logo1_label.image = Logo1
+        Logo1_label.place(x=0, y =0)
+
+        img2 = Image.open(r"C:\NDSU_Logo.png")
+        img2 = img2.resize((100,50), Image.ANTIALIAS)
+        Logo2 = ImageTk.PhotoImage(img2)
+        Logo2_label = tkinter.Label(self,image=Logo2)
+        Logo2_label.image = Logo2
+        Logo2_label.place(x=670, y =0)
         
 
         #Making the Title and the admin button
         L1fontStyle = tkFont.Font(family = "Lucida Grande", size =20)
-        L1 = tkinter.Label(self, height=2, text="Parts Inventory Display", bg="yellow", font = L1fontStyle)
+        L1 = tkinter.Label(self, height=2, width= 35, text="Parts Inventory Display", bg="yellow", font = L1fontStyle)
         L1.grid( row=0, column=1)
         self.adminButton = tkinter.Button(self, width=15, height=1, text="Admin",
                                         command=lambda: master.switch_frame(Admin))
         self.adminButton.grid(row=5, column=1)
 
         L2fontStyle = tkFont.Font(family = "Lucida Grande", size =15)
-        L2 = tkinter.Label(self, width=10, text="--------", bg="yellow", font = L2fontStyle)
-        L2.grid( row=1, column=1)
+        #L2 = tkinter.Label(self, width=10, text="--------", bg="yellow", font = L2fontStyle)
+        #L2.grid( row=1, column=1)
+
+        L2 = tkinter.Label(self, width=80, bg = "yellow")
+        L2.grid( row=8, columnspan = 3)
 
         #------------------------ Creating buttons -------------------------
-        self.QuickSearch = tkinter.Button(self, text="Quick Search",width=15,
+        self.QuickSearch = tkinter.Button(self, text="Quick Search", font = L2fontStyle, width=20,
                            height=2, command=lambda: master.switch_frame(QuickSearch))
         self.QuickSearch.grid(row=2, column=1, pady=2)
 
-        self.capButton = tkinter.Button(self, width=15, height=2, text="Specified Search",
+        self.SpecifiedSearch = tkinter.Button(self, width=20, height=2, text="Specified Search",font = L2fontStyle,
                                         command=lambda: master.switch_frame(SpecificSearch))
-        self.capButton.grid(row=3,column=1, pady=2)
+        self.SpecifiedSearch.grid(row=3,column=1, pady=2)
 
         
 
-        self.otherButton = tkinter.Button(self, width=15, height=2, text="Recent Searches",
+        self.RecentButton = tkinter.Button(self, width=20, height=2, text="Recent Searches",font = L2fontStyle,
                                         command=lambda: master.switch_frame(RecentSearches))
-        self.otherButton.grid(row=4, column=1, pady=2)
+        self.RecentButton.grid(row=4, column=1, pady=2)
 
 
 
@@ -132,22 +142,15 @@ class Admin(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
         tkinter.Frame.__init__(self, master)
-        tkinter.Frame.configure(self,bg='')
+        tkinter.Frame.configure(self,bg="")
         tkinter.Label(self, bg='Green',text="Admin", font=('Helvetica', 18, "bold")).grid(row=0)
 
         self.homeButton = tkinter.Button(self, text="Home",
             command=lambda: master.switch_frame(StartPage))
         self.homeButton.grid(row=20, column=0, sticky="W"+"E", pady=4)
-        self.create_keypad_and_search()
+        self.create_keypad_and_search(self.master)
 
-    def switch_frame(self, frame_class):
-        new_frame = frame_class(self)
-        if self._frame is None:
-            self._frame.destroy()
-        self._frame = new_frame
-        self._frame.pack()
-
-    def create_keypad_and_search(self):
+    def create_keypad_and_search(self, master):
         canvas = tkinter.Canvas(self)
         canvas.grid(row=1, column=0,rowspan=10,  sticky="news",pady=4)
         keys = [
@@ -166,15 +169,15 @@ class Admin(tkinter.Frame):
             for x, key in enumerate(row):
                 # `lambda` inside `for` has to use `val=key:code(val)` 
                 # instead of direct `code(key)`
-                b = tkinter.Button(canvas, text=key, width = 10, height =3, command=lambda val=key:self.code(val, e))
+                b = tkinter.Button(canvas, text=key, width = 10, height =3, command=lambda val=key:self.code(master, val, e))
                 b.grid(row=y, column=x, ipadx=10)
     
     #------------------------Code to Make the Keypad work---------------------------------
 
-    def code(self,value, e):
+    def code(self,master,value, e):
 
         # inform function to use external/global variable
-        global pin
+        global pin, check
 
         if value == 'Backspace':
             # remove last number from `pin`
@@ -188,7 +191,7 @@ class Admin(tkinter.Frame):
 
             if pin == "0000":
                 print("PIN OK")
-               # self.switch_frame(RecentSearches)
+                master.switch_frame(AdminONLY)
             else:
                 print("PIN ERROR!", pin)
                 # clear `pin`
@@ -204,10 +207,25 @@ class Admin(tkinter.Frame):
 
         print("Current:", pin)
 
+class AdminONLY(tkinter.Frame):
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg='')
+        tkinter.Label(self, bg='Green',text="Admin ONLY", font=('Helvetica', 18, "bold")).grid(row=0)
+
+        self.homeButton = tkinter.Button(self, text="Home",
+            command=lambda: master.switch_frame(StartPage))
+        self.homeButton.grid(row=2, column=0, sticky="W"+"E")
+
+        L1 = tkinter.Label(self,text = "You are Admin")
+        L1.grid(row=1)
+
 #---------- Start of Main Function---------------
 
 # create global variable for pin
 pin = '' # empty string
+check = False
 app = Application()
 
 app.mainloop()
