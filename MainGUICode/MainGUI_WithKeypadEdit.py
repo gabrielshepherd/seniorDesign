@@ -4,9 +4,8 @@ This Program has a base level start to what we may potentially want as the GUI
 import tkinter as tkinter
 import tkinter.font as tkFont
 import tkinter.messagebox as messagebox
-#root.iconbitmap('c:/ndsuicon.ico')
-#import PIL
 from PIL import ImageTk, Image
+import AdditionalPages as AddP
 
 #img = ImageTk.PhotoImage(Image.open("NDSU_Logo.png"))
 #-----------------------------Startup and Initialization----------------------------
@@ -37,7 +36,8 @@ class StartPage(tkinter.Frame):
     
         self.create_greenspace(1,0)
         self.create_greenspace(1,2)
-
+        
+        #--------Making Images-------------------
         img1 = Image.open(r"C:\NDSU_Logo.png")
         img1 = img1.resize((100,50), Image.ANTIALIAS)
         Logo1 = ImageTk.PhotoImage(img1)
@@ -62,29 +62,21 @@ class StartPage(tkinter.Frame):
         self.adminButton.grid(row=5, column=1)
 
         L2fontStyle = tkFont.Font(family = "Lucida Grande", size =15)
-        #L2 = tkinter.Label(self, width=10, text="--------", bg="yellow", font = L2fontStyle)
-        #L2.grid( row=1, column=1)
-
         L2 = tkinter.Label(self, width=80, bg = "yellow")
         L2.grid( row=8, columnspan = 3)
 
         #------------------------ Creating buttons -------------------------
         self.QuickSearch = tkinter.Button(self, text="Quick Search", font = L2fontStyle, width=20,
-                           height=2, command=lambda: master.switch_frame(QuickSearch))
+                           height=2, command=lambda: master.switch_frame(AddP.QuickSearch))
         self.QuickSearch.grid(row=2, column=1, pady=2)
 
         self.SpecifiedSearch = tkinter.Button(self, width=20, height=2, text="Specified Search",font = L2fontStyle,
-                                        command=lambda: master.switch_frame(SpecificSearch))
+                                        command=lambda: master.switch_frame(AddP.SpecificSearch))
         self.SpecifiedSearch.grid(row=3,column=1, pady=2)
 
-        
-
         self.RecentButton = tkinter.Button(self, width=20, height=2, text="Recent Searches",font = L2fontStyle,
-                                        command=lambda: master.switch_frame(RecentSearches))
+                                        command=lambda: master.switch_frame(AddP.RecentSearches))
         self.RecentButton.grid(row=4, column=1, pady=2)
-
-
-
         #-------------------------------------------------------------------
  
     def create_blankspace(self,rowNum,colNum):
@@ -94,57 +86,9 @@ class StartPage(tkinter.Frame):
     #will be picture in future
     def create_greenspace(self,rowNum,colNum):
         canvas = tkinter.Canvas(self, width=100, bg="green")
-        
         canvas.grid(row=rowNum, column=colNum,rowspan=10)
 
-
-
 #------------------------------------------------------------------------------------
-
-class QuickSearch(tkinter.Frame):
-    def __init__(self, master=None):
-        self.master = master
-        tkinter.Frame.__init__(self, master)
-        tkinter.Frame.configure(self,bg='')
-        tkinter.Label(self, width = 35,bg='Green',text="Quick Search", font=('Helvetica', 18, "bold")).grid(row=0, columnspan=3)
-        L2fontStyle = tkFont.Font(family = "Lucida Grande", size =10)
-
-        self.homeButton = tkinter.Button(self, text="Home",
-            command=lambda: master.switch_frame(StartPage))
-        self.homeButton.grid(row=2, column=1, sticky="W"+"E")
-
-        self.Resistors= tkinter.Button(self, text="Resistors", width=20,font = L2fontStyle,
-                           height=2, command=lambda: master.switch_frame(StartPage))
-        self.Resistors.grid(row=1, column=0, pady=2)
-        self.Capacitors= tkinter.Button(self, text="Capacitors", width=20,font = L2fontStyle,
-                           height=2, command=lambda: master.switch_frame(StartPage))
-        self.Capacitors.grid(row=1, column=2, pady=2)
-
-
-class SpecificSearch(tkinter.Frame):
-    def __init__(self, master=None):
-        self.master = master
-        tkinter.Frame.__init__(self, master)
-        tkinter.Frame.configure(self,bg='')
-        tkinter.Label(self, bg='Green',text="Specified Search", font=('Helvetica', 18, "bold")).grid(row=0)
-
-        self.homeButton = tkinter.Button(self, text="Home",
-            command=lambda: master.switch_frame(StartPage))
-        self.homeButton.grid(row=2, column=0, sticky="W"+"E")
-
-
-class RecentSearches(tkinter.Frame):
-    def __init__(self, master=None):
-        self.master = master
-        tkinter.Frame.__init__(self, master)
-        tkinter.Frame.configure(self,bg='')
-        tkinter.Label(self, bg='Green',text="Recent Searches", font=('Helvetica', 18, "bold")).grid(row=0)
-
-        self.homeButton = tkinter.Button(self, text="Home",
-            command=lambda: master.switch_frame(StartPage))
-        self.homeButton.grid(row=2, column=0, sticky="W"+"E")
-        
-
 
 class Admin(tkinter.Frame):
     def __init__(self, master=None):
