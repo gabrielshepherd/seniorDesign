@@ -106,11 +106,19 @@ class QuickSearch(tkinter.Frame):
         self.master = master
         tkinter.Frame.__init__(self, master)
         tkinter.Frame.configure(self,bg='')
-        tkinter.Label(self, bg='Green',text="Quick Search", font=('Helvetica', 18, "bold")).grid(row=0)
+        tkinter.Label(self, width = 35,bg='Green',text="Quick Search", font=('Helvetica', 18, "bold")).grid(row=0, columnspan=3)
+        L2fontStyle = tkFont.Font(family = "Lucida Grande", size =10)
 
         self.homeButton = tkinter.Button(self, text="Home",
             command=lambda: master.switch_frame(StartPage))
-        self.homeButton.grid(row=2, column=0, sticky="W"+"E")
+        self.homeButton.grid(row=2, column=1, sticky="W"+"E")
+
+        self.Resistors= tkinter.Button(self, text="Resistors", width=20,font = L2fontStyle,
+                           height=2, command=lambda: master.switch_frame(StartPage))
+        self.Resistors.grid(row=1, column=0, pady=2)
+        self.Capacitors= tkinter.Button(self, text="Capacitors", width=20,font = L2fontStyle,
+                           height=2, command=lambda: master.switch_frame(StartPage))
+        self.Capacitors.grid(row=1, column=2, pady=2)
 
 
 class SpecificSearch(tkinter.Frame):
