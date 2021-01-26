@@ -95,7 +95,7 @@ class Admin(tkinter.Frame):
         self.master = master
         tkinter.Frame.__init__(self, master)
         tkinter.Frame.configure(self,bg="")
-        tkinter.Label(self, bg='Green',text="Admin", font=('Helvetica', 18, "bold")).grid(row=0)
+        tkinter.Label(self, bg='Green',text="Admin", width=20, font=('Helvetica', 18, "bold")).grid(row=0)
 
         self.homeButton = tkinter.Button(self, text="Home",
             command=lambda: master.switch_frame(StartPage))
@@ -164,7 +164,7 @@ class AdminONLY(tkinter.Frame):
         self.master = master
         tkinter.Frame.__init__(self, master)
         tkinter.Frame.configure(self,bg='')
-        tkinter.Label(self, bg='Green',text="Admin ONLY", font=('Helvetica', 18, "bold")).grid(row=0)
+        tkinter.Label(self,width = 40, bg='Green',text="Admin ONLY", font=('Helvetica', 18, "bold")).grid(row=0)
 
         self.homeButton = tkinter.Button(self, text="Home",
             command=lambda: master.switch_frame(StartPage))
@@ -177,7 +177,6 @@ class AdminONLY(tkinter.Frame):
 
 # create global variable for pin
 pin = '' # empty string
-check = False
 app = Application()
 
 app.mainloop()
