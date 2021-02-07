@@ -30,6 +30,7 @@ class StartPage(tkinter.Frame):
         super().__init__(master)
         self.master = master
         self.pack()
+        self.configure(bg = "white")
         # Edit this value once we test on actual display
         master.geometry('800x350')
         master.title('Parts Inventory Display')
@@ -55,18 +56,18 @@ class StartPage(tkinter.Frame):
 
         #Making the Title and the admin button
         L1fontStyle = tkFont.Font(family = "Lucida Grande", size =20)
-        L1 = tkinter.Label(self, height=2, width= 35, text="Parts Inventory Display", bg="yellow", font = L1fontStyle)
+        L1 = tkinter.Label(self, height=2, width= 35, text="Parts Inventory Display", bg="#F6B022", font = L1fontStyle)
         L1.grid( row=0, column=1)
         self.adminButton = tkinter.Button(self, width=15, height=1, text="Admin",
                                         command=lambda: master.switch_frame(Admin))
         self.adminButton.grid(row=5, column=1)
 
         L2fontStyle = tkFont.Font(family = "Lucida Grande", size =15)
-        L2 = tkinter.Label(self, width=80, bg = "yellow")
+        L2 = tkinter.Label(self, width=80, bg = "#F6B022")
         L2.grid( row=8, columnspan = 3)
 
         #------------------------ Creating buttons -------------------------
-        self.QuickSearch = tkinter.Button(self, text="Quick Search", font = L2fontStyle, width=20,
+        self.QuickSearch = tkinter.Button(self, text="Quick Search", font = L2fontStyle,  width=20, #bg = "#202124",
                            height=2, command=lambda: master.switch_frame(AddP.QuickSearch))
         self.QuickSearch.grid(row=2, column=1, pady=2)
 
@@ -85,7 +86,7 @@ class StartPage(tkinter.Frame):
 
     #will be picture in future
     def create_greenspace(self,rowNum,colNum):
-        canvas = tkinter.Canvas(self, width=100, bg="green")
+        canvas = tkinter.Canvas(self, width=100, bg="#0A5640")
         canvas.grid(row=rowNum, column=colNum,rowspan=10)
 
 #------------------------------------------------------------------------------------
