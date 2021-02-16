@@ -6,13 +6,14 @@ import time
 import board
 import neopixel
  
- 
+CLEAR = (0, 0, 0)  # clear (or second color)
+COLOR = (25,200,7)
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
 # NeoPixels must be connected to D10, D12, D18 or D21 to work.
 pixel_pin = board.D18
  
 # The number of NeoPixels
-num_pixels = 35
+num_pixels = 60
  
 # The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
 # For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
@@ -54,9 +55,11 @@ def rainbow_cycle(wait):
         time.sleep(wait)
 
 def sectionA():
-    pixels[5]
-    pixels.fill((255,255,0))      
+    for k in range(0, 30)
+        pixels[k] = COLOR      
     pixels.show()
+    time.sleep(3)
+    pixels.fill(CLEAR)
 
      
  
@@ -69,7 +72,7 @@ while True:
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     # pixels.fill((0, 0, 255, 0))
     #pixels.show()
-    time.sleep(5)
+    #time.sleep(5)
 
 
     # Comment this line out if you have RGBW/GRBW NeoPixels
@@ -92,6 +95,9 @@ while True:
     # pixels.fill((0, 0, 255, 0))
     pixels.show()
     time.sleep(5)
+
+
+    pixels.fill(CLEAR)
 
   
  
