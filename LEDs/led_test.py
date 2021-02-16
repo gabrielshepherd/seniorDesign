@@ -53,8 +53,8 @@ def rainbow_cycle(wait):
         pixels.show()
         time.sleep(wait)
 
-def sectionA():
-    pixels[]
+# def sectionA():
+#     pixels[]
  
  
 while True:
