@@ -55,11 +55,40 @@ def rainbow_cycle(wait):
         time.sleep(wait)
 
 def sectionA():
-    for k in range(0, 30):
+    for k in range(0, 10):
         pixels[k] = COLOR      
     pixels.show()
     time.sleep(3)
     pixels.fill(CLEAR)
+    pixels.show()
+    time.sleep(3)
+
+def sectionB():
+    for k in range(10, 20):
+        pixels[k] = COLOR      
+    pixels.show()
+    time.sleep(3)
+    pixels.fill(CLEAR)
+    pixels.show()
+    time.sleep(3)
+
+def sectionC():
+    for k in range(20, 30):
+        pixels[k] = COLOR      
+    pixels.show()
+    time.sleep(3)
+    pixels.fill(CLEAR)
+    pixels.show()
+    time.sleep(3)
+
+def sectionD():
+    for k in range(30, 40):
+        pixels[k] = COLOR      
+    pixels.show()
+    time.sleep(3)
+    pixels.fill(CLEAR)
+    pixels.show()
+    time.sleep(3)
 
      
  
@@ -69,35 +98,40 @@ while True:
     # Comment this line out if you have RGBW/GRBW NeoPixels
     #pixels.fill((0, 0, 0))
     sectionA()
+    sectionB()
+    sectionC()
+    sectionD()
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     # pixels.fill((0, 0, 255, 0))
     #pixels.show()
     #time.sleep(5)
 
 
-    # Comment this line out if you have RGBW/GRBW NeoPixels
-    pixels.fill((255, 0, 0))
-    # Uncomment this line if you have RGBW/GRBW NeoPixels
-    # pixels.fill((255, 0, 0, 0))
-    pixels.show()
-    time.sleep(5)
+    # # Comment this line out if you have RGBW/GRBW NeoPixels
+    # pixels.fill((255, 0, 0))
+    # # Uncomment this line if you have RGBW/GRBW NeoPixels
+    # # pixels.fill((255, 0, 0, 0))
+    # pixels.show()
+    # time.sleep(1)
  
-    # Comment this line out if you have RGBW/GRBW NeoPixels
-    pixels.fill((0, 255, 0))
-    # Uncomment this line if you have RGBW/GRBW NeoPixels
-    # pixels.fill((0, 255, 0, 0))
-    pixels.show()
-    time.sleep(5)
+    # # Comment this line out if you have RGBW/GRBW NeoPixels
+    # pixels.fill((0, 255, 0))
+    # # Uncomment this line if you have RGBW/GRBW NeoPixels
+    # # pixels.fill((0, 255, 0, 0))
+    # pixels.show()
+    # time.sleep(1)
  
-    # Comment this line out if you have RGBW/GRBW NeoPixels
-    pixels.fill((0, 0, 255))
-    # Uncomment this line if you have RGBW/GRBW NeoPixels
-    # pixels.fill((0, 0, 255, 0))
-    pixels.show()
-    time.sleep(5)
+    # # Comment this line out if you have RGBW/GRBW NeoPixels
+    # pixels.fill((0, 0, 255))
+    # # Uncomment this line if you have RGBW/GRBW NeoPixels
+    # # pixels.fill((0, 0, 255, 0))
+    # pixels.show()
+    # time.sleep(1)
 
 
-    pixels.fill(CLEAR)
+    # pixels.fill(CLEAR)
+    # pixels.show()
+
 
   
  
