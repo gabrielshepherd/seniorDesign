@@ -55,7 +55,7 @@ def rainbow_cycle(wait):
         time.sleep(wait)
 
 def sectionA():
-    for k in range(0, 30)
+    for k in range(0, 30):
         pixels[k] = COLOR      
     pixels.show()
     time.sleep(3)
