@@ -54,9 +54,8 @@ def rainbow_cycle(wait):
         time.sleep(wait)
 
 def sectionA():
-    for k in range(num_pixels - 5):
-        pixels[k]
-        pixels.fill((255,255,0))      
+    pixels[5]
+    pixels.fill((255,255,0))      
     pixels.show()
 
      
