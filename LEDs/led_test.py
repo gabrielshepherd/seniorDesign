@@ -54,17 +54,20 @@ def rainbow_cycle(wait):
         pixels.show()
         time.sleep(wait)
 
-def sectionA():
-    for k in range(0, 10):
-        pixels[k] = COLOR      
-    pixels.show()
+def sectionA(wait):
+    for j in range(255):
+        for i in range(20):
+            pixel_index = (i * 256 // 20) + j
+            pixels[i] = wheel(pixel_index & 255)
+        pixels.show()
+        time.sleep(wait)
     time.sleep(3)
     pixels.fill(CLEAR)
     pixels.show()
     time.sleep(3)
 
 def sectionB():
-    for k in range(10, 20):
+    for k in range(20,40):
         pixels[k] = COLOR      
     pixels.show()
     time.sleep(3)
@@ -73,7 +76,7 @@ def sectionB():
     time.sleep(3)
 
 def sectionC():
-    for k in range(20, 30):
+    for k in range(40, 60):
         pixels[k] = COLOR      
     pixels.show()
     time.sleep(3)
@@ -82,7 +85,7 @@ def sectionC():
     time.sleep(3)
 
 def sectionD():
-    for k in range(30, 40):
+    for k in range(60, 80):
         pixels[k] = COLOR      
     pixels.show()
     time.sleep(3)
@@ -97,7 +100,7 @@ while True:
 
     # Comment this line out if you have RGBW/GRBW NeoPixels
     #pixels.fill((0, 0, 0))
-    sectionA()
+    sectionA(0.001)
     sectionB()
     sectionC()
     sectionD()
