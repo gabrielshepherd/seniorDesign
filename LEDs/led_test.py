@@ -58,7 +58,7 @@ def sectionA():
     for k in range(0, 20):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.1)
+        time.sleep(0.05)
     time.sleep(2)
     pixels.fill(CLEAR)
     pixels.show()
@@ -68,7 +68,7 @@ def sectionB():
     for k in range(20,40):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.1)
+        time.sleep(0.05)
     time.sleep(2)
     pixels.fill(CLEAR)
     pixels.show()
@@ -78,7 +78,7 @@ def sectionC():
     for k in range(40, 60):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.1)
+        time.sleep(0.05)
     time.sleep(2)
     pixels.fill(CLEAR)
     pixels.show()
@@ -88,7 +88,7 @@ def sectionD():
     for k in range(60, 80):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.1)
+        time.sleep(0.05)
     time.sleep(2)
     pixels.fill(CLEAR)
     pixels.show()
