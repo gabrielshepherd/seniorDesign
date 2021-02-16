@@ -56,7 +56,8 @@ class QuickSearch(tkinter.Frame):
         self.Resistors.grid(row=1, column=0, pady=4)
 
         self.Inductors= tkinter.Button(self, text="Inductors", width=20,font = L2fontStyle,relief = "ridge", 
-                           height=2, command=lambda: master.switch_frame(Main.StartPage))
+                           height=2, command=lambda: [master.switch_frame(Inductors), RecentlySearchedName.append("Inductors"),
+                           RecentlySearchedFrame.append(self)])
         self.Inductors.grid(row=2, column=0, pady=4)
 
         self.Capacitors= tkinter.Button(self, text="Capacitors", width=20,font = L2fontStyle,relief = "ridge", 
@@ -83,8 +84,6 @@ class QuickSearch(tkinter.Frame):
                            height=2, command=lambda: master.switch_frame(Main.StartPage))
         self.Filters.grid(row=4, column=0, pady=4)
 
-        
-
 
 
 class Resistors(tkinter.Frame):
@@ -98,6 +97,8 @@ class Resistors(tkinter.Frame):
         tkinter.Label(self, text = "Power", bg = "white", font =('Helvetica', 12, "bold") ).grid(row=1, column=0)
         tkinter.Label(self, text = "Tolerance", bg = "white", font =('Helvetica', 12, "bold") ).grid(row=5, column=0)
         tkinter.Label(self, text = "Range", bg = "white", font =('Helvetica', 12, "bold") ).grid(row=1, column=2)
+        tkinter.Label(self, text = " ", bg = "white", font =('Helvetica', 12, "bold") ).grid(row=8, column=2, pady = 5)
+        tkinter.Label(self, text = " ", bg = "white", font =('Helvetica', 12, "bold") ).grid(row=4, column=2, pady = 5)
 
         #Contains the variables selected from the radio buttons
         def sel():
@@ -115,7 +116,7 @@ class Resistors(tkinter.Frame):
                 Ranges = ["4.7 - 62k", "100k - 1M", "   None   "]
             count1=1
             for names in Ranges:
-                tkinter.Radiobutton(self, variable = Range, value = names, text = names, bg="white", justify = "right", command=sel).grid(row=count1+1, column=2)
+                tkinter.Radiobutton(self, variable = Range, value = names, text = names, bg="white", justify = "right", command=sel).grid(row=count1+1, column=2, sticky = "W" + "E")
                 count1 = count1 + 1
 
         #Initialization of the radio buttons
@@ -134,17 +135,43 @@ class Resistors(tkinter.Frame):
                 tkinter.Radiobutton(self, variable = Select, value = names, text = names,bg="white", justify = "right", command=lambda:[sel(), ranges()]).grid(row=count+3, column=0)
             count = count + 1
 
-        
-
-
-
-        
-
-        self.searchButton = tkinter.Button(self, text="Search", relief = "ridge",
+        self.searchButton = tkinter.Button(self, text="Search", relief = "ridge", width = 30,
             command=lambda: master.switch_frame(Main.StartPage))
-        self.searchButton.grid(row=9, column=1, sticky="W"+"E", pady = 5)
+        self.searchButton.grid(row=10, column=1, pady = 5)
 
-
-        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge",
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 30,
             command=lambda: master.switch_frame(Main.StartPage))
-        self.homeButton.grid(row=10, column=1, sticky="W"+"E")
+        self.homeButton.grid(row=11, column=1)
+
+
+class Inductors(tkinter.Frame):
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg="white")
+
+        #Setting Up Labels
+        tkinter.Label(self, width = 45, bg="#F6B022",text="Inductors", font=('Helvetica', 18, "bold")).grid(row=0, columnspan=3, pady = 10)
+        tkinter.Label(self, text = "Range", bg = "white", font =('Helvetica', 12, "bold") ).grid(row=1, column=1)
+        tkinter.Label(self, text = " ", bg = "white", font =('Helvetica', 12, "bold") ).grid(row=8, column=0, pady =5)
+
+        def sel():
+            selection = "Selection: " + str(Range.get()) 
+            tkinter.Label(self, text = selection, bg = "white").grid(row = 8, column =1, sticky = "W" + "E", pady = 5)
+
+        Ranges = [".22u - 68m", "100m - 1"]
+        Range = tkinter.StringVar()
+        Range.set("Low Power")
+        count = 1
+        #Making Radio buttons
+        for names in Ranges:
+            tkinter.Radiobutton(self, variable = Range, value = names, text = names,bg="white", justify = "right", command=sel).grid(row=count+1, column=1)
+            count = count + 1
+
+        self.searchButton = tkinter.Button(self, text="Search", relief = "ridge",width = 30,
+            command=lambda: master.switch_frame(Main.StartPage))
+        self.searchButton.grid(row=9, column=1, pady = 5)
+
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 30,
+            command=lambda: master.switch_frame(Main.StartPage))
+        self.homeButton.grid(row=10, column=1)
