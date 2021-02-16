@@ -54,10 +54,10 @@ class StartPage(tkinter.Frame):
         Logo2_label.image = Logo2
         Logo2_label.place(x=670, y =10)
         
-
+ 
         #Making the Title and the admin button
         L1fontStyle = tkFont.Font(family = "Lucida Grande", size =20)
-        L1 = tkinter.Label(self, height=2, width= 35, text="Parts Inventory Display", bg="#F6B022", font = L1fontStyle)
+        L1 = tkinter.Label(self, height=2, width= 35, text="Parts Inventory Display", bg="#F6B022", font = L1fontStyle )
         L1.grid( row=0, column=1)
         self.adminButton = tkinter.Button(self, width=15, height=1, text="Admin",relief = "ridge",
                                         command=lambda: master.switch_frame(Admin))
