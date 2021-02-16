@@ -56,40 +56,40 @@ def rainbow_cycle(wait):
 
 def sectionA():
     for k in range(0, 20):
-        time.sleep(0.1)
         pixels[k] = COLOR      
-    pixels.show()
-    time.sleep(1)
+        pixels.show()
+        time.sleep(0.1)
+    time.sleep(2)
     pixels.fill(CLEAR)
     pixels.show()
     time.sleep(3)
 
 def sectionB():
     for k in range(20,40):
-        time.sleep(0.1)
         pixels[k] = COLOR      
-    pixels.show()
-    time.sleep(1)
+        pixels.show()
+        time.sleep(0.1)
+    time.sleep(2)
     pixels.fill(CLEAR)
     pixels.show()
     time.sleep(3)
 
 def sectionC():
     for k in range(40, 60):
-        time.sleep(0.1)
         pixels[k] = COLOR      
-    pixels.show()
-    time.sleep(1)
+        pixels.show()
+        time.sleep(0.1)
+    time.sleep(2)
     pixels.fill(CLEAR)
     pixels.show()
     time.sleep(3)
 
 def sectionD():
     for k in range(60, 80):
-        time.sleep(0.1)
         pixels[k] = COLOR      
-    pixels.show()
-    time.sleep(1)
+        pixels.show()
+        time.sleep(0.1)
+    time.sleep(2)
     pixels.fill(CLEAR)
     pixels.show()
     time.sleep(3)
