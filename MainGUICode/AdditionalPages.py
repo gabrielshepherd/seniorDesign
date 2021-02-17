@@ -1,6 +1,8 @@
 import tkinter as tkinter
 import tkinter.font as tkFont
 import MainGUI_WithKeypadEdit as Main
+#from send import *
+#import requests - Add send.py to directory so that to send a location, you use data_trasmit(<location>)
 
 #Global List of what was recently searched
 RecentlySearchedName = []

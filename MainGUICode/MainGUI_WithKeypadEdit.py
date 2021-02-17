@@ -33,14 +33,14 @@ class StartPage(tkinter.Frame):
         self.configure(bg = "white")
         master.configure(bg = "white")
         # Edit this value once we test on actual display
-        master.geometry('800x350')
+        master.geometry('800x350') #1024x600 is size, I tested with 800x350
         master.title('Parts Inventory Display')
     
         self.create_greenspace(1,0)
         self.create_greenspace(1,2)
         
         #--------Making Images-------------------
-        img1 = Image.open(r"C:\NDSU_Logo.png")
+        img1 = Image.open(r"C:\NDSU_Logo2.png")
         img1 = img1.resize((100,50), Image.ANTIALIAS)
         Logo1 = ImageTk.PhotoImage(img1)
         Logo1_label = tkinter.Label(self,image=Logo1, bg="white")
