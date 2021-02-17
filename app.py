@@ -9,7 +9,7 @@ def function_call(location):
 # if __name__=="__main__":
 @app.route('/')
 def connect():
-    return "connection established"
+    return "connection confirmed"
 
 # @app.route('/transmit')
 # def receive_data():
