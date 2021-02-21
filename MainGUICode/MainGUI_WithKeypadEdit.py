@@ -97,17 +97,17 @@ class Admin(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
         tkinter.Frame.__init__(self, master)
-        tkinter.Frame.configure(self,bg="")
-        tkinter.Label(self, bg='Green',text="Admin", width=20, font=('Helvetica', 18, "bold")).grid(row=0)
+        tkinter.Frame.configure(self,bg="white")
+        tkinter.Label(self, width = 45, borderwidth=2, relief="solid", bg="#F6B022",text="Admin", font=('Helvetica', 18, "bold")).grid(row=0, columnspan=3, pady=4)
 
-        self.homeButton = tkinter.Button(self, text="Home",
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge",
             command=lambda: master.switch_frame(StartPage))
-        self.homeButton.grid(row=20, column=0, sticky="W"+"E", pady=4)
+        self.homeButton.grid(row=20, column=1, sticky="W"+"E", pady=4)
         self.create_keypad_and_search(self.master)
 
     def create_keypad_and_search(self, master):
-        canvas = tkinter.Canvas(self)
-        canvas.grid(row=1, column=0,rowspan=10,  sticky="news",pady=4)
+        canvas = tkinter.Canvas(self, bg = "white", bd=0, highlightthickness=0, relief='ridge')
+        canvas.grid(row=1, column=1,rowspan = 10,pady=4)
         keys = [
         ['1', '2', '3'],    
         ['4', '5', '6'],    
@@ -116,15 +116,15 @@ class Admin(tkinter.Frame):
         ]
 
         # place to display search value
-        e = tkinter.Entry(canvas)
-        e.grid(row=0, column=0, columnspan=3, ipady=5)
+        e = tkinter.Entry(canvas, relief = "solid")
+        e.grid(row=0, column=0, columnspan = 3,  ipady=5, pady = 5)
 
         # create buttons using `keys`
         for y, row in enumerate(keys, 1):
             for x, key in enumerate(row):
                 # `lambda` inside `for` has to use `val=key:code(val)` 
                 # instead of direct `code(key)`
-                b = tkinter.Button(canvas, text=key, width = 10, height =3, command=lambda val=key:self.code(master, val, e))
+                b = tkinter.Button(canvas, text=key, relief = "ridge", width = 10, height =3, command=lambda val=key:self.code(master, val, e))
                 b.grid(row=y, column=x, ipadx=10)
     
     #------------------------Code to Make the Keypad work---------------------------------
