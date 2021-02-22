@@ -166,15 +166,15 @@ class AdminONLY(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
         tkinter.Frame.__init__(self, master)
-        tkinter.Frame.configure(self,bg='')
-        tkinter.Label(self,width = 40, bg='Green',text="Admin ONLY", font=('Helvetica', 18, "bold")).grid(row=0)
+        tkinter.Frame.configure(self,bg="white")
+        tkinter.Label(self, width = 45, borderwidth=2, relief="solid", bg="#F6B022",text="Admin ONLY", font=('Helvetica', 18, "bold")).grid(row=0, columnspan=3, pady=4)
 
-        self.homeButton = tkinter.Button(self, text="Home",
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge",
             command=lambda: master.switch_frame(StartPage))
-        self.homeButton.grid(row=2, column=0, sticky="W"+"E")
+        self.homeButton.grid(row=2, column=1, sticky="W"+"E")
 
-        L1 = tkinter.Label(self,text = "You are Admin")
-        L1.grid(row=1)
+        L1 = tkinter.Label(self,text = "You are Admin", bg = "white")
+        L1.grid(row=1, column = 1)
 
 #---------- Start of Main Function---------------
 
