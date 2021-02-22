@@ -1,8 +1,17 @@
+from LEDs.led_location import sectionA, sectionB, sectionC, sectionD
 from flask import Flask, request
 app = Flask(__name__)
 
 def function_call(location):
     # Andrew, this is where your stuff should go
+    if location == 'A':
+        sectionA()
+    if location == 'B':
+        sectionB()
+    if location == 'C':
+        sectionC()
+    if location == 'D':
+        sectionD()
     print(location)
     return
 
