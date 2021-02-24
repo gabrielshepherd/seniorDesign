@@ -101,10 +101,10 @@ while True:
 
     # Comment this line out if you have RGBW/GRBW NeoPixels
     #pixels.fill((0, 0, 0))
-    sectionA()
-    sectionB()
-    sectionC()
-    sectionD()
+    # sectionA()
+    # sectionB()
+    # sectionC()
+    # sectionD()
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     # pixels.fill((0, 0, 255, 0))
     #pixels.show()
