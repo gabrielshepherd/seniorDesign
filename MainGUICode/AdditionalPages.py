@@ -1,7 +1,11 @@
 import tkinter as tkinter
 import tkinter.font as tkFont
 import MainGUI_WithKeypadEdit as Main
-from PIL import ImageTk, Image
+
+#Need to install this on Pi
+#from PIL import ImageTk, Image
+
+#For sending data - future use:
 #from send import *
 #import requests - Add send.py to directory so that to send a location, you use data_trasmit(<location>)
 
@@ -25,12 +29,15 @@ class SpecificSearch(tkinter.Frame):
 
         self.searchButton = tkinter.Button(self, text = "Search", relief = "ridge").grid(row=3, column = 1, pady = 20, sticky="W"+"E")
 
-        img2 = Image.open(r"C:\NDSU_Logo2.png")
-        img2 = img2.resize((300,50), Image.ANTIALIAS)
-        Logo2 = ImageTk.PhotoImage(img2)
-        Logo2_label = tkinter.Label(self,image=Logo2, bg="white")
-        Logo2_label.image = Logo2
-        Logo2_label.grid(row=5, column = 1, pady = 30)
+        #---These lines are for the NDSU Logo at bottom-----
+        #img2 = Image.open(r"C:\NDSU_Logo2.png")
+        #img2 = img2.resize((300,50), Image.ANTIALIAS)
+        #Logo2 = ImageTk.PhotoImage(img2)
+        #Logo2_label = tkinter.Label(self,image=Logo2, bg="white")
+        #Logo2_label.image = Logo2
+        #Logo2_label.grid(row=5, column = 1, pady = 30)
+        #--------------------------------------------------
+        
         #Logo2_label.place(x=100, y =10)
 
 class RecentSearches(tkinter.Frame):

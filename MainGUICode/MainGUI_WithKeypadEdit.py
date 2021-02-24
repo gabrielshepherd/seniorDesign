@@ -3,8 +3,8 @@ This Program has a base level start to what we may potentially want as the GUI
 '''
 import tkinter as tkinter
 import tkinter.font as tkFont
-import tkinter.messagebox as messagebox
-from PIL import ImageTk, Image
+#Get this installed on Pi
+#from PIL import ImageTk, Image
 import AdditionalPages as AddP
 
 #img = ImageTk.PhotoImage(Image.open("NDSU_Logo.png"))
@@ -40,19 +40,19 @@ class StartPage(tkinter.Frame):
         self.create_greenspace(1,2)
         
         #--------Making Images-------------------
-        img1 = Image.open(r"C:\NDSU_Logo2.png")
-        img1 = img1.resize((100,50), Image.ANTIALIAS)
-        Logo1 = ImageTk.PhotoImage(img1)
-        Logo1_label = tkinter.Label(self,image=Logo1, bg="white")
-        Logo1_label.image = Logo1
-        Logo1_label.place(x=0, y =10)
+        #img1 = Image.open(r"C:\NDSU_Logo2.png")
+        #img1 = img1.resize((100,50), Image.ANTIALIAS)
+        #Logo1 = ImageTk.PhotoImage(img1)
+        #Logo1_label = tkinter.Label(self,image=Logo1, bg="white")
+        #Logo1_label.image = Logo1
+        #Logo1_label.place(x=0, y =10)
 
-        img2 = Image.open(r"C:\NDSU_Logo.png")
-        img2 = img2.resize((100,50), Image.ANTIALIAS)
-        Logo2 = ImageTk.PhotoImage(img2)
-        Logo2_label = tkinter.Label(self,image=Logo2, bg="white")
-        Logo2_label.image = Logo2
-        Logo2_label.place(x=670, y =10)
+        #img2 = Image.open(r"C:\NDSU_Logo.png")
+        #img2 = img2.resize((100,50), Image.ANTIALIAS)
+        #Logo2 = ImageTk.PhotoImage(img2)
+        #Logo2_label = tkinter.Label(self,image=Logo2, bg="white")
+        #Logo2_label.image = Logo2
+        #Logo2_label.place(x=670, y =10)
         
  
         #Making the Title and the admin button
