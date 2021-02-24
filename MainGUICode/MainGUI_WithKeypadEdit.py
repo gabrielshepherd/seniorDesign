@@ -33,7 +33,7 @@ class StartPage(tkinter.Frame):
         self.configure(bg = "white")
         master.configure(bg = "white")
         # Edit this value once we test on actual display
-        master.geometry('800x350') #1024x600 is size, I tested with 800x350
+        master.geometry('1024x600') #1024x600 is size, I tested with 800x350
         master.title('Parts Inventory Display')
     
         self.create_greenspace(1,0)

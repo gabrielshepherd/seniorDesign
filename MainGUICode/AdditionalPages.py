@@ -6,7 +6,7 @@ import MainGUI_WithKeypadEdit as Main
 #from PIL import ImageTk, Image
 
 #For sending data - future use:
-#from send import *
+import send as output
 #import requests - Add send.py to directory so that to send a location, you use data_trasmit(<location>)
 
 #Global List of what was recently searched
@@ -88,7 +88,7 @@ class QuickSearch(tkinter.Frame):
         self.Inductors.grid(row=2, column=0, pady=4)
 
         self.OpAmps= tkinter.Button(self, text="Op Amps", width=20,font = L2fontStyle,relief = "ridge", 
-                           height=2, command=lambda: save(self.OpAmps, 3))
+                           height=2, command=lambda: output.data_transmit("B3"))#save(self.OpAmps, 3)
         self.OpAmps.grid(row=3, column=0, pady=4)
 
         self.Filters= tkinter.Button(self, text="Filters", width=20,font = L2fontStyle,relief = "ridge", 
