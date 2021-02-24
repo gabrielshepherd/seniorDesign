@@ -97,7 +97,7 @@ def sectionD():
      
  
  
-while True:
+#while True:
 
     # Comment this line out if you have RGBW/GRBW NeoPixels
     #pixels.fill((0, 0, 0))
@@ -140,4 +140,3 @@ while True:
   
  
     #rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
- 
