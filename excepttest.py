@@ -25,7 +25,8 @@ def before_request_func():
     print(msg)
     return msg
 
-@app.after_request
+# @app.after_request
+@app.teardown_request
 def after_request_func():
     msg = "after request"
     print(msg)
