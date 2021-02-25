@@ -15,6 +15,10 @@ def connect():
 
 @app.route('/transmit')
 def receive_data():
+    @after_this_request
+    def after_this_request_func(response):
+        print("after request")
+        return response
     location = request.json['location']
     function_call(location)
     return "data received"
@@ -31,11 +35,6 @@ def before_request_func():
 #     msg = "after request"
 #     print(msg)
 #     return msg
-
-@after_this_request
-def after_this_request_func(response):
-    print("after request")
-return response
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
