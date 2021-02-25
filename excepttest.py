@@ -19,9 +19,17 @@ def receive_data():
     function_call(location)
     return "data received"
 
+@app.before_request
+def before_request_func():
+    msg = "before request"
+    print(msg)
+    return msg
+
+@app.after_request
+def after_request_func():
+    msg = "after request"
+    print(msg)
+    return msg
+
 if __name__ == '__main__':
-    t = 0
     app.run(debug=False, host='0.0.0.0')
-    while True:
-        print(t)
-        t=t+1
