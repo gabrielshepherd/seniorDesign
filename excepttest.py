@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, after_this_request
 from multiprocessing import Process
 import time
 
@@ -26,11 +26,16 @@ def before_request_func():
     return msg
 
 # @app.after_request
-@app.teardown_request
-def after_request_func():
-    msg = "after request"
-    print(msg)
-    return msg
+# @app.teardown_request
+# def after_request_func():
+#     msg = "after request"
+#     print(msg)
+#     return msg
+
+@after_this_request
+def after_this_request_func(response):
+    print("after request")
+    return response
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
