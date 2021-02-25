@@ -25,11 +25,11 @@ def before_request_func():
     print(msg)
     return msg
 
-@app.after_request
-def after_request_func():
-    msg = "after request"
-    print(msg)
-    return msg
+# @app.after_request
+# def after_request_func():
+#     msg = "after request"
+#     print(msg)
+#     return msg
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
