@@ -10,7 +10,8 @@ q = mp.Queue()
 def function_call(location, t0):
     t1 = time.time()
     dt = t1 - t0
-    
+    while dt < 10:
+        
     print(location)
     return
 
