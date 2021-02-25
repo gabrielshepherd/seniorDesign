@@ -1,6 +1,15 @@
 from flask import Flask, request, after_this_request
-from multiprocessing import Process
+import threading
 import time
+
+def my_threaded_thing():
+    t = threading.current_thread()
+    count = 0
+    while getattr(t, "do_run", True):
+        print(count)
+        count += 1
+        time.sleep(1)
+    print("ok im ded now")
 
 app = Flask(__name__)
 
@@ -21,6 +30,10 @@ def receive_data():
         return response
     location = request.json['location']
     function_call(location)
+
+    my_thread = threading.Thread(target=my_threaded_thing)
+    my_thread.start()
+
     return "data received"
 
 @app.before_request
