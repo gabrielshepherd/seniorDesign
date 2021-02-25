@@ -6,18 +6,9 @@ def function_call(location):
     print(location)
     return
 
-# if __name__=="__main__":
 @app.route('/')
 def connect():
     return "connection confirmed"
-
-# @app.route('/transmit')
-# def receive_data():
-#     location = request.json['location']
-#     color = request.json['color']
-#     print(location)
-#     print(color)
-#     return "data received"
 
 @app.route('/transmit')
 def receive_data():
