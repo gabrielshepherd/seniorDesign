@@ -20,4 +20,8 @@ def receive_data():
     return "data received"
 
 if __name__ == '__main__':
+    t = 0
     app.run(debug=False, host='0.0.0.0')
+    while True:
+        print(t)
+        t=t+1
