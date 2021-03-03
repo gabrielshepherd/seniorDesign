@@ -31,7 +31,7 @@ class StartPage(tkinter.Frame):
         self.master = master
         self.pack()
         self.configure(bg = "white")
-        master.configure(bg = "white")
+        master.configure(bg = "white",relief = "ridge" )
         # Edit this value once we test on actual display
         master.geometry('1024x600') #1024x600 is size, I tested with 800x350
         master.title('Parts Inventory Display')
@@ -56,27 +56,27 @@ class StartPage(tkinter.Frame):
         
  
         #Making the Title and the admin button
-        L1fontStyle = tkFont.Font(family = "Lucida Grande", size =20)
-        L1 = tkinter.Label(self, height=2, width= 35, text="Parts Inventory Display", bg="#F6B022", font = L1fontStyle )
+        L1fontStyle = tkFont.Font(family = "Lucida Grande", size =25)
+        L1 = tkinter.Label(self, height=2, width= 35, text="Parts Inventory Display", bg="#F6B022", borderwidth=2, relief="solid", font = L1fontStyle )
         L1.grid( row=0, column=1)
-        self.adminButton = tkinter.Button(self, width=15, height=1, text="Admin",relief = "ridge",
+        self.adminButton = tkinter.Button(self, width=20, height=2, text="Admin",relief = "ridge",
                                         command=lambda: master.switch_frame(Admin))
         self.adminButton.grid(row=5, column=1)
 
-        L2fontStyle = tkFont.Font(family = "Lucida Grande", size =15)
-        L2 = tkinter.Label(self, width=80, bg = "#F6B022")
+        L2fontStyle = tkFont.Font(family = "Lucida Grande", size =20)
+        L2 = tkinter.Label(self, width=82, bg = "#F6B022",borderwidth=2, relief="solid" )
         L2.grid( row=8, columnspan = 3)
 
         #------------------------ Creating buttons -------------------------
-        self.QuickSearch = tkinter.Button(self, text="Quick Search", font = L2fontStyle,  width=20, relief = "ridge", #bg = "#202124",
-                           height=2, command=lambda: master.switch_frame(AddP.QuickSearch))
+        self.QuickSearch = tkinter.Button(self, text="Quick Search", font = L2fontStyle,  width=30, relief = "ridge", #bg = "#202124",
+                           height=3, command=lambda: master.switch_frame(AddP.QuickSearch))
         self.QuickSearch.grid(row=2, column=1, pady=2)
 
-        self.SpecifiedSearch = tkinter.Button(self, width=20, height=2, text="Specified Search",font = L2fontStyle,relief = "ridge",
+        self.SpecifiedSearch = tkinter.Button(self, width=30, height=3, text="Specified Search",font = L2fontStyle,relief = "ridge",
                                         command=lambda: master.switch_frame(AddP.SpecificSearch))
         self.SpecifiedSearch.grid(row=3,column=1, pady=2)
 
-        self.RecentButton = tkinter.Button(self, width=20, height=2, text="Recent Searches",font = L2fontStyle,relief = "ridge",
+        self.RecentButton = tkinter.Button(self, width=30, height=3, text="Recent Searches",font = L2fontStyle,relief = "ridge",
                                         command=lambda: master.switch_frame(AddP.RecentSearches))
         self.RecentButton.grid(row=4, column=1, pady=2)
 
@@ -88,7 +88,7 @@ class StartPage(tkinter.Frame):
 
     #will be picture in future
     def create_greenspace(self,rowNum,colNum):
-        canvas = tkinter.Canvas(self, width=100, bg="#0A5640")
+        canvas = tkinter.Canvas(self, width=120, height=430, bg ="green", borderwidth=2, relief="solid")# bg="#0A5640")
         canvas.grid(row=rowNum, column=colNum,rowspan=10)
 
 #------------------------------------------------------------------------------------
