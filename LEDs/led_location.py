@@ -65,14 +65,13 @@ def sectionA():
     time.sleep(3)
 
 def sectionB():
-    for k in range(20,40):
+    for k in range(37,72):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.05)
-    time.sleep(2)
+    time.sleep(3)
     pixels.fill(CLEAR)
     pixels.show()
-    time.sleep(3)
+    time.sleep(1)
 
 def sectionC():
     for k in range(40, 60):
