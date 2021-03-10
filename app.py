@@ -5,9 +5,12 @@ import time
 
 #app = Flask(__name__)
 
-def idle_mode():
-    rainbow_cycle(0.01)
-    pass
+# def idle_mode():
+#     for j in range(255):
+#         rainbow_cycle(0.01, j)
+#         if j == 255:
+#             j = 0
+#     pass
 
 
 class MyThread(Thread):
@@ -23,9 +26,14 @@ class MyThread(Thread):
             if self.stopped.wait(0.01):
                 return
         # Do the animation
+        j = 0
         while not self.stopped.wait(0.01):
             # print(f"my thread ({count})")
-            idle_mode()
+            rainbow_cycle(0.01, j)
+            if j == 255:
+                j -= 255
+            else:
+                j += 1
             # call a function
 
 
