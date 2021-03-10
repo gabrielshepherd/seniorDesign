@@ -7,7 +7,7 @@ import board
 import neopixel
  
 CLEAR = (0, 0, 0)  # clear (or second color)
-COLOR = (25,200,7)
+COLOR = (0,255,255)
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
 # NeoPixels must be connected to D10, D12, D18 or D21 to work.
 pixel_pin = board.D18
@@ -46,52 +46,37 @@ def wheel(pos):
     return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
  
  
-def rainbow_cycle(wait):
-    for j in range(255):
-        for i in range(num_pixels):
-            pixel_index = (i * 256 // num_pixels) + j
-            pixels[i] = wheel(pixel_index & 255)
-        pixels.show()
-        time.sleep(wait)
+def rainbow_cycle(wait, j):
+    # for j in range(255):
+    for i in range(num_pixels):
+        pixel_index = (i * 256 // num_pixels) + j
+        pixels[i] = wheel(pixel_index & 255)
+    pixels.show()
+    time.sleep(wait)
 
 def sectionA():
     for k in range(0, 20):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.05)
-    time.sleep(2)
-    pixels.fill(CLEAR)
-    pixels.show()
-    time.sleep(3)
+   
 
 def sectionB():
     for k in range(37,72):
         pixels[k] = COLOR      
         pixels.show()
-    time.sleep(3)
-    pixels.fill(CLEAR)
-    pixels.show()
-    time.sleep(1)
+ 
 
 def sectionC():
     for k in range(40, 60):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.05)
-    time.sleep(2)
-    pixels.fill(CLEAR)
-    pixels.show()
-    time.sleep(3)
+ 
 
 def sectionD():
     for k in range(60, 80):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.05)
-    time.sleep(2)
-    pixels.fill(CLEAR)
-    pixels.show()
-    time.sleep(3)
+
 
      
  
