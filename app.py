@@ -1,6 +1,6 @@
-from flask import Flask, request, after_this_request
+from flask import Flask, request
 from LEDs.led_location import rainbow_cycle, sectionB
-from threading import Thread, Event, Timer
+from threading import Thread, Event
 import time
 
 
