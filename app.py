@@ -1,17 +1,11 @@
-from flask import Flask, request, after_this_request
+from flask import Flask, request
 from LEDs.led_location import rainbow_cycle, sectionB
-from threading import Thread, Event, Timer
+from threading import Thread, Event
 import time
 
-#app = Flask(__name__)
 
-# def idle_mode():
-#     for j in range(255):
-#         rainbow_cycle(0.01, j)
-#         if j == 255:
-#             j = 0
-#     pass
-
+# init flask app
+app = Flask(__name__)
 
 class MyThread(Thread):
     WAIT_TIME = 1000                        # in 10s of milliseconds
@@ -34,12 +28,6 @@ class MyThread(Thread):
                 j -= 255
             else:
                 j += 1
-            # call a function
-
-
-# init flask app
-app = Flask(__name__)
-
 
 
 def function_call(location):
