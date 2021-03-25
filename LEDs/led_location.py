@@ -13,7 +13,7 @@ COLOR = (0,255,255)
 pixel_pin = board.D18
  
 # The number of NeoPixels
-num_pixels = 350
+num_pixels = 345
  
 # The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
 # For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
@@ -55,7 +55,7 @@ def rainbow_cycle(wait, j):
     time.sleep(wait)
 
     for k in range(num_pixels):
-        pixel_index = (k * 256 // (num_pixels/2)) + j
+        pixel_index = (k * 256 // (num_pixels//2)) + j
         pixels[k] = wheel(pixel_index & 255)
     pixels.show()
     time.sleep(wait)
@@ -63,7 +63,7 @@ def rainbow_cycle(wait, j):
 def sectionA():
     pixels.fill(0,0,0)
     pixels.show()
-    for k in range(0, 20):
+    for k in range(0, 35):
         pixels[k] = COLOR      
         pixels.show()
    
@@ -79,7 +79,7 @@ def sectionB():
 def sectionC():
     pixels.fill(0,0,0)
     pixels.show()
-    for k in range(40, 60):
+    for k in range(73, 109):
         pixels[k] = COLOR      
         pixels.show()
  
@@ -87,7 +87,7 @@ def sectionC():
 def sectionD():
     pixels.fill(0,0,0)
     pixels.show()
-    for k in range(60, 80):
+    for k in range(110, 122):
         pixels[k] = COLOR      
         pixels.show()
 

@@ -29,7 +29,7 @@ class MyThread(Thread):
         j = 0
         while not self.stopped.wait(0.01):
             # print(f"my thread ({count})")
-            rainbow_cycle(0.0001, j)
+            rainbow_cycle(0.01, j)
             if j == 255:
                 j -= 255
             else:
