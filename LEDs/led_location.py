@@ -53,13 +53,7 @@ def rainbow_cycle(wait, j):
         pixels[i] = wheel(pixel_index & 255)
     pixels.show()
     time.sleep(wait)
-
-    for k in range(num_pixels):
-        pixel_index = (k * 256 // (num_pixels//2)) + j
-        pixels[k] = wheel(pixel_index & 255)
-    pixels.show()
-    time.sleep(wait)
-
+    
 def sectionA():
     pixels.fill(0,0,0)
     pixels.show()
