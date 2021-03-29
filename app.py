@@ -1,5 +1,5 @@
 from flask import Flask, request
-from LEDs.led_location import rainbow_cycle, sectionB
+from LEDs.led_location import rainbow_cycle, snake, sectionB
 from threading import Thread, Event
 import time
 
@@ -21,11 +21,16 @@ class MyThread(Thread):
                 return
         # Do the animation
         j = 0
+        cycle = 2
         while not self.stopped.wait(0.01):
             # print(f"my thread ({count})")
             rainbow_cycle(0.01, j)
             if j == 255:
                 j -= 255
+                cycle -= 1
+            if cycle == 0:
+                snake()
+                cycle = 2
             else:
                 j += 1
 

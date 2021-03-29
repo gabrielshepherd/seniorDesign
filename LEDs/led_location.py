@@ -54,6 +54,39 @@ def rainbow_cycle(wait, j):
     pixels.show()
     time.sleep(wait)
 
+def snake():
+    pixels.fill(0,0,0)
+    pixels.show()
+    for i in range(122):
+        pixels[i] = (0,102,51)
+        pixels.show()
+    for j in range(460,565):
+        pixels[j] = (0,102,51)
+        pixels.show()
+    for k in range(318,303,-1):
+        pixels[k] = (0,102,51)
+        pixels.show()
+    for l in range(566,671):
+        pixels[l] = (0,102,51)
+        pixels.show()
+    for m in range(137,152):
+        pixels[m] = (0,102,51)
+        pixels.show()
+    for n in range(672,777):
+        pixels[n] = (0,102,51)
+        pixels.show()
+    for p in range(289,274,-1):
+        pixels[p] = (0,102,51)
+        pixels.show()
+    for q in range(274,168,-1):
+        pixels[q] = (0,102,51)
+        pixels.show()
+    
+
+
+        
+
+
 def sectionA():
     pixels.fill(0,0,0)
     pixels.show()
