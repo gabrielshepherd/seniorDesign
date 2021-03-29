@@ -55,7 +55,7 @@ def rainbow_cycle(wait, j):
     time.sleep(wait)
 
 def snake():
-    pixels.fill(0,0,0)
+    pixels.fill((0,0,0))
     pixels.show()
     for i in range(122):
         pixels[i] = (0,102,51)
