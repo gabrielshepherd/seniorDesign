@@ -84,7 +84,7 @@ def snake():
     
 
 def sectionA():
-    pixels.fill(0,0,0)
+    pixels.fill((0,0,0))
     pixels.show()
     for k in range(0, 35):
         pixels[k] = COLOR      
@@ -92,7 +92,7 @@ def sectionA():
    
 
 def sectionB():
-    pixels.fill(0,0,0)
+    pixels.fill((0,0,0))
     pixels.show()
     for k in range(37,72):
         pixels[k] = COLOR      
