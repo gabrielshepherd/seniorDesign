@@ -60,7 +60,7 @@ def snake():
     for i in range(122):
         pixels[i] = (0,51,102)
         pixels.show()
-    for j in range(460,565):
+    for j in range(457,565):
         pixels[j] = (0,51,102)
         pixels.show()
     for k in range(318,303,-1):
