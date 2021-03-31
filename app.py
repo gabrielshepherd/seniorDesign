@@ -1,5 +1,5 @@
 from flask import Flask, request
-from LEDs.led_location import rainbow_cycle, snake, sectionB, sectionA
+from LEDs.led_location import rainbow_cycle, snake, sectionB, sectionA, clear
 from threading import Thread, Event
 import time
 
@@ -37,6 +37,7 @@ class MyThread(Thread):
 
 def function_call(location):
     # Andrew, this is where your stuff should go
+    clear()
     if location == 'B3':
         sectionB()
     if location == 'A3':
