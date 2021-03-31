@@ -18,12 +18,13 @@ class SpecificSearch(tkinter.Frame):
         self.master = master
         tkinter.Frame.__init__(self, master)
         tkinter.Frame.configure(self,bg="white")
-        tkinter.Label(self, width = 45, borderwidth=2, relief="solid", bg="#F6B022",text="Specified Search", font=('Helvetica', 18, "bold")).grid(row=0, columnspan=3, pady=4)
-
-        self.L1 = tkinter.Label(self, text = "Enter part here:", bg = "white").grid(row = 1, column = 1, pady = 10)
-
-        e = tkinter.Entry(self, relief="solid").grid(row=2, column =1, pady = 20, ipady = 5)
-        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge",
+        tkinter.Label(self, width = 45, borderwidth=2, relief="solid", bg="#F6B022",text="Specified Search", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=3, pady=4)
+        
+        L2fontStyle = tkFont.Font(family = "Helvetica", size =15)
+        self.L1 = tkinter.Label(self, text = "Enter part here:", bg = "white", font=('Helvetica', 18)).grid(row = 1, column = 1, pady = 10)
+ 
+        e = tkinter.Entry(self, width=20, relief="solid").grid(row=2, column =1, pady = 20, ipady = 5)
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 30, height=3,
             command=lambda: master.switch_frame(Main.StartPage))
         self.homeButton.grid(row=4, column=1, sticky="W"+"E")
 
@@ -67,49 +68,49 @@ class QuickSearch(tkinter.Frame):
         self.master = master
         tkinter.Frame.__init__(self, master)
         tkinter.Frame.configure(self,bg="white")
-        tkinter.Label(self, width = 45, borderwidth=2, relief="solid", bg="#F6B022",text="Quick Search", font=('Helvetica', 18, "bold")).grid(row=0, columnspan=3, pady=4)
-        L2fontStyle = tkFont.Font(family = "Lucida Grande", size =12)
+        tkinter.Label(self, width = 50, borderwidth=2, relief="solid", bg="#F6B022",text="Quick Search", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=3, pady=4)
+        L2fontStyle = tkFont.Font(family = "Helvetica", size =15)
 
         #This list keeps track of which button is pressed
         pressed = [False, False,False, False,False, False,False, False]
 
-        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", 
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 10, height=2,
             command=lambda: master.switch_frame(Main.StartPage))
-        self.homeButton.grid(row=10, column=1, sticky="W"+"E", pady=4)
+        self.homeButton.grid(row=10, column=1, pady=4)
 
-        self.Resistors= tkinter.Button(self, text="Resistors", width=20,font = L2fontStyle,relief = "ridge", 
-                           height=2, command=lambda: [master.switch_frame(Resistors), RecentlySearchedName.append("Resistors"),
+        self.Resistors= tkinter.Button(self, text="Resistors", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [master.switch_frame(Resistors), RecentlySearchedName.append("Resistors"),
                            RecentlySearchedFrame.append(self)])
         self.Resistors.grid(row=1, column=0, pady=4)
 
-        self.Inductors= tkinter.Button(self, text="Inductors", width=20,font = L2fontStyle,relief = "ridge", 
-                           height=2, command=lambda: [master.switch_frame(Inductors), RecentlySearchedName.append("Inductors"),
+        self.Inductors= tkinter.Button(self, text="Inductors", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [master.switch_frame(Inductors), RecentlySearchedName.append("Inductors"),
                            RecentlySearchedFrame.append(self)])
         self.Inductors.grid(row=2, column=0, pady=4)
 
-        self.OpAmps= tkinter.Button(self, text="Op Amps", width=20,font = L2fontStyle,relief = "ridge", 
-                           height=2, command=lambda: output.data_transmit("B3"))#save(self.OpAmps, 3)
+        self.OpAmps= tkinter.Button(self, text="Op Amps", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda:[output.data_transmit("Stop"), output.data_transmit("B3")])#save(self.OpAmps, 3)
         self.OpAmps.grid(row=3, column=0, pady=4)
 
-        self.Filters= tkinter.Button(self, text="Filters", width=20,font = L2fontStyle,relief = "ridge", 
-                           height=2, command=lambda: save(self.Filters, 4))
-        self.Filters.grid(row=4, column=0, pady=4)
+        self.Diodes= tkinter.Button(self, text="Diodes", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: save(self.Diodes, 4))
+        self.Diodes.grid(row=4, column=0, pady=4)
 
-        self.Capacitors= tkinter.Button(self, text="Capacitors", width=20,font = L2fontStyle,relief = "ridge", 
-                           height=2, command=lambda: [master.switch_frame(Capacitors), RecentlySearchedName.append("Capacitors"),
+        self.Capacitors= tkinter.Button(self, text="Capacitors", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [master.switch_frame(Capacitors), RecentlySearchedName.append("Capacitors"),
                            RecentlySearchedFrame.append(self)])
         self.Capacitors.grid(row=1, column=2, pady=4)
 
-        self.Transistors= tkinter.Button(self, text="Transistors", width=20,font = L2fontStyle,relief = "ridge", 
-                           height=2, command=lambda: master.switch_frame(Main.StartPage))
+        self.Transistors= tkinter.Button(self, text="Transistors", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: master.switch_frame(Main.StartPage))
         self.Transistors.grid(row=2, column=2, pady=4)
 
-        self.Pots= tkinter.Button(self, text="Potentiometers", width=20,font = L2fontStyle,relief = "ridge", 
-                           height=2, command=lambda: save(self.Pots, 6))
+        self.Pots= tkinter.Button(self, text="Potentiometers", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: save(self.Pots, 6))
         self.Pots.grid(row=3, column=2, pady=4)
 
-        self.DigitalIC= tkinter.Button(self, text="Digital ICs", width=20,font = L2fontStyle,relief = "ridge", 
-                           height=2, command=lambda: [save(self.DigitalIC, 7), RecentlySearchedName.append("Digital ICs"),
+        self.DigitalIC= tkinter.Button(self, text="Digital ICs", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.DigitalIC, 7), RecentlySearchedName.append("Digital ICs"),
                            RecentlySearchedFrame.append(self) ] )
         self.DigitalIC.grid(row=4, column=2, pady=4)
 
