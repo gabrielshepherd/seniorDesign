@@ -7,13 +7,13 @@ import board
 import neopixel
  
 CLEAR = (0, 0, 0)  # clear (or second color)
-COLOR = (25,200,7)
+COLOR = (0,255,255)
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
 # NeoPixels must be connected to D10, D12, D18 or D21 to work.
 pixel_pin = board.D18
  
 # The number of NeoPixels
-num_pixels = 60
+num_pixels = 600
  
 # The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
 # For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
@@ -46,65 +46,63 @@ def wheel(pos):
     return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
  
  
-def rainbow_cycle(wait):
-    for j in range(255):
-        for i in range(num_pixels):
-            pixel_index = (i * 256 // num_pixels) + j
-            pixels[i] = wheel(pixel_index & 255)
-        pixels.show()
-        time.sleep(wait)
+def rainbow_cycle(wait, j):
+    # for j in range(255):
+    for i in range(num_pixels):
+        pixel_index = (i * 256 // num_pixels) + j
+        pixels[i] = wheel(pixel_index & 255)
+    pixels.show()
+    time.sleep(wait)
+
+    for k in range(num_pixels):
+        pixel_index = (k * 256 // (num_pixels//2)) + j
+        pixels[k] = wheel(pixel_index & 255)
+    pixels.show()
+    time.sleep(wait)
 
 def sectionA():
-    for k in range(0, 20):
+    pixels.fill(0,0,0)
+    pixels.show()
+    for k in range(0, 35):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.05)
-    time.sleep(2)
-    pixels.fill(CLEAR)
-    pixels.show()
-    time.sleep(3)
+   
 
 def sectionB():
-    for k in range(20,40):
+    pixels.fill(0,0,0)
+    pixels.show()
+    for k in range(37,72):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.05)
-    time.sleep(2)
-    pixels.fill(CLEAR)
-    pixels.show()
-    time.sleep(3)
+ 
 
 def sectionC():
-    for k in range(40, 60):
+    pixels.fill(0,0,0)
+    pixels.show()
+    for k in range(73, 109):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.05)
-    time.sleep(2)
-    pixels.fill(CLEAR)
-    pixels.show()
-    time.sleep(3)
+ 
 
 def sectionD():
-    for k in range(60, 80):
+    pixels.fill(0,0,0)
+    pixels.show()
+    for k in range(110, 122):
         pixels[k] = COLOR      
         pixels.show()
-        time.sleep(0.05)
-    time.sleep(2)
-    pixels.fill(CLEAR)
-    pixels.show()
-    time.sleep(3)
+
 
      
  
  
-while True:
+#while True:
 
     # Comment this line out if you have RGBW/GRBW NeoPixels
     #pixels.fill((0, 0, 0))
-    sectionA()
-    sectionB()
-    sectionC()
-    sectionD()
+    # sectionA()
+    # sectionB()
+    # sectionC()
+    # sectionD()
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     # pixels.fill((0, 0, 255, 0))
     #pixels.show()
@@ -140,4 +138,3 @@ while True:
   
  
     #rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
- 
