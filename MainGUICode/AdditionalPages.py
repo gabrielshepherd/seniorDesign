@@ -12,6 +12,7 @@ import MainGUI_WithKeypadEdit as Main
 RecentlySearchedName = []
 RecentlySearchedFrame = []
 
+#------Main 3 pages--------
 class SpecificSearch(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
@@ -39,7 +40,7 @@ class SpecificSearch(tkinter.Frame):
         #--------------------------------------------------
         
         #Logo2_label.place(x=100, y =10)
-
+#Future addition - Have the sender also send the leds to light up. Change the button to light up leds insead
 class RecentSearches(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
@@ -104,11 +105,11 @@ class QuickSearch(tkinter.Frame):
         self.Capacitors.grid(row=1, column=1, pady=4)
 
         self.Transistors= tkinter.Button(self, text="Transistors", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: master.switch_frame(Main.StartPage))
+                           height=3, command=lambda: save(self.Transistors, 6))
         self.Transistors.grid(row=2, column=1, pady=4)
 
         self.Pots= tkinter.Button(self, text="Potentiometers", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: save(self.Pots, 6))
+                           height=3, command=lambda: save(self.Pots, 7))
         self.Pots.grid(row=3, column=1, pady=4)
 
         self.Logic= tkinter.Button(self, text="Logic", width=30,font = L2fontStyle,relief = "ridge", 
@@ -116,7 +117,7 @@ class QuickSearch(tkinter.Frame):
         self.Logic.grid(row=4, column=1, pady=4)
 
         self.Other= tkinter.Button(self, text="Other", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: master.switch_frame(Main.StartPage))
+                           height=3, command=lambda: master.switch_frame(OtherComponents))
         self.Other.grid(row=5, column=1, pady=4)
 
         #This function is used to make the button green when pressed.
@@ -128,6 +129,7 @@ class QuickSearch(tkinter.Frame):
                 button.config(relief="ridge", bg = "SystemButtonFace")
                 pressed[buttonNum] = False
 
+#Only pages related to quick search below
 class Resistors(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
@@ -272,10 +274,179 @@ class BulkResistors(tkinter.Frame):
                 button.config(relief="ridge", bg = "SystemButtonFace")
                 pressed[buttonNum] = False
 
+class Inductors(tkinter.Frame):
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg="white")
 
+        #Setting Up Labels
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Logic", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        L2fontStyle = tkFont.Font(family = "Helvetica", size =15)
+
+        #This list keeps track of which button is pressed
+        pressed = [False, False, False]
+
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = L2fontStyle,
+            command=lambda: master.switch_frame(Main.StartPage))
+        self.homeButton.grid(row=10, column=0, pady=10)
+
+        self.backButton = tkinter.Button(self, text="Back", relief = "ridge", width = 20, height=2, font = L2fontStyle,
+            command=lambda: master.switch_frame(QuickSearch))
+        self.backButton.grid(row=9, column=0, pady=10)
+
+        self.Range1= tkinter.Button(self, text=".22uH - 68mH", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Range1, 0), RecentlySearchedName.append(".22uH - 68mH, Inductors"),
+                           RecentlySearchedFrame.append(self)])
+        self.Range1.grid(row=1, column=0, pady=10)
+
+        self.Range2= tkinter.Button(self, text="100mH - 1H", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Range2, 1), RecentlySearchedName.append("100mH - 1H, Inductors"),
+                           RecentlySearchedFrame.append(self)])
+        self.Range2.grid(row=2, column=0, pady=10, padx = 4)
+
+        #This function is used to make the button green when pressed.
+        def save(button, buttonNum):
+            if pressed[buttonNum] == False:
+                button.config(relief="sunken", bg = "green")
+                pressed[buttonNum] = True
+            else:
+                button.config(relief="ridge", bg = "SystemButtonFace")
+                pressed[buttonNum] = False
+
+class Capacitors(tkinter.Frame):
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg="white")
+
+        #Setting Up Labels
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Logic", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        L2fontStyle = tkFont.Font(family = "Helvetica", size =15)
+
+        #This list keeps track of which button is pressed
+        pressed = [False, False, False]
+
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = L2fontStyle,
+            command=lambda: master.switch_frame(Main.StartPage))
+        self.homeButton.grid(row=10, column=0, pady=10)
+
+        self.backButton = tkinter.Button(self, text="Back", relief = "ridge", width = 20, height=2, font = L2fontStyle,
+            command=lambda: master.switch_frame(QuickSearch))
+        self.backButton.grid(row=9, column=0, pady=10)
+
+        self.Range1= tkinter.Button(self, text=".5pF - 470pF", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Range1, 0), RecentlySearchedName.append(".5pF - 470pF, Capacitors"),
+                           RecentlySearchedFrame.append(self)])
+        self.Range1.grid(row=1, column=0, pady=10)
+
+        self.Range2= tkinter.Button(self, text="500pF - 4.7uF", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Range2, 1), RecentlySearchedName.append("500pF - 4.7uF, Capacitors"),
+                           RecentlySearchedFrame.append(self)])
+        self.Range2.grid(row=2, column=0, pady=10, padx = 4)
+
+        self.Range3= tkinter.Button(self, text="6.8uF - 3300uF", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Range3, 2), RecentlySearchedName.append("6.8uF - 3300uF, Capacitors"),
+                           RecentlySearchedFrame.append(self)])
+        self.Range3.grid(row=3, column=0, pady=10, padx = 4)
+
+        #This function is used to make the button green when pressed.
+        def save(button, buttonNum):
+            if pressed[buttonNum] == False:
+                button.config(relief="sunken", bg = "green")
+                pressed[buttonNum] = True
+            else:
+                button.config(relief="ridge", bg = "SystemButtonFace")
+                pressed[buttonNum] = False
+
+class LogicComponents(tkinter.Frame):
+
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg="white")
+
+        #Setting Up Labels
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Logic", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        L2fontStyle = tkFont.Font(family = "Helvetica", size =15)
+
+        #This list keeps track of which button is pressed
+        pressed = [False, False, False]
+
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = L2fontStyle,
+            command=lambda: master.switch_frame(Main.StartPage))
+        self.homeButton.grid(row=10, column=0, pady=10)
+
+        self.backButton = tkinter.Button(self, text="Back", relief = "ridge", width = 20, height=2, font = L2fontStyle,
+            command=lambda: master.switch_frame(QuickSearch))
+        self.backButton.grid(row=9, column=0, pady=10)
+
+        self.CMOSLogic= tkinter.Button(self, text="CMOS Logic", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.CMOSLogic, 0), RecentlySearchedName.append("CMOS Logic"),
+                           RecentlySearchedFrame.append(self)])
+        self.CMOSLogic.grid(row=1, column=0, pady=10)
+
+        self.TTLLogic= tkinter.Button(self, text="TTL Logic", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.TTLLogic, 1), RecentlySearchedName.append("TTL Logic"),
+                           RecentlySearchedFrame.append(self)])
+        self.TTLLogic.grid(row=2, column=0, pady=10, padx = 4)
+
+        self.Multiplexors= tkinter.Button(self, text="Multiplexors", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Multiplexors, 2), RecentlySearchedName.append("Multiplexors"),
+                           RecentlySearchedFrame.append(self)])
+        self.Multiplexors.grid(row=3, column=0, pady=10, padx = 4)
+
+        #This function is used to make the button green when pressed.
+        def save(button, buttonNum):
+            if pressed[buttonNum] == False:
+                button.config(relief="sunken", bg = "green")
+                pressed[buttonNum] = True
+            else:
+                button.config(relief="ridge", bg = "SystemButtonFace")
+                pressed[buttonNum] = False
+
+class OtherComponents(tkinter.Frame):
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg="white")
+
+        #Setting Up Labels
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Logic", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        L2fontStyle = tkFont.Font(family = "Helvetica", size =15)
+
+        #This list keeps track of which button is pressed
+        pressed = [False, False, False]
+
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = L2fontStyle,
+            command=lambda: master.switch_frame(Main.StartPage))
+        self.homeButton.grid(row=10, column=0, pady=10)
+
+        self.backButton = tkinter.Button(self, text="Back", relief = "ridge", width = 20, height=2, font = L2fontStyle,
+            command=lambda: master.switch_frame(QuickSearch))
+        self.backButton.grid(row=9, column=0, pady=10)
+
+        self.Crystals= tkinter.Button(self, text="Crystals", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Crystals, 0), RecentlySearchedName.append("Crystals"),
+                           RecentlySearchedFrame.append(self)])
+        self.Crystals.grid(row=1, column=0, pady=10)
+
+        self.Micros= tkinter.Button(self, text="Microcontrollers", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Micros, 1), RecentlySearchedName.append("Microcontrollers"),
+                           RecentlySearchedFrame.append(self)])
+        self.Micros.grid(row=2, column=0, pady=10, padx = 4)
+
+        #This function is used to make the button green when pressed.
+        def save(button, buttonNum):
+            if pressed[buttonNum] == False:
+                button.config(relief="sunken", bg = "green")
+                pressed[buttonNum] = True
+            else:
+                button.config(relief="ridge", bg = "SystemButtonFace")
+                pressed[buttonNum] = False
 
 #Old Code -- It had a lot of good methods to have push buttons update others in the same frame.
-class Resistors2(tkinter.Frame):
+class ResistorsOLD(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
         tkinter.Frame.__init__(self, master)
@@ -334,7 +505,7 @@ class Resistors2(tkinter.Frame):
             command=lambda: master.switch_frame(QuickSearch))
         self.backButton.grid(row=11, column=1)
 
-class Inductors(tkinter.Frame):
+class InductorsOLD(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
         tkinter.Frame.__init__(self, master)
@@ -366,7 +537,7 @@ class Inductors(tkinter.Frame):
             command=lambda: master.switch_frame(QuickSearch))
         self.backButton.grid(row=10, column=1)
 
-class Capacitors(tkinter.Frame):
+class CapacitorsOLD(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
         tkinter.Frame.__init__(self, master)
@@ -397,48 +568,3 @@ class Capacitors(tkinter.Frame):
         self.backButton = tkinter.Button(self, text="Back", relief = "ridge", width = 30,
             command=lambda: master.switch_frame(QuickSearch))
         self.backButton.grid(row=10, column=1)
-
-class LogicComponents(tkinter.Frame):
-    def __init__(self, master=None):
-        self.master = master
-        tkinter.Frame.__init__(self, master)
-        tkinter.Frame.configure(self,bg="white")
-
-        #Setting Up Labels
-        tkinter.Label(self, width = 50, bg="#F6B022",text="Logic", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
-        L2fontStyle = tkFont.Font(family = "Helvetica", size =15)
-
-        #This list keeps track of which button is pressed
-        pressed = [False, False, False]
-
-        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = L2fontStyle,
-            command=lambda: master.switch_frame(Main.StartPage))
-        self.homeButton.grid(row=10, column=0, pady=10)
-
-        self.backButton = tkinter.Button(self, text="Back", relief = "ridge", width = 20, height=2, font = L2fontStyle,
-            command=lambda: master.switch_frame(QuickSearch))
-        self.backButton.grid(row=9, column=0, pady=10)
-
-        self.CMOSLogic= tkinter.Button(self, text="CMOS Logic", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: [save(self.CMOSLogic, 0), RecentlySearchedName.append("CMOS Logic"),
-                           RecentlySearchedFrame.append(self)])
-        self.CMOSLogic.grid(row=1, column=0, pady=10)
-
-        self.TTLLogic= tkinter.Button(self, text="TTL Logic", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: [save(self.TTLLogic, 1), RecentlySearchedName.append("TTL Logic"),
-                           RecentlySearchedFrame.append(self)])
-        self.TTLLogic.grid(row=2, column=0, pady=10, padx = 4)
-
-        self.Multiplexors= tkinter.Button(self, text="Multiplexors", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: [save(self.Multiplexors, 2), RecentlySearchedName.append("Multiplexors"),
-                           RecentlySearchedFrame.append(self)])
-        self.Multiplexors.grid(row=3, column=0, pady=10, padx = 4)
-
-        #This function is used to make the button green when pressed.
-        def save(button, buttonNum):
-            if pressed[buttonNum] == False:
-                button.config(relief="sunken", bg = "green")
-                pressed[buttonNum] = True
-            else:
-                button.config(relief="ridge", bg = "SystemButtonFace")
-                pressed[buttonNum] = False
