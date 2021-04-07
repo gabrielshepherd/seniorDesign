@@ -170,8 +170,7 @@ class Resistors(tkinter.Frame):
 
         #Going to Bulk Resistors page with 3 Buttons
         self.Bulk= tkinter.Button(self, text="Bulk", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: [master.switch_frame(Main.StartPage), RecentlySearchedName.append("Bulk"),
-                           RecentlySearchedFrame.append(self)])
+                           height=3, command=lambda: [master.switch_frame(BulkResistors)])
         self.Bulk.grid(row=3, column=0, pady=20, columnspan=2)
 
         #This function is used to make the button green when pressed.
@@ -182,7 +181,6 @@ class Resistors(tkinter.Frame):
             else:
                 button.config(relief="ridge", bg = "SystemButtonFace")
                 pressed[buttonNum] = False
-
 
 class QuarterWResistors(tkinter.Frame):
     def __init__(self, master=None):
@@ -202,7 +200,7 @@ class QuarterWResistors(tkinter.Frame):
         self.homeButton.grid(row=10, column=0, pady=10)
 
         self.backButton = tkinter.Button(self, text="Back", relief = "ridge", width = 20, height=2, font = L2fontStyle,
-            command=lambda: master.switch_frame(QuickSearch))
+            command=lambda: master.switch_frame(Resistors))
         self.backButton.grid(row=9, column=0, pady=10)
 
         self.Range1= tkinter.Button(self, text="1Ω - 360Ω", width=30,font = L2fontStyle,relief = "ridge", 
@@ -229,7 +227,50 @@ class QuarterWResistors(tkinter.Frame):
                 button.config(relief="ridge", bg = "SystemButtonFace")
                 pressed[buttonNum] = False
 
+class BulkResistors(tkinter.Frame):
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg="white")
 
+        #Setting Up Labels
+        tkinter.Label(self, width = 50, bg="#F6B022",text="1/4 Watt Resistors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        L2fontStyle = tkFont.Font(family = "Helvetica", size =15)
+
+        #This list keeps track of which button is pressed
+        pressed = [False, False, False]
+
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = L2fontStyle,
+            command=lambda: master.switch_frame(Main.StartPage))
+        self.homeButton.grid(row=10, column=0, pady=10)
+
+        self.backButton = tkinter.Button(self, text="Back", relief = "ridge", width = 20, height=2, font = L2fontStyle,
+            command=lambda: master.switch_frame(Resistors))
+        self.backButton.grid(row=9, column=0, pady=10)
+
+        self.Range1= tkinter.Button(self, text="150Ω - 200kΩ, 1% Tolerance", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Range1, 0), RecentlySearchedName.append("150Ω - 200kΩ, 1% Tolerance Resistors"),
+                           RecentlySearchedFrame.append(self)])
+        self.Range1.grid(row=1, column=0, pady=10)
+
+        self.Range2= tkinter.Button(self, text="100kΩ - 1MΩ+, 5% Tolerance", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Range2, 1), RecentlySearchedName.append("100kΩ - 1MΩ+, 5% Tolerance Resistors"),
+                           RecentlySearchedFrame.append(self)])
+        self.Range2.grid(row=2, column=0, pady=10, padx = 4)
+
+        self.Range3= tkinter.Button(self, text="4.7Ω - 62kΩ, 5% Tolerance", width=30,font = L2fontStyle,relief = "ridge", 
+                           height=3, command=lambda: [save(self.Range3, 2), RecentlySearchedName.append("4.7Ω - 62kΩ, 5% Tolerance Resistors"),
+                           RecentlySearchedFrame.append(self)])
+        self.Range3.grid(row=3, column=0, pady=10, padx = 4)
+
+        #This function is used to make the button green when pressed.
+        def save(button, buttonNum):
+            if pressed[buttonNum] == False:
+                button.config(relief="sunken", bg = "green")
+                pressed[buttonNum] = True
+            else:
+                button.config(relief="ridge", bg = "SystemButtonFace")
+                pressed[buttonNum] = False
 
 
 
