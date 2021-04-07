@@ -96,7 +96,7 @@ def sectionA():
 def sectionB():
     #pixels.fill((0,0,0))
     pixels.show()
-    for top in range(460,565):
+    for top in range(457,563):
         pixels[top] = COLOR      
         pixels.show()
  
