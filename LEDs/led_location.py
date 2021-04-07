@@ -96,15 +96,15 @@ def sectionA():
 def sectionB():
     #pixels.fill((0,0,0))
     pixels.show()
-    for k in range(37,72):
-        pixels[k] = COLOR      
+    for top in range(0,110):
+        pixels[top] = COLOR      
         pixels.show()
  
 
 def sectionC():
     #pixels.fill((0,0,0))
     pixels.show()
-    for k in range(73, 109):
+    for k in range(494, 632):
         pixels[k] = COLOR      
         pixels.show()
  
@@ -112,7 +112,7 @@ def sectionC():
 def sectionD():
     #pixels.fill((0,0,0))
     pixels.show()
-    for k in range(110, 122):
+    for k in range(566, 671):
         pixels[k] = COLOR      
         pixels.show()
 
@@ -120,14 +120,14 @@ def sectionD():
      
  
  
-#while True:
+while True:
 
     # Comment this line out if you have RGBW/GRBW NeoPixels
-    #pixels.fill((0, 0, 0))
-    # sectionA()
-    # sectionB()
-    # sectionC()
-    # sectionD()
+    pixels.fill((0, 0, 0))
+    sectionA()
+    sectionB()
+    sectionC()
+    sectionD()
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     # pixels.fill((0, 0, 255, 0))
     #pixels.show()
