@@ -88,7 +88,7 @@ def clear():
 def sectionA():
     #pixels.fill((0,0,0))
     pixels.show()
-    for k in range(0, 35):
+    for k in range(0, 109):
         pixels[k] = COLOR      
         pixels.show()
    
@@ -96,7 +96,7 @@ def sectionA():
 def sectionB():
     #pixels.fill((0,0,0))
     pixels.show()
-    for top in range(0,110):
+    for top in range(460,565):
         pixels[top] = COLOR      
         pixels.show()
  
@@ -104,7 +104,7 @@ def sectionB():
 def sectionC():
     #pixels.fill((0,0,0))
     pixels.show()
-    for k in range(494, 632):
+    for k in range(566, 671):
         pixels[k] = COLOR      
         pixels.show()
  
@@ -112,7 +112,7 @@ def sectionC():
 def sectionD():
     #pixels.fill((0,0,0))
     pixels.show()
-    for k in range(566, 671):
+    for k in range(169, 274):
         pixels[k] = COLOR      
         pixels.show()
 
