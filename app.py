@@ -4,6 +4,9 @@ from threading import Thread, Event
 import time
 
 
+
+stop = False 
+
 # init flask app
 app = Flask(__name__)
 
@@ -21,23 +24,28 @@ class MyThread(Thread):
                 return
         # Do the animation
         j = 0
-        cycle = 2
+        
         while not self.stopped.wait(0.01):
             # print(f"my thread ({count})")
+            stop = False
             rainbow_cycle(0.01, j)
             if j == 255:
                 j -= 255
-                cycle -= 1
-            if cycle == 0:
-                snake()
-                cycle = 2
+            if stop == True:
+                clear
+
+            #     cycle -= 1
+            # if cycle == 0:
+            #     snake()
+            #     cycle = 2
             else:
                 j += 1
 
 
 def function_call(location):
     # Andrew, this is where your stuff should go
-    clear()
+    global stop
+    stop = True
     if location == 'B3':
         sectionB()
     if location == 'A3':
