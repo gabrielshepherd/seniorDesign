@@ -7,7 +7,7 @@ import MainGUI_WithKeypadEdit as Main
 #from PIL import ImageTk, Image
 
 #For sending data - future use:
-#import send as output
+import send as output
 
 #Global List of what was recently searched
 RecentlySearchedName = []
@@ -89,15 +89,15 @@ class QuickSearch(tkinter.Frame):
         self.Inductors.grid(row=2, column=0, pady=4)
 
         self.OpAmps= tkinter.Button(self, text="Op Amps", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: save(self.OpAmps, 3)) #output.data_transmit("B3"))
+                           height=3, command=lambda: [save(self.OpAmps, 3), output.data_transmit("A11")])
         self.OpAmps.grid(row=3, column=0, pady=4)
 
         self.Diodes= tkinter.Button(self, text="Diodes", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: save(self.Diodes, 4))
+                           height=3, command=lambda: [save(self.Diodes, 4),output.data_transmit("A12") ])
         self.Diodes.grid(row=4, column=0, pady=4)
 
         self.VoltageReg= tkinter.Button(self, text="Voltage Regulators", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: save(self.VoltageReg, 5))
+                           height=3, command=lambda: [save(self.VoltageReg, 5),output.data_transmit("A12") ])
         self.VoltageReg.grid(row=5, column=0, pady=4)
 
         self.Capacitors= tkinter.Button(self, text="Capacitors", width=30,font = L2fontStyle,relief = "ridge", 
