@@ -142,21 +142,21 @@ def part_location(location):
 def sectionA11():
     for k in range(0, 11):
         pixels[k] = COLOR 
-    for j in range(555, 563):
+    for j in range(553, 563):
         pixels[j] = COLOR      
     pixels.show()
 
 def sectionA12():
     for k in range(11, 22):
         pixels[k] = COLOR
-    for j in range(544, 554):
+    for j in range(542, 553):
         pixels[j] = COLOR       
     pixels.show()
 
 def sectionA13():
     for k in range(22, 34):
         pixels[k] = COLOR
-    for j in range(533, 544):
+    for j in range(530, 541):
         pixels[j] = COLOR       
     pixels.show()
 
