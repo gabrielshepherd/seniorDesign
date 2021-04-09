@@ -4,9 +4,6 @@ from threading import Thread, Event
 import time
 
 
-
-
-
 # init flask app
 app = Flask(__name__)
 
