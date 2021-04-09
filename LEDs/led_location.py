@@ -88,10 +88,18 @@ def clear():
 
 #Dictionary of each section location
 def part_location(location):
-    switcher = {
-        'A11': sectionA11,
-        'A12': sectionA12,
-        'A13': sectionA13,
+
+    if location == 'A11':
+        sectionA11()
+    if location == 'A12':
+        sectionA12()
+    if location == 'A13':
+        sectionA13()
+
+    # switcher = {
+    #     'A11': sectionA11,
+    #     'A12': sectionA12,
+    #     'A13': sectionA13,
         # 'A21': sectionA21,
         # 'A22': sectionA22,
         # 'A23': sectionA23,
@@ -125,8 +133,9 @@ def part_location(location):
         # 'c41': sectionC41,
         # 'c42': sectionC42,
         # 'c43': sectionC43,
-    }
-    return switcher.get(location,clear)
+    #}
+    return 
+    # switcher.get(location,clear)
 
 
 
