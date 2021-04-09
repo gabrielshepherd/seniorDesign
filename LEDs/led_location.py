@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
- 
-# Simple test for NeoPixels on Raspberry Pi
+
 import time
 import board
 import neopixel
@@ -23,7 +22,7 @@ pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=1.1, auto_write=False, pixel_order=ORDER
 )
  
- 
+# Wheel function found online 
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
@@ -45,7 +44,7 @@ def wheel(pos):
         b = int(255 - pos * 3)
     return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
  
- 
+# Rainbow function for the idle mode
 def rainbow_cycle(wait, j):
     # for j in range(255):
     for i in range(num_pixels):
@@ -54,6 +53,7 @@ def rainbow_cycle(wait, j):
     pixels.show()
     time.sleep(wait)
 
+#Broken snake function
 def snake():
     pixels.fill((0,0,0))
     pixels.show()
@@ -81,11 +81,12 @@ def snake():
     for q in range(274,168,-1):
         pixels[q] = (0,51,102)
         pixels.show()
-    
+
+#Turns off all pixels 
 def clear():
-    pixels.fill((0,0,0))
+    pixels.fill(CLEAR)
 
-
+#Dictionary of each section location
 def part_location(location):
     switcher = {
         'a11': sectionA11,
