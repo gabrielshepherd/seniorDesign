@@ -19,7 +19,7 @@ class Application(tkinter.Tk):
         self._frame = new_frame
         self._frame.pack()
     
-#------------------------------------------------------------------------------------
+#------------------------Code to Make the Keypad work---------------------------------
 
 def code(value, e):
 
@@ -96,6 +96,7 @@ class StartPage(tkinter.Frame):
 
         self.otherButton = tkinter.Button(self, width=15, height=2, text="Other")
         self.otherButton.grid(row=7, column=0)
+
         #-------------------------------------------------------------------
  
     def create_blankspace(self,rowNum,colNum):
@@ -112,7 +113,7 @@ class StartPage(tkinter.Frame):
         ['Backspace', '0', 'Enter'],    
         ]
 
-        # place to display pin
+        # place to display search value
         e = tkinter.Entry(canvas)
         e.grid(row=0, column=0, columnspan=3, ipady=5)
 
@@ -127,7 +128,7 @@ class StartPage(tkinter.Frame):
         self.recentsButton = tkinter.Button(canvas, width=25, height=2, text="Recent Searches")
         self.recentsButton.grid(row=6,column=0, columnspan=3, pady=5)
 
-
+           
     
 
     def create_units(self):
