@@ -33,7 +33,7 @@ class MyThread(Thread):
 
 def function_call(location):
     # Andrew, this is where your stuff should go
-    clear
+    clear()
     part_location(location)
     # if location == 'B3':
     #     sectionB()
