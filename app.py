@@ -1,11 +1,11 @@
 from flask import Flask, request
-from LEDs.led_location import rainbow_cycle, snake, sectionB, sectionA, clear
+from LEDs.led_location import rainbow_cycle, snake, clear, part_location
 from threading import Thread, Event
 import time
 
 
 
-stop = False 
+
 
 # init flask app
 app = Flask(__name__)
@@ -27,29 +27,21 @@ class MyThread(Thread):
         
         while not self.stopped.wait(0.01):
             # print(f"my thread ({count})")
-            stop = False
             rainbow_cycle(0.01, j)
             if j == 255:
                 j -= 255
-            if stop == True:
-                clear
-
-            #     cycle -= 1
-            # if cycle == 0:
-            #     snake()
-            #     cycle = 2
             else:
                 j += 1
 
 
 def function_call(location):
     # Andrew, this is where your stuff should go
-    global stop
-    stop = True
-    if location == 'B3':
-        sectionB()
-    if location == 'A3':
-        sectionA()
+    clear
+    part_location(location)
+    # if location == 'B3':
+    #     sectionB()
+    # if location == 'A3':
+    #     sectionA()
     # if location == 'B':
     #     sectionB()
     # if location == 'C':

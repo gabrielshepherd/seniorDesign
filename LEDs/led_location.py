@@ -85,36 +85,157 @@ def snake():
 def clear():
     pixels.fill((0,0,0))
 
-def sectionA():
-    #pixels.fill((0,0,0))
+
+def part_location(location):
+    switcher = {
+        'a11': sectionA11,
+        'a12': sectionA12,
+        'a13': sectionA13,
+        # 'a21': sectionA21,
+        # 'a22': sectionA22,
+        # 'a23': sectionA23,
+        # 'a31': sectionA31,
+        # 'a32': sectionA32,
+        # 'a33': sectionA33,
+        # 'a41': sectionA41,
+        # 'a42': sectionA42,
+        # 'a43': sectionA43,
+        # 'b11': sectionB11,
+        # 'b12': sectionB12,
+        # 'b13': sectionB13,
+        # 'b21': sectionB21,
+        # 'b22': sectionB22,
+        # 'b23': sectionB23,
+        # 'b31': sectionB31,
+        # 'b32': sectionB32,
+        # 'b33': sectionB33,
+        # 'b41': sectionB41,
+        # 'b42': sectionB42,
+        # 'b43': sectionB43,
+        # 'c11': sectionC11,
+        # 'c12': sectionC12,
+        # 'c13': sectionC13,
+        # 'c21': sectionC21,
+        # 'c22': sectionC22,
+        # 'c23': sectionC23,
+        # 'c31': sectionC31,
+        # 'c32': sectionC32,
+        # 'c33': sectionC33,
+        # 'c41': sectionC41,
+        # 'c42': sectionC42,
+        # 'c43': sectionC43,
+    }
+    return switcher.get(location,clear)
+
+
+
+def sectionA11():
+    for k in range(0, 11):
+        pixels[k] = COLOR 
+    for j in range(555, 563):
+        pixels[j] = COLOR      
     pixels.show()
-    for k in range(0, 109):
-        pixels[k] = COLOR      
-        pixels.show()
+
+def sectionA12():
+    for k in range(11, 22):
+        pixels[k] = COLOR
+    for j in range(544, 554):
+        pixels[j] = COLOR       
+    pixels.show()
+
+def sectionA13():
+    for k in range(22, 34):
+        pixels[k] = COLOR
+    for j in range(533, 544):
+        pixels[j] = COLOR       
+    pixels.show()
+
+
+# def sectionA21():
+#     for k in range(555, 563):
+#         pixels[k] = COLOR 
+#     for j in range(563, 574):
+#         pixels[j] = COLOR    
+#     pixels.show()
+
+
+# def sectionA22():
+#     for k in range(544, 555):
+#         pixels[k] = COLOR 
+#     for j in range(575, 586):
+#         pixels[j] = COLOR     
+#     pixels.show()
+
+
+# def sectionA23():
+#     for k in range(0, 109):
+#         pixels[k] = COLOR      
+#     pixels.show()
+
+
+# def sectionA31():
+#     #pixels.fill((0,0,0))
+    
+#     for k in range(0, 109):
+#         pixels[k] = COLOR      
+#     pixels.show()
+
+# def sectionA32():
+#     #pixels.fill((0,0,0))
+    
+#     for k in range(0, 109):
+#         pixels[k] = COLOR      
+#     pixels.show()
+
+
+# def sectionA33():
+#     #pixels.fill((0,0,0))
+    
+#     for k in range(0, 109):
+#         pixels[k] = COLOR      
+#     pixels.show()
    
+# def sectionA41():
+#     #pixels.fill((0,0,0))
+    
+#     for k in range(0, 109):
+#         pixels[k] = COLOR      
+#     pixels.show()
 
-def sectionB():
-    #pixels.fill((0,0,0))
-    pixels.show()
-    for top in range(457,563):
-        pixels[top] = COLOR      
-        pixels.show()
+# def sectionA42():
+#     #pixels.fill((0,0,0))
+   
+#     for k in range(0, 109):
+#         pixels[k] = COLOR      
+#     pixels.show()
+
+# def sectionA43():
+#     #pixels.fill((0,0,0))
+    
+#     for k in range(0, 109):
+#         pixels[k] = COLOR      
+#     pixels.show()
+
+
+
+
+
  
 
-def sectionC():
-    #pixels.fill((0,0,0))
-    pixels.show()
-    for k in range(566, 671):
-        pixels[k] = COLOR      
-        pixels.show()
+# def sectionC():
+#     #pixels.fill((0,0,0))
+#     pixels.show()
+#     for k in range(566, 671):
+#         pixels[k] = COLOR      
+#         pixels.show()
  
 
-def sectionD():
-    #pixels.fill((0,0,0))
-    pixels.show()
-    for k in range(169, 274):
-        pixels[k] = COLOR      
-        pixels.show()
+# def sectionD():
+#     #pixels.fill((0,0,0))
+#     pixels.show()
+#     for k in range(169, 274):
+#         pixels[k] = COLOR      
+#         pixels.show()
 
 
      
