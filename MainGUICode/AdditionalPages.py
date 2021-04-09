@@ -1,6 +1,7 @@
 import tkinter as tkinter
 import tkinter.font as tkFont
 import MainGUI_WithKeypadEdit as Main
+#Import Will's code and in specific search, send the value to the code to light up the leds
 
 #Need to install this on Pi
 #from PIL import ImageTk, Image
