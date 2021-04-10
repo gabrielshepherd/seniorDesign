@@ -253,13 +253,15 @@ def sectionA23():
  
 while True:
 #     # Comment this line out if you have RGBW/GRBW NeoPixels
-    pixels.fill((0, 0, 0))
-    time.sleep(5)
     sectionA21()
     time.sleep(5)
+    pixels.fill((0, 0, 0))
     sectionA22()
     time.sleep(5)
+    pixels.fill((0, 0, 0))
     sectionA23()
+    time.sleep(5)
+    pixels.fill((0, 0, 0))
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     # pixels.fill((0, 0, 255, 0))
     #pixels.show()
