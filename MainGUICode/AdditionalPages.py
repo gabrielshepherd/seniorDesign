@@ -121,13 +121,14 @@ class QuickSearch(tkinter.Frame):
                            height=3, command=lambda: master.switch_frame(OtherComponents))
         self.Other.grid(row=5, column=1, pady=4)
 
+        orig_color = self.homeButton.cget("background")
         #This function is used to make the button green when pressed.
         def save(button, buttonNum):
             if pressed[buttonNum] == False:
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
             else:
-                button.config(relief="ridge", bg = "SystemButtonFace")
+                button.config(relief="ridge", bg = orig_color)
                 pressed[buttonNum] = False
 
 #Only pages related to quick search below
@@ -176,13 +177,14 @@ class Resistors(tkinter.Frame):
                            height=3, command=lambda: [master.switch_frame(BulkResistors)])
         self.Bulk.grid(row=3, column=0, pady=20, columnspan=2)
 
+        orig_color = self.homeButton.cget("background")
         #This function is used to make the button green when pressed.
         def save(button, buttonNum):
             if pressed[buttonNum] == False:
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
             else:
-                button.config(relief="ridge", bg = "SystemButtonFace")
+                button.config(relief="ridge", bg = orig_color)
                 pressed[buttonNum] = False
 
 class QuarterWResistors(tkinter.Frame):
@@ -221,13 +223,14 @@ class QuarterWResistors(tkinter.Frame):
                            RecentlySearchedFrame.append(self)])
         self.Range3.grid(row=3, column=0, pady=10, padx = 4)
 
+        orig_color = self.homeButton.cget("background")
         #This function is used to make the button green when pressed.
         def save(button, buttonNum):
             if pressed[buttonNum] == False:
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
             else:
-                button.config(relief="ridge", bg = "SystemButtonFace")
+                button.config(relief="ridge", bg = orig_color)
                 pressed[buttonNum] = False
 
 class BulkResistors(tkinter.Frame):
@@ -266,13 +269,14 @@ class BulkResistors(tkinter.Frame):
                            RecentlySearchedFrame.append(self)])
         self.Range3.grid(row=3, column=0, pady=10, padx = 4)
 
+        orig_color = self.homeButton.cget("background")
         #This function is used to make the button green when pressed.
         def save(button, buttonNum):
             if pressed[buttonNum] == False:
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
             else:
-                button.config(relief="ridge", bg = "SystemButtonFace")
+                button.config(relief="ridge", bg = orig_color)
                 pressed[buttonNum] = False
 
 class Inductors(tkinter.Frame):
@@ -306,13 +310,14 @@ class Inductors(tkinter.Frame):
                            RecentlySearchedFrame.append(self)])
         self.Range2.grid(row=2, column=0, pady=10, padx = 4)
 
+        orig_color = self.homeButton.cget("background")
         #This function is used to make the button green when pressed.
         def save(button, buttonNum):
             if pressed[buttonNum] == False:
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
             else:
-                button.config(relief="ridge", bg = "SystemButtonFace")
+                button.config(relief="ridge", bg = orig_color)
                 pressed[buttonNum] = False
 
 class Capacitors(tkinter.Frame):
@@ -351,13 +356,14 @@ class Capacitors(tkinter.Frame):
                            RecentlySearchedFrame.append(self)])
         self.Range3.grid(row=3, column=0, pady=10, padx = 4)
 
+        orig_color = self.homeButton.cget("background")
         #This function is used to make the button green when pressed.
         def save(button, buttonNum):
             if pressed[buttonNum] == False:
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
             else:
-                button.config(relief="ridge", bg = "SystemButtonFace")
+                button.config(relief="ridge", bg = orig_color)
                 pressed[buttonNum] = False
 
 class LogicComponents(tkinter.Frame):
@@ -397,13 +403,14 @@ class LogicComponents(tkinter.Frame):
                            RecentlySearchedFrame.append(self)])
         self.Multiplexors.grid(row=3, column=0, pady=10, padx = 4)
 
+        orig_color = self.homeButton.cget("background")
         #This function is used to make the button green when pressed.
         def save(button, buttonNum):
             if pressed[buttonNum] == False:
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
             else:
-                button.config(relief="ridge", bg = "SystemButtonFace")
+                button.config(relief="ridge", bg = orig_color)
                 pressed[buttonNum] = False
 
 class OtherComponents(tkinter.Frame):
@@ -437,13 +444,14 @@ class OtherComponents(tkinter.Frame):
                            RecentlySearchedFrame.append(self)])
         self.Micros.grid(row=2, column=0, pady=10, padx = 4)
 
+        orig_color = self.homeButton.cget("background")
         #This function is used to make the button green when pressed.
         def save(button, buttonNum):
             if pressed[buttonNum] == False:
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
             else:
-                button.config(relief="ridge", bg = "SystemButtonFace")
+                button.config(relief="ridge", bg = orig_color)
                 pressed[buttonNum] = False
 
 #Old Code -- It had a lot of good methods to have push buttons update others in the same frame.
