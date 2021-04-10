@@ -204,6 +204,28 @@ def sectionA33():
     pixels.show()   
     pixels.show()
 
+def sectionA41():
+    for k in range(765, 774):
+        pixels[k] = COLOR 
+    for j in range(263, 274):
+        pixels[j] = COLOR    
+    pixels.show()
+
+def sectionA42():
+    for k in range(753, 765):
+        pixels[k] = COLOR 
+    for j in range(251, 263):
+        pixels[j] = COLOR     
+    pixels.show()
+
+def sectionA43():
+    for k in range(741, 753):
+        pixels[k] = COLOR   
+    for j in range(239, 251):
+        pixels[j] = COLOR     
+    pixels.show()   
+    pixels.show()
+
 # def sectionA31():
 #     #pixels.fill((0,0,0))
     
@@ -274,13 +296,13 @@ def sectionA33():
  
 while True:
 #     # Comment this line out if you have RGBW/GRBW NeoPixels
-    sectionA31()
+    sectionA41()
     time.sleep(5)
     pixels.fill((0, 0, 0))
-    sectionA32()
+    sectionA42()
     time.sleep(5)
     pixels.fill((0, 0, 0))
-    sectionA33()
+    sectionA43()
     time.sleep(5)
     pixels.fill((0, 0, 0))
     # Uncomment this line if you have RGBW/GRBW NeoPixels
