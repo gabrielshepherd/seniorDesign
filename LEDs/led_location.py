@@ -214,14 +214,14 @@ def sectionA41():
 def sectionA42():
     for k in range(753, 765):
         pixels[k] = COLOR 
-    for j in range(251, 263):
+    for j in range(250, 263):
         pixels[j] = COLOR     
     pixels.show()
 
 def sectionA43():
     for k in range(741, 753):
         pixels[k] = COLOR   
-    for j in range(239, 251):
+    for j in range(238, 251):
         pixels[j] = COLOR     
     pixels.show()   
     pixels.show()
