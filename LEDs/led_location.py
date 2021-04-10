@@ -312,13 +312,13 @@ def sectionA43():
  
 while True:
 #     # Comment this line out if you have RGBW/GRBW NeoPixels
-    sectionA31()
+    sectionA41()
     time.sleep(5)
     pixels.fill((0, 0, 0))
-    sectionA32()
+    sectionA42()
     time.sleep(5)
     pixels.fill((0, 0, 0))
-    sectionA33()
+    sectionA43()
     time.sleep(5)
     pixels.fill((0, 0, 0))
     # Uncomment this line if you have RGBW/GRBW NeoPixels
