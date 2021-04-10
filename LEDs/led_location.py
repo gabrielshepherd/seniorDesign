@@ -154,33 +154,33 @@ def sectionA12():
     pixels.show()
 
 def sectionA13():
-    for k in range(22, 34):
+    for k in range(23, 35):
         pixels[k] = COLOR
     for j in range(530, 541):
         pixels[j] = COLOR       
     pixels.show()
 
+def sectionA21():
+    for k in range(553, 563):
+        pixels[k] = COLOR 
+    for j in range(564, 575):
+        pixels[j] = COLOR    
+    pixels.show()
 
-# def sectionA21():
-#     for k in range(555, 563):
-#         pixels[k] = COLOR 
-#     for j in range(563, 574):
-#         pixels[j] = COLOR    
-#     pixels.show()
+def sectionA22():
+    for k in range(541, 552):
+        pixels[k] = COLOR 
+    for j in range(576, 587):
+        pixels[j] = COLOR     
+    pixels.show()
 
-
-# def sectionA22():
-#     for k in range(544, 555):
-#         pixels[k] = COLOR 
-#     for j in range(575, 586):
-#         pixels[j] = COLOR     
-#     pixels.show()
-
-
-# def sectionA23():
-#     for k in range(0, 109):
-#         pixels[k] = COLOR      
-#     pixels.show()
+def sectionA23():
+    for k in range(529, 540):
+        pixels[k] = COLOR   
+    for j in range(588, 599):
+        pixels[j] = COLOR     
+    pixels.show()   
+    pixels.show()
 
 
 # def sectionA31():
@@ -251,14 +251,12 @@ def sectionA13():
      
  
  
-# while True:
-
+while True:
 #     # Comment this line out if you have RGBW/GRBW NeoPixels
-#     pixels.fill((0, 0, 0))
-#     sectionA()
-#     sectionB()
-#     sectionC()
-#     sectionD()
+    pixels.fill((0, 0, 0))
+    sectionA21()
+    sectionA22()
+    sectionA23()
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     # pixels.fill((0, 0, 255, 0))
     #pixels.show()
