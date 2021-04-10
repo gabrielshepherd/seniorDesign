@@ -272,17 +272,17 @@ def sectionA33():
      
  
  
-while True:
-#     # Comment this line out if you have RGBW/GRBW NeoPixels
-    sectionA31()
-    time.sleep(5)
-    pixels.fill((0, 0, 0))
-    sectionA32()
-    time.sleep(5)
-    pixels.fill((0, 0, 0))
-    sectionA33()
-    time.sleep(5)
-    pixels.fill((0, 0, 0))
+# while True:
+# #     # Comment this line out if you have RGBW/GRBW NeoPixels
+#     sectionA31()
+#     time.sleep(5)
+#     pixels.fill((0, 0, 0))
+#     sectionA32()
+#     time.sleep(5)
+#     pixels.fill((0, 0, 0))
+#     sectionA33()
+#     time.sleep(5)
+#     pixels.fill((0, 0, 0))
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     # pixels.fill((0, 0, 255, 0))
     #pixels.show()
