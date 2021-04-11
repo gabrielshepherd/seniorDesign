@@ -7,6 +7,7 @@ import time
 # init flask app
 app = Flask(__name__)
 
+#Creates a thread to have an idle mode
 class MyThread(Thread):
     WAIT_TIME = 1000                        # in 10s of milliseconds
 
@@ -19,14 +20,16 @@ class MyThread(Thread):
         for i in range(MyThread.WAIT_TIME):
             if self.stopped.wait(0.01):
                 return
-        # Do the animation
-        j = 0
         
+        # Do the animation
+        j = 0   # variable for rainbow cycle
+
         while not self.stopped.wait(0.01):
-            # print(f"my thread ({count})")
+            # Runs the rainbow cycle
             rainbow_cycle(0.01, j)
             if j == 255:
                 j -= 255
+
             else:
                 j += 1
 
@@ -35,16 +38,6 @@ def function_call(location):
     # Andrew, this is where your stuff should go
     clear()
     part_location(location)
-    # if location == 'B3':
-    #     sectionB()
-    # if location == 'A3':
-    #     sectionA()
-    # if location == 'B':
-    #     sectionB()
-    # if location == 'C':
-    #     sectionC()
-    # if location == 'D':
-    #     sectionD()
     print(location)
     return
 
