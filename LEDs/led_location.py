@@ -113,6 +113,54 @@ def part_location(location):
         sectionA12()
     if location == 'A43':
         sectionA13()
+    if location == 'B11':
+        sectionB11()
+    if location == 'B12':
+        sectionB12()
+    if location == 'B13':
+        sectionB13()
+    if location == 'B21':
+        sectionB21()
+    if location == 'B22':
+        sectionB22()
+    if location == 'B23':
+        sectionB23()
+    # if location == 'B31':
+    #     sectionB31()
+    # if location == 'B32':
+    #     sectionB32()
+    # if location == 'B33':
+    #     sectionB33()
+    # if location == 'B41':
+    #     sectionB41()
+    # if location == 'B42':
+    #     sectionB42()
+    # if location == 'B43':
+    #     sectionB43()
+    if location == 'C11':
+        sectionC11()
+    if location == 'C12':
+        sectionC12()
+    if location == 'C13':
+        sectionC13()
+    if location == 'C21':
+        sectionC21()
+    if location == 'C22':
+        sectionC22()
+    if location == 'C23':
+        sectionC23()
+    # if location == 'C31':
+    #     sectionC31()
+    # if location == 'C32':
+    #     sectionC32()
+    # if location == 'C33':
+    #     sectionC33()
+    # if location == 'C41':
+    #     sectionC41()
+    # if location == 'C42':
+    #     sectionC42()
+    # if location == 'C43':
+    #     sectionC43()
 
     # switcher = {
     #     'A11': sectionA11,
@@ -463,17 +511,17 @@ def sectionC23():
 
 
 
-while True:
-#     # Comment this line out if you have RGBW/GRBW NeoPixels
-    sectionA41()
-    time.sleep(5)
-    pixels.fill((0, 0, 0))
-    sectionA42()
-    time.sleep(5)
-    pixels.fill((0, 0, 0))
-    sectionA43()
-    time.sleep(5)
-    pixels.fill((0, 0, 0))
+# while True:
+# #     # Comment this line out if you have RGBW/GRBW NeoPixels
+#     sectionA41()
+#     time.sleep(5)
+#     pixels.fill((0, 0, 0))
+#     sectionA42()
+#     time.sleep(5)
+#     pixels.fill((0, 0, 0))
+#     sectionA43()
+#     time.sleep(5)
+#     pixels.fill((0, 0, 0))
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     # pixels.fill((0, 0, 255, 0))
     #pixels.show()
