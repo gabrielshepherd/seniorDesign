@@ -117,6 +117,11 @@ def part_location(location):
         diodes()
     if location == 'voltreg':
         voltreg()
+    if location == 'ttl':
+        ttl()
+    if location == 'transistors':
+        transistors()
+
     if location == 'A11':
         sectionA11()
     if location == 'A12':
@@ -285,6 +290,67 @@ def voltreg():
     for i in range(427, 442):
         pixels[i] = COLOR  
     pixels.show()
+
+def ttl():
+    #a11
+    for k in range(0, 12):
+        pixels[k] = COLOR 
+    for j in range(553, 563):
+        pixels[j] = COLOR  
+    for i in range(319, 335):
+        pixels[i] = COLOR 
+
+    #a12
+    for a in range(11, 22):
+        pixels[a] = COLOR
+    for b in range(542, 553):
+        pixels[b] = COLOR  
+
+    #b11
+    for c in range(37, 49):
+        pixels[c] = COLOR   
+    for d in range(516, 528):
+        pixels[d] = COLOR 
+    for e in range(335, 350):
+        pixels[e] = COLOR     
+    pixels.show()
+
+def transistors():
+    #b12
+    for k in range(49, 61):
+        pixels[k] = COLOR   
+    for j in range(504, 516):
+        pixels[j] = COLOR     
+    pixels.show()
+
+    #b13
+    for a in range(61, 73):
+        pixels[a] = COLOR   
+    for b in range(492, 504):
+        pixels[b] = COLOR
+
+    
+    #c11
+    for d in range(73, 85):
+        pixels[d] = COLOR   
+    for e in range(480, 491):
+        pixels[e] = COLOR 
+
+    
+    #b23
+    for g in range(492, 504):
+        pixels[g] = COLOR   
+    for h in range(622, 635):
+        pixels[h] = COLOR
+ 
+    
+    #c21
+    for l in range(480, 491):
+        pixels[l] = COLOR   
+    for m in range(635, 647):
+        pixels[m] = COLOR     
+    pixels.show()
+
 
 
 def sectionA11():
