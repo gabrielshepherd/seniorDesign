@@ -89,15 +89,15 @@ class QuickSearch(tkinter.Frame):
         self.Inductors.grid(row=2, column=0, pady=4)
 
         self.OpAmps= tkinter.Button(self, text="Op Amps", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: [save(self.OpAmps, 3), output.data_transmit("A11")])
+                           height=3, command=lambda: [save(self.OpAmps, 3), output.data_transmit("opamps")])
         self.OpAmps.grid(row=3, column=0, pady=4)
 
         self.Diodes= tkinter.Button(self, text="Diodes", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: [save(self.Diodes, 4),output.data_transmit("A12") ])
+                           height=3, command=lambda: [save(self.Diodes, 4),output.data_transmit("diodes") ])
         self.Diodes.grid(row=4, column=0, pady=4)
 
         self.VoltageReg= tkinter.Button(self, text="Voltage Regulators", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: [save(self.VoltageReg, 5),output.data_transmit("A13") ])
+                           height=3, command=lambda: [save(self.VoltageReg, 5),output.data_transmit("voltreg") ])
         self.VoltageReg.grid(row=5, column=0, pady=4)
 
         self.Capacitors= tkinter.Button(self, text="Capacitors", width=30,font = L2fontStyle,relief = "ridge", 
