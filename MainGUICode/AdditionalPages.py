@@ -159,17 +159,17 @@ class Resistors(tkinter.Frame):
 
         self.Half= tkinter.Button(self, text="1/2 Watt", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Half, 0), RecentlySearchedName.append("1/2 Watt"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self) ,output.data_transmit("A41")])
         self.Half.grid(row=1, column=1, pady=20, padx = 4)
 
         self.OneW= tkinter.Button(self, text="1 Watt", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.OneW, 1), RecentlySearchedName.append("1 Watt Resistors"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self) ,output.data_transmit("A42")])
         self.OneW.grid(row=2, column=0, pady=20, padx = 4)
 
         self.TwoW = tkinter.Button(self, text="2 Watt", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.TwoW, 2), RecentlySearchedName.append("2 Watt"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self),output.data_transmit("A43")])
         self.TwoW.grid(row=2, column=1, pady=20, padx = 4)
 
         #Going to Bulk Resistors page with 3 Buttons
@@ -210,17 +210,17 @@ class QuarterWResistors(tkinter.Frame):
 
         self.Range1= tkinter.Button(self, text="1Ω - 360Ω", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Range1, 0), RecentlySearchedName.append("1Ω - 360Ω Resistors"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self),output.data_transmit("A31")])
         self.Range1.grid(row=1, column=0, pady=10)
 
         self.Range2= tkinter.Button(self, text="390Ω - 110kΩ", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Range2, 1), RecentlySearchedName.append("390Ω - 110kΩ Resistors"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self) ,output.data_transmit("A32")])
         self.Range2.grid(row=2, column=0, pady=10, padx = 4)
 
         self.Range3= tkinter.Button(self, text="120kΩ - 25MΩ", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Range3, 2), RecentlySearchedName.append("120kΩ - 25MΩ Resistors"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self) ,output.data_transmit("A33")])
         self.Range3.grid(row=3, column=0, pady=10, padx = 4)
 
         orig_color = self.homeButton.cget("background")
