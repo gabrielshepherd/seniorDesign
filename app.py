@@ -22,6 +22,7 @@ class MyThread(Thread):
                 return
         
         # Do the animation
+        clear()
         j = 0   # variable for rainbow cycle
 
         while not self.stopped.wait(0.01):
