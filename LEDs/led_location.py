@@ -119,23 +119,23 @@ def part_location(location):
     if location == 'A13':
         sectionA13()
     if location == 'A21':
-        sectionA11()
+        sectionA21()
     if location == 'A22':
-        sectionA12()
+        sectionA22()
     if location == 'A23':
-        sectionA13()
+        sectionA23()
     if location == 'A31':
-        sectionA11()
+        sectionA31()
     if location == 'A32':
-        sectionA12()
+        sectionA32()
     if location == 'A33':
-        sectionA13()
+        sectionA33()
     if location == 'A41':
-        sectionA11()
+        sectionA41()
     if location == 'A42':
-        sectionA12()
+        sectionA42()
     if location == 'A43':
-        sectionA13()
+        sectionA43()
     if location == 'B11':
         sectionB11()
     if location == 'B12':
