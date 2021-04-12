@@ -70,7 +70,7 @@ def wheel(pos):
 # Rainbow function for the idle mode
 def rainbow_cycle(wait, j):
     # for j in range(255):
-    for i in range(337):
+    for i in range(335):
         pixel_index = (i * 256 // num_pixels) + j
         pixels[i] = wheel(pixel_index & 255)
     pixels.show()
