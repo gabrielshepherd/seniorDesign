@@ -308,13 +308,13 @@ def ttl():
     for i in range(304, 320):
         pixels[i] = COLOR    
 
-    #b11
-    for c in range(37, 49):
-        pixels[c] = COLOR   
-    for d in range(516, 528):
-        pixels[d] = COLOR 
-    for e in range(335, 350):
-        pixels[e] = COLOR     
+    #a21
+    for k in range(553, 563):
+        pixels[k] = COLOR 
+    for j in range(563, 574):
+        pixels[j] = COLOR
+    for i in range(304, 320):
+        pixels[i] = COLOR     
     pixels.show()
 
 def transistors():
@@ -487,7 +487,7 @@ def sectionB21():
         pixels[k] = COLOR   
     for j in range(599, 611):
         pixels[j] = COLOR 
-    for i in range(335, 350):
+    for i in range(350, 365):
         pixels[i] = COLOR     
     pixels.show()
 
