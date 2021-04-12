@@ -260,11 +260,11 @@ def diodes():
     for j in range(647, 659):
         pixels[j] = COLOR     
     #c23
-    for a in range(459, 468):
+    for a in range(457, 468):
         pixels[a] = COLOR   
     for b in range(659, 669):
         pixels[b] = COLOR
-    for c in range(121, 137):
+    for c in range(122, 137):
         pixels[c] = COLOR  
     pixels.show()
 
