@@ -49,7 +49,7 @@ def numbers_to_strings(argument):
     # value of passed argument if it is present 
     # in dictionary otherwise second argument will
     # be assigned as default value of passed argument
-    return switcher.get(argument,"nothing")
+    return switcher.get(argument,"nothing")()
   
 # Driver program
 if __name__ == "__main__":

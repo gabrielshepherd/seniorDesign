@@ -24,6 +24,26 @@ ORDER = neopixel.GRB
 pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
 )
+
+# codes = {
+#     'A11': [(0, 1), (40, 120), (256, 512), (123, 456)],
+#     'A11': [(0, 1)],
+#     'A11': [(40, 120), (256, 512)],
+#     'A11': [(0, 1), (40, 120), (256, 512)],
+#     'A11': [(0, 1), (40, 120), (256, 512)],
+#     'A11': [(0, 1), (40, 120), (256, 512)],
+#     'A11': [(0, 1), (40, 120), (256, 512)],
+#     'A11': [(0, 1), (40, 120), (256, 512)],
+#     'A11': [(0, 1), (40, 120), (256, 512)],
+# }
+
+# def idea(code):
+#     rangesForCode = codes[code]
+#     for pair in rangesForCode:
+#         start, end = pair
+#         for x in range(start, end):
+#             pixels[x] = COLOR
+#     pixels.show()
  
 # Wheel function found online 
 def wheel(pos):
