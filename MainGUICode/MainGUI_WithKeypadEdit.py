@@ -98,10 +98,10 @@ class Admin(tkinter.Frame):
         self.master = master
         tkinter.Frame.__init__(self, master)
         tkinter.Frame.configure(self,bg="white")
-        tkinter.Label(self, width = 45, borderwidth=2, relief="solid", bg="#F6B022",text="Admin", font=('Helvetica', 18, "bold")).grid(row=0, columnspan=3, pady=4)
+        tkinter.Label(self, width = 50, borderwidth=2, relief="solid", bg="#F6B022",text="Admin", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=3, pady=4)
 
         self.homeButton = tkinter.Button(self, text="Home", relief = "ridge",
-            command=lambda: master.switch_frame(StartPage))
+            font=('Helvetica', 18), command=lambda: master.switch_frame(StartPage))
         self.homeButton.grid(row=20, column=1, sticky="W"+"E", pady=4)
         self.create_keypad_and_search(self.master)
 
