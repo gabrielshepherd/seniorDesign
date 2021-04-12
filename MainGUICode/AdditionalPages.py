@@ -436,12 +436,12 @@ class OtherComponents(tkinter.Frame):
 
         self.Crystals= tkinter.Button(self, text="Crystals", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Crystals, 0), RecentlySearchedName.append("Crystals"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self), output.data_transmit("C12")])
         self.Crystals.grid(row=1, column=0, pady=10)
 
         self.Micros= tkinter.Button(self, text="Microcontrollers", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Micros, 1), RecentlySearchedName.append("Microcontrollers"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self), output.data_transmit("C13")])
         self.Micros.grid(row=2, column=0, pady=10, padx = 4)
 
         orig_color = self.homeButton.cget("background")
