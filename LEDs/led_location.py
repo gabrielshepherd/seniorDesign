@@ -626,7 +626,7 @@ def sectionC33():
         pixels[k] = COLOR   
     for j in range(669, 681):
         pixels[j] = COLOR
-    for i in range(138, 153):
+    for i in range(137, 152):
         pixels[i] = COLOR  
     pixels.show()
 
