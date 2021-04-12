@@ -158,12 +158,12 @@ def part_location(location):
         sectionB22()
     if location == 'B23':
         sectionB23()
-    # if location == 'B31':
-    #     sectionB31()
-    # if location == 'B32':
-    #     sectionB32()
-    # if location == 'B33':
-    #     sectionB33()
+    if location == 'B31':
+        sectionB31()
+    if location == 'B32':
+        sectionB32()
+    if location == 'B33':
+        sectionB33()
     # if location == 'B41':
     #     sectionB41()
     # if location == 'B42':
@@ -182,12 +182,12 @@ def part_location(location):
         sectionC22()
     if location == 'C23':
         sectionC23()
-    # if location == 'C31':
-    #     sectionC31()
-    # if location == 'C32':
-    #     sectionC32()
-    # if location == 'C33':
-    #     sectionC33()
+    if location == 'C31':
+        sectionC31()
+    if location == 'C32':
+        sectionC32()
+    if location == 'C33':
+        sectionC33()
     # if location == 'C41':
     #     sectionC41()
     # if location == 'C42':
