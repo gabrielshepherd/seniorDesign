@@ -8,7 +8,7 @@ import neopixel
 CLEAR = (0, 0, 0)  # clear (or second color)
 
 #Color as (R,G,B) - (0,102,51) is Bison green
-COLOR = (0,102,51)
+COLOR = (0,255,0)
 
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
 # NeoPixels must be connected to D10, D12, D18 or D21 to work.
@@ -111,7 +111,12 @@ def clear():
 
 #Dictionary of each section location
 def part_location(location):
-
+    if location == 'opamps':
+        opamps()
+    if location == 'diodes':
+        diodes()
+    if location == 'voltreg':
+        voltreg()
     if location == 'A11':
         sectionA11()
     if location == 'A12':
@@ -226,6 +231,60 @@ def part_location(location):
     return 
     # switcher.get(location,clear)
 
+def opamps():
+    #a13
+    for k in range(23, 35):
+        pixels[k] = COLOR
+    for j in range(528, 541):
+        pixels[j] = COLOR
+    for i in range(335, 350):
+        pixels[i] = COLOR 
+    #b11
+    for a in range(37, 49):
+        pixels[a] = COLOR   
+    for b in range(516, 528):
+        pixels[b] = COLOR 
+    for c in range(335, 350):
+        pixels[c] = COLOR     
+    #b22
+    for d in range(504, 516):
+        pixels[d] = COLOR   
+    for d in range(610, 623):
+        pixels[d] = COLOR     
+    pixels.show()
+
+def diodes():
+    #c22
+    for k in range(468, 480):
+        pixels[k] = COLOR   
+    for j in range(647, 659):
+        pixels[j] = COLOR     
+    #c23
+    for a in range(459, 468):
+        pixels[a] = COLOR   
+    for b in range(659, 669):
+        pixels[b] = COLOR
+    for c in range(122, 138):
+        pixels[c] = COLOR  
+    pixels.show()
+
+def voltreg():
+    #a23
+    for k in range(528, 541):
+        pixels[k] = COLOR   
+    for j in range(586, 598):
+        pixels[j] = COLOR 
+    for i in range(350, 365):
+        pixels[i] = COLOR     
+     
+    #b23
+    for k in range(492, 504):
+        pixels[k] = COLOR   
+    for j in range(622, 635):
+        pixels[j] = COLOR
+    for i in range(320, 335):
+        pixels[i] = COLOR  
+    pixels.show()
 
 
 def sectionA11():
@@ -277,7 +336,7 @@ def sectionA23():
     for i in range(350, 365):
         pixels[i] = COLOR     
     pixels.show()   
-    pixels.show()
+   
 
 def sectionA31():
     for k in range(563, 574):
