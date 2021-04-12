@@ -264,7 +264,7 @@ def diodes():
         pixels[a] = COLOR   
     for b in range(659, 669):
         pixels[b] = COLOR
-    for c in range(122, 138):
+    for c in range(121, 137):
         pixels[c] = COLOR  
     pixels.show()
 
@@ -282,7 +282,7 @@ def voltreg():
         pixels[k] = COLOR   
     for j in range(622, 635):
         pixels[j] = COLOR
-    for i in range(428, 443):
+    for i in range(427, 442):
         pixels[i] = COLOR  
     pixels.show()
 
