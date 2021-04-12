@@ -631,23 +631,23 @@ def sectionC33():
     pixels.show()
 
 # def sectionC41():
-#     for k in range(635, 647):
+#     for k in range(692, 704):
 #         pixels[k] = COLOR   
-#     for j in range(635, 647):
+#     for j in range(221, 230):
 #         pixels[j] = COLOR 
 #     for i in range(320, 335):
 #         pixels[i] = COLOR     
 #     pixels.show()
 
 # def sectionC42():
-#     for k in range(647, 659):
+#     for k in range(681, 692):
 #         pixels[k] = COLOR   
 #     for j in range(647, 659):
 #         pixels[j] = COLOR     
 #     pixels.show()
      
 # def sectionC43():
-#     for k in range(659, 669):
+#     for k in range(669, 681):
 #         pixels[k] = COLOR   
 #     for j in range(659, 669):
 #         pixels[j] = COLOR
