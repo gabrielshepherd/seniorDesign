@@ -244,8 +244,8 @@ def opamps():
         pixels[a] = COLOR   
     for b in range(516, 528):
         pixels[b] = COLOR 
-    for c in range(335, 350):
-        pixels[c] = COLOR     
+    # for c in range(335, 350):
+    #     pixels[c] = COLOR     
     #b22
     for d in range(504, 516):
         pixels[d] = COLOR   
@@ -282,7 +282,7 @@ def voltreg():
         pixels[k] = COLOR   
     for j in range(622, 635):
         pixels[j] = COLOR
-    for i in range(320, 335):
+    for i in range(430, 445):
         pixels[i] = COLOR  
     pixels.show()
 
@@ -435,7 +435,7 @@ def sectionB23():
         pixels[k] = COLOR   
     for j in range(622, 635):
         pixels[j] = COLOR
-    for i in range(320, 335):
+    for i in range(430, 445):
         pixels[i] = COLOR  
     pixels.show()
 
@@ -519,7 +519,7 @@ def sectionC21():
         pixels[k] = COLOR   
     for j in range(635, 647):
         pixels[j] = COLOR 
-    for i in range(320, 335):
+    for i in range(430, 445):
         pixels[i] = COLOR     
     pixels.show()
 
