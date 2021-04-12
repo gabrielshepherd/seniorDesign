@@ -301,12 +301,10 @@ def ttl():
         pixels[i] = COLOR 
 
     #a12
-    for k in range(516, 528):
-        pixels[k] = COLOR   
-    for j in range(599, 611):
-        pixels[j] = COLOR 
-    for i in range(304, 320):
-        pixels[i] = COLOR    
+    for k in range(11, 22):
+        pixels[k] = COLOR
+    for j in range(542, 553):
+        pixels[j] = COLOR  
 
     #a21
     for k in range(553, 563):
