@@ -531,7 +531,7 @@ def sectionC22():
     pixels.show()
      
 def sectionC23():
-    for k in range(459, 468):
+    for k in range(457, 468):
         pixels[k] = COLOR   
     for j in range(659, 669):
         pixels[j] = COLOR
