@@ -106,7 +106,7 @@ class QuickSearch(tkinter.Frame):
         self.Capacitors.grid(row=1, column=1, pady=4)
 
         self.Transistors= tkinter.Button(self, text="Transistors", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: save(self.Transistors, 6))
+                           height=3, command=lambda: [save(self.Transistors, 6),output.data_transmit("transistors")])
         self.Transistors.grid(row=2, column=1, pady=4)
 
         self.Pots= tkinter.Button(self, text="Potentiometers", width=30,font = L2fontStyle,relief = "ridge", 
@@ -390,17 +390,17 @@ class LogicComponents(tkinter.Frame):
 
         self.CMOSLogic= tkinter.Button(self, text="CMOS Logic", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.CMOSLogic, 0), RecentlySearchedName.append("CMOS Logic"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self),output.data_transmit("A22")])
         self.CMOSLogic.grid(row=1, column=0, pady=10)
 
         self.TTLLogic= tkinter.Button(self, text="TTL Logic", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.TTLLogic, 1), RecentlySearchedName.append("TTL Logic"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self),output.data_transmit("ttl")])
         self.TTLLogic.grid(row=2, column=0, pady=10, padx = 4)
 
         self.Multiplexors= tkinter.Button(self, text="Multiplexors", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Multiplexors, 2), RecentlySearchedName.append("Multiplexors"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self),output.data_transmit("B21")])
         self.Multiplexors.grid(row=3, column=0, pady=10, padx = 4)
 
         orig_color = self.homeButton.cget("background")
