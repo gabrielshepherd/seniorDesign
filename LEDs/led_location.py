@@ -301,10 +301,12 @@ def ttl():
         pixels[i] = COLOR 
 
     #a12
-    for a in range(11, 22):
-        pixels[a] = COLOR
-    for b in range(542, 553):
-        pixels[b] = COLOR  
+    for k in range(516, 528):
+        pixels[k] = COLOR   
+    for j in range(599, 611):
+        pixels[j] = COLOR 
+    for i in range(304, 320):
+        pixels[i] = COLOR    
 
     #b11
     for c in range(37, 49):
@@ -485,7 +487,7 @@ def sectionB21():
         pixels[k] = COLOR   
     for j in range(599, 611):
         pixels[j] = COLOR 
-    for i in range(304, 320):
+    for i in range(335, 350):
         pixels[i] = COLOR     
     pixels.show()
 
