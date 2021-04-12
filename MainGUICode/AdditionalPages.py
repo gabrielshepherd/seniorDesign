@@ -110,7 +110,7 @@ class QuickSearch(tkinter.Frame):
         self.Transistors.grid(row=2, column=1, pady=4)
 
         self.Pots= tkinter.Button(self, text="Potentiometers", width=30,font = L2fontStyle,relief = "ridge", 
-                           height=3, command=lambda: save(self.Pots, 7))
+                           height=3, command=lambda: [save(self.Pots, 7), output.data_transmit("B31")])
         self.Pots.grid(row=3, column=1, pady=4)
 
         self.Logic= tkinter.Button(self, text="Logic", width=30,font = L2fontStyle,relief = "ridge", 
@@ -302,12 +302,12 @@ class Inductors(tkinter.Frame):
 
         self.Range1= tkinter.Button(self, text=".22uH - 68mH", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Range1, 0), RecentlySearchedName.append(".22uH - 68mH, Inductors"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self), output.data_transmit("C32")])
         self.Range1.grid(row=1, column=0, pady=10)
 
         self.Range2= tkinter.Button(self, text="100mH - 1H", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Range2, 1), RecentlySearchedName.append("100mH - 1H, Inductors"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self), output.data_transmit("C33")])
         self.Range2.grid(row=2, column=0, pady=10, padx = 4)
 
         orig_color = self.homeButton.cget("background")
@@ -343,17 +343,17 @@ class Capacitors(tkinter.Frame):
 
         self.Range1= tkinter.Button(self, text=".5pF - 470pF", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Range1, 0), RecentlySearchedName.append(".5pF - 470pF, Capacitors"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self), output.data_transmit("B32")])
         self.Range1.grid(row=1, column=0, pady=10)
 
         self.Range2= tkinter.Button(self, text="500pF - 4.7uF", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Range2, 1), RecentlySearchedName.append("500pF - 4.7uF, Capacitors"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self), output.data_transmit("B33")])
         self.Range2.grid(row=2, column=0, pady=10, padx = 4)
 
         self.Range3= tkinter.Button(self, text="6.8uF - 3300uF", width=30,font = L2fontStyle,relief = "ridge", 
                            height=3, command=lambda: [save(self.Range3, 2), RecentlySearchedName.append("6.8uF - 3300uF, Capacitors"),
-                           RecentlySearchedFrame.append(self)])
+                           RecentlySearchedFrame.append(self), output.data_transmit("C31")])
         self.Range3.grid(row=3, column=0, pady=10, padx = 4)
 
         orig_color = self.homeButton.cget("background")
