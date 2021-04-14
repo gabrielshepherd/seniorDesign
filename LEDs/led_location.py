@@ -57,8 +57,8 @@ def rainbow_cycle(wait, j):
         pixel_index = (i * 256 // num_pixels) + j
         #pixels[i] = wheel(pixel_index & 255)
         pixels.fill(wheel(pixel_index & 255))
-    pixels.show()
-    time.sleep(wait)
+        pixels.show()
+        time.sleep(wait)
 
 #Broken snake function
 def snake():
