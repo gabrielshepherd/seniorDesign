@@ -48,6 +48,10 @@ def wheel(pos):
         g = int(pos * 3)
         b = int(255 - pos * 3)
     return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
+
+def transition(index):
+    if index <
+
  
 # Rainbow function for the idle mode
 def rainbow_cycle(wait, j):
@@ -55,7 +59,8 @@ def rainbow_cycle(wait, j):
     for i in range(335):
         pixel_index = (i * 256 // num_pixels) + j
         # pixels[i] = wheel(pixel_index & 255)
-        pixels[i] = wheel(pixel_index & 255)
+        # pixels[i] = wheel(pixel_index & 255)
+        pixels.fill(wheel(pixel_index & 255))
 
     pixels.show()
     time.sleep(wait)
@@ -146,7 +151,7 @@ codes = {
 }
 
 #Parses 'codes' to know which LEDs to light up.
-def new_part_location(code):
+def part_location(code):
     rangesForCode = codes[code]
     for pair in rangesForCode:
         start, end = pair
