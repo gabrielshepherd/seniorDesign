@@ -33,10 +33,9 @@ for row in range(rows):
       if cellE.value == resistor :
          location = cellB.value
          break
-      
+ 
       locationdata[cellB] = {}
       #print(cellB.value)
-
 
 for row in range(rows):
    for col in range(cols):
@@ -45,9 +44,81 @@ for row in range(rows):
       #print(cellE.value)
      
 
+#0-59 is 1 60-120 is 2 121-180 is 3
+
+#A1x
+if(location[0] == "A"):
+   if(location[2] == "1"):
+      if(location[4:6] <= "059"):
+         #output.data_transmit("A11")
+      if(location[4:6] >= "060"):
+         if(location[4:6] <= "120"):
+         #output.data_transmit("A12")
+      if(location[4:6] >= "121"):
+         if(location[4:6] <= "180"):
+         #output.data_transmit("A13")
+#B1x         
+if(location[0] == "B"):
+   if(location[2] == "1"):
+      if(location[4:6] <= "059"):
+         #output.data_transmit("B11")
+      if(location[4:6] >= "060"):
+         if(location[4:6] <= "120"):
+         #output.data_transmit("B12")
+      if(location[4:6] >= "121"):
+         if(location[4:6] <= "180"):
+         #output.data_transmit("B13")
+#C1x
+if(location[0] == "C"):
+   if(location[2] == "1"):
+      if(location[4:6] <= "059"):
+         #output.data_transmit("C11")
+      if(location[4:6] >= "060"):
+         if(location[4:6] <= "120"):
+         #output.data_transmit("C12")
+      if(location[4:6] >= "121"):
+         if(location[4:6] <= "180"):
+         #output.data_transmit("C13")
+#A2x
+if(location[0] == "A"):
+   if(location[2] == "2"):
+      if(location[4:6] <= "059"):
+         #output.data_transmit("A21")
+      if(location[4:6] >= "060"):
+         if(location[4:6] <= "120"):
+         #output.data_transmit("A22")
+      if(location[4:6] >= "121"):
+         if(location[4:6] <= "180"):
+         #output.data_transmit("A23")
+#B2x
+if(location[0] == "B"):
+   if(location[2] == "2"):
+      if(location[4:6] <= "059"):
+         #output.data_transmit("B21")
+      if(location[4:6] >= "060"):
+         if(location[4:6] <= "120"):
+         #output.data_transmit("B22")
+      if(location[4:6] >= "121"):
+         if(location[4:6] <= "180"):
+         #output.data_transmit("B23")
+#C2x
+if(location[0] == "C"):
+   if(location[2] == "2"):
+      if(location[4:6] <= "059"):
+         #output.data_transmit("C21")
+      if(location[4:6] >= "060"):
+         if(location[4:6] <= "120"):
+         #output.data_transmit("C22")
+      if(location[4:6] >= "121"):
+         if(location[4:6] <= "180"):
+         #output.data_transmit("C23")
+
+#A3x
+#C3x
+#B4x          
 
 
-
+if(location[0]) == "C":
 #print (descriptdata)
 #print (locationdata)
 print (location)
