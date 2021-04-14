@@ -53,71 +53,71 @@ def search(input):
    if(location[0] == "A"):
       if(location[2] == "1"):
          if(location[4:6] <= "059"):
-            #output.data_transmit("A11")
+            output.data_transmit("A11")
             print("Transmitted Data")
          if(location[4:6] >= "060"):
             if(location[4:6] <= "120"):
-            #output.data_transmit("A12")
+               output.data_transmit("A12")
                print("Transmitted Data")
          if(location[4:6] >= "121"):
             if(location[4:6] <= "180"):
-            #output.data_transmit("A13")
+               output.data_transmit("A13")
                print("Transmitted Data")
    #B1x         
    if(location[0] == "B"):
       if(location[2] == "1"):
          if(location[4:6] <= "059"):
-            #output.data_transmit("B11")
+            output.data_transmit("B11")
                print("Transmitted Data")
          if(location[4:6] >= "060"):
             if(location[4:6] <= "120"):
-            #output.data_transmit("B12")
+               output.data_transmit("B12")
                print("Transmitted Data")
          if(location[4:6] >= "121"):
             if(location[4:6] <= "180"):
-            #output.data_transmit("B13")
+               output.data_transmit("B13")
                print("Transmitted Data")
    #C1x
    if(location[0] == "C"):
       if(location[2] == "1"):
          if(location[4:6] <= "059"):
-            #output.data_transmit("C11")
+               output.data_transmit("C11")
                print("Transmitted Data")
          if(location[4:6] >= "060"):
             if(location[4:6] <= "120"):
-            #output.data_transmit("C12")
+               output.data_transmit("C12")
                print("Transmitted Data")
          if(location[4:6] >= "121"):
             if(location[4:6] <= "180"):
-            #output.data_transmit("C13")
+               output.data_transmit("C13")
                print("Transmitted Data")
    #A2x
    if(location[0] == "A"):
       if(location[2] == "2"):
          if(location[4:6] <= "059"):
-            #output.data_transmit("A21")
+            output.data_transmit("A21")
             print("Transmitted Data")
          if(location[4:6] >= "060"):
             if(location[4:6] <= "120"):
-            #output.data_transmit("A22")
+               output.data_transmit("A22")
                print("Transmitted Data")
          if(location[4:6] >= "121"):
             if(location[4:6] <= "180"):
-            #output.data_transmit("A23")
+               output.data_transmit("A23")
                print("Transmitted Data")
    #B2x
    if(location[0] == "B"):
       if(location[2] == "2"):
          if(location[4:6] <= "059"):
-            #output.data_transmit("B21")
+            output.data_transmit("B21")
             print("Transmitted Data")
          if(location[4:6] >= "060"):
             if(location[4:6] <= "120"):
-            #output.data_transmit("B22")
+               output.data_transmit("B22")
                print("Transmitted Data")
          if(location[4:6] >= "121"):
             if(location[4:6] <= "180"):
-            #output.data_transmit("B23")
+               output.data_transmit("B23")
                print("Transmitted Data")
    #C2x
    if(location[0] == "C"):
@@ -127,16 +127,97 @@ def search(input):
             print("Transmitted Data - C21")
          if(location[4:6] >= "060"):
             if(location[4:6] <= "120"):
-            #output.data_transmit("C22")
+               output.data_transmit("C22")
                print("Transmitted Data")
          if(location[4:6] >= "121"):
             if(location[4:6] <= "180"):
-            #output.data_transmit("C23")
+               output.data_transmit("C23")
                print("Transmitted Data")
 
    #A3x
+   if(location[0] == "A"):
+      if(location[2] == "3"):
+         if(location[4:6] <= "059"):
+            output.data_transmit("A31")
+            print("Transmitted Data")
+         if(location[4:6] >= "060"):
+            if(location[4:6] <= "120"):
+               output.data_transmit("A32")
+               print("Transmitted Data")
+         if(location[4:6] >= "121"):
+            if(location[4:6] <= "180"):
+               output.data_transmit("A33")
+               print("Transmitted Data")
+   #B3x
+   if(location[0] == "B"):
+      if(location[2] == "3"):
+         if(location[4:6] <= "059"):
+            output.data_transmit("B31")
+            print("Transmitted Data")
+         if(location[4:6] >= "060"):
+            if(location[4:6] <= "120"):
+               output.data_transmit("B32")
+               print("Transmitted Data")
+         if(location[4:6] >= "121"):
+            if(location[4:6] <= "180"):
+               output.data_transmit("B33")
+               print("Transmitted Data")
    #C3x
-   #B4x          
+   if(location[0] == "C"):
+      if(location[2] == "3"):
+         if(location[4:6] <= "059"):
+            output.data_transmit("C31")
+            print("Transmitted Data")
+         if(location[4:6] >= "060"):
+            if(location[4:6] <= "120"):
+               output.data_transmit("C32")
+               print("Transmitted Data")
+         if(location[4:6] >= "121"):
+            if(location[4:6] <= "180"):
+               output.data_transmit("C33")
+               print("Transmitted Data")
+   #A4x
+   if(location[0] == "A"):
+      if(location[2] == "4"):
+         if(location[4:6] <= "059"):
+            output.data_transmit("A41")
+            print("Transmitted Data")
+         if(location[4:6] >= "060"):
+            if(location[4:6] <= "120"):
+               output.data_transmit("A42")
+               print("Transmitted Data")
+         if(location[4:6] >= "121"):
+            if(location[4:6] <= "180"):
+               output.data_transmit("A43")
+               print("Transmitted Data")
+   #B4x
+   if(location[0] == "B"):
+      if(location[2] == "4"):
+         if(location[4:6] <= "059"):
+            output.data_transmit("B41")
+            print("Transmitted Data")
+         if(location[4:6] >= "060"):
+            if(location[4:6] <= "120"):
+               output.data_transmit("B42")
+               print("Transmitted Data")
+         if(location[4:6] >= "121"):
+            if(location[4:6] <= "180"):
+               output.data_transmit("B43")
+               print("Transmitted Data")
+   #C4x
+   if(location[0] == "C"):
+      if(location[2] == "4"):
+         if(location[4:6] <= "059"):
+            output.data_transmit("C41")
+            print("Transmitted Data")
+         if(location[4:6] >= "060"):
+            if(location[4:6] <= "120"):
+               output.data_transmit("C42")
+               print("Transmitted Data")
+         if(location[4:6] >= "121"):
+            if(location[4:6] <= "180"):
+               output.data_transmit("C43")
+               print("Transmitted Data")      
 
 
    if(location[0]) == "C":
