@@ -68,7 +68,7 @@ def search(input):
       if(location[2] == "1"):
          if(location[4:6] <= "059"):
             output.data_transmit("B11")
-               print("Transmitted Data")
+            print("Transmitted Data")
          if(location[4:6] >= "060"):
             if(location[4:6] <= "120"):
                output.data_transmit("B12")
