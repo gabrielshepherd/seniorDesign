@@ -97,7 +97,7 @@ def clear():
 # The first pair of numbers is the top of the section. Second pair is the bottom. Third pair 
 # is the left or right side depending on if it's in section XX1 or XX3.
 codes = {
-    'opamps': [(40, 120), (256, 512), (37, 49), (516, 528), (504, 516), (610, 623) ], #a13, b11, b22
+    'opamps': [(23, 35), (528, 541), (37, 49), (516, 528), (504, 516), (610, 623) ], #a13, b11, b22
     'diodes': [(468, 480), (647, 659), (457, 468), (659, 669), (122, 137) ], #c22, c23
     'voltreg': [(528, 541), (586, 598), (350, 365), (492, 504), (622, 635), (427, 442)],#a23, b23
     'ttl': [(0, 12), (553, 563), (319, 335),(11, 22), (542, 553), (553, 563), (563, 574), (304, 320)], #a11, a12, a21
