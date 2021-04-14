@@ -15,7 +15,7 @@ import tkinter.font as tkFont
 # Using the main file that has the main structure of the GUI.
 import MainGUI_WithKeypadEdit as Main
 # Needed for parsing excel spreadsheet
-#import excel as search
+import excel as search
 # For sending data to other pi
 import send as output
 
@@ -37,17 +37,19 @@ class SpecificSearch(tkinter.Frame):
         tkinter.Frame.__init__(self, master)
         tkinter.Frame.configure(self,bg="white")
         tkinter.Label(self, width = 50, borderwidth=2, relief="solid", bg="#F6B022",text="Specified Search", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=3, pady=4)
-        
+     
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
         self.L1 = tkinter.Label(self, text = "Enter part here:", bg = "white", font=('Helvetica', 18)).grid(row = 1, column = 1, pady = 10)
- 
-        e = tkinter.Entry(self, width=40, relief="solid").grid(row=2, column =1, pady = 20, ipady = 5)
+
+        value = tkinter.StringVar()
+        e = tkinter.Entry(self, width=40, relief="solid", textvariable=value).grid(row=2, column =1, pady = 20, ipady = 5)
+
         self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 30, height=3,
             font = MainFontStyle, command=lambda: master.switch_frame(Main.StartPage))
         self.homeButton.grid(row=4, column=1, sticky="W"+"E")
 
         self.searchButton = tkinter.Button(self, text = "Search", relief = "ridge",width = 30, height=3,
-            font = MainFontStyle)
+            font = MainFontStyle, command=lambda: [print(value.get()) , search.search(value.get())])
         self.searchButton.grid(row=3, column = 1, pady = 20, sticky="W"+"E")
         
         #---These lines are for the NDSU Logo at bottom-----
