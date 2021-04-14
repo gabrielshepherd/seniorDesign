@@ -1,5 +1,5 @@
 from flask import Flask, request
-from LEDs.led_location import rainbow_cycle, snake, clear, part_location
+from LEDs.led_location import rainbow_cycle, snake, clear, part_location, wheel
 from threading import Thread, Event
 import time
 
@@ -28,11 +28,13 @@ class MyThread(Thread):
         while not self.stopped.wait(0.01):
             # Runs the rainbow cycle
             rainbow_cycle(0.001, j)
-            if j == 255:
-                j -= 255
+            if j == 850:
+                j = 0
 
             else:
                 j += 1
+            
+
 
 
 def function_call(location):
