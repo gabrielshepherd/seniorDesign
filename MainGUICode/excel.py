@@ -1,6 +1,7 @@
 #import openpyxl 
 import xlrd 
-import xlwt 
+import xlwt
+import send as output 
 
 def search(input):
    #input = "IC LDO REG 500mA 1.2 V, TO220-3, POS FIXED, 2.1-6V IN,1.2OUT"
