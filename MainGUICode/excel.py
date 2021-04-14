@@ -122,7 +122,7 @@ def search(input):
    if(location[0] == "C"):
       if(location[2] == "2"):
          if(location[4:6] <= "059"):
-            #output.data_transmit("C21")
+            output.data_transmit("C21")
             print("Transmitted Data - C21")
          if(location[4:6] >= "060"):
             if(location[4:6] <= "120"):
