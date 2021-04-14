@@ -1,5 +1,5 @@
 from flask import Flask, request
-from LEDs.led_location import rainbow_cycle, snake, clear, part_location
+from LEDs.led_location import rainbow_cycle, snake, clear, part_location, new_part_location
 from threading import Thread, Event
 import time
 
@@ -38,6 +38,7 @@ class MyThread(Thread):
 def function_call(location):
     # Andrew, this is where your stuff should go
     clear()
+    #new_part_location(location)
     part_location(location)
     print(location)
     return

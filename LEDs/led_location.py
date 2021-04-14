@@ -25,25 +25,7 @@ pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
 )
 
-# codes = {
-#     'A11': [(0, 1), (40, 120), (256, 512), (123, 456)],
-#     'A11': [(0, 1)],
-#     'A11': [(40, 120), (256, 512)],
-#     'A11': [(0, 1), (40, 120), (256, 512)],
-#     'A11': [(0, 1), (40, 120), (256, 512)],
-#     'A11': [(0, 1), (40, 120), (256, 512)],
-#     'A11': [(0, 1), (40, 120), (256, 512)],
-#     'A11': [(0, 1), (40, 120), (256, 512)],
-#     'A11': [(0, 1), (40, 120), (256, 512)],
-# }
 
-# def idea(code):
-#     rangesForCode = codes[code]
-#     for pair in rangesForCode:
-#         start, end = pair
-#         for x in range(start, end):
-#             pixels[x] = COLOR
-#     pixels.show()
  
 # Wheel function found online 
 def wheel(pos):
@@ -108,6 +90,43 @@ def snake():
 #Turns off all pixels 
 def clear():
     pixels.fill(CLEAR)
+
+# Dictionary of lists with the key being the location ID with its correspoding LED addresses.
+# The first pair of numbers is the top of the section. Second pair is the bottom. Third pair 
+# is the left or right side depending on if it's in section XX1 or XX3.
+codes = {
+    'A11': [(0, 12), (553, 563),(319, 335)],
+    'A12': [(11,22), (542, 553)],
+    'A13': [(40, 120), (256, 512), (335, 350)],
+    'A21': [(553, 563), (563, 574), (304,320)],
+    'A22': [(541, 553), (574, 586)],
+    'A23': [(528, 541), (586, 598), (350, 365)],
+    'A31': [(563, 574), (765, 774), (289, 304)],
+    'A32': [(574, 586), (753, 765)],
+    'A33': [(586, 598), (741, 753), (365,380)],
+    'A41': [(765, 774), (262, 274), (274, 289)],
+    'A42': [(753, 765), (250, 262)],
+    'A43': [(741, 753), (238, 250),(380,395)],
+
+    'B11': [(37, 49), (516, 528), (335, 350)],
+    'B12': [(49, 61), (504, 516)],
+    'B13': [(61, 73), (492, 504), (445, 460)],
+    'B21': [(516, 528), (599, 611), (350, 365)],
+    'B22': [(504, 516), (610, 623)],
+    'B23': [(492, 504), (622, 635), (430, 445)],
+    'B31': [(599, 611), (728, 741), (365, 380)],
+    'B32': [(610, 623), (716, 728)],
+    'B33': [(622, 635), (704, 716), (412, 427)],
+}
+
+#Parses 'codes' to know which LEDs to light up.
+def new_part_location(code):
+    rangesForCode = codes[code]
+    for pair in rangesForCode:
+        start, end = pair
+        for x in range(start, end):
+            pixels[x] = COLOR
+    pixels.show()
 
 #Dictionary of each section location
 def part_location(location):
@@ -194,47 +213,7 @@ def part_location(location):
     #     sectionC42()
     # if location == 'C43':
     #     sectionC43()
-
-    # switcher = {
-    #     'A11': sectionA11,
-    #     'A12': sectionA12,
-    #     'A13': sectionA13,
-        # 'A21': sectionA21,
-        # 'A22': sectionA22,
-        # 'A23': sectionA23,
-        # 'a31': sectionA31,
-        # 'a32': sectionA32,
-        # 'a33': sectionA33,
-        # 'a41': sectionA41,
-        # 'a42': sectionA42,
-        # 'a43': sectionA43,
-        # 'b11': sectionB11,
-        # 'b12': sectionB12,
-        # 'b13': sectionB13,
-        # 'b21': sectionB21,
-        # 'b22': sectionB22,
-        # 'b23': sectionB23,
-        # 'b31': sectionB31,
-        # 'b32': sectionB32,
-        # 'b33': sectionB33,
-        # 'b41': sectionB41,
-        # 'b42': sectionB42,
-        # 'b43': sectionB43,
-        # 'c11': sectionC11,
-        # 'c12': sectionC12,
-        # 'c13': sectionC13,
-        # 'c21': sectionC21,
-        # 'c22': sectionC22,
-        # 'c23': sectionC23,
-        # 'c31': sectionC31,
-        # 'c32': sectionC32,
-        # 'c33': sectionC33,
-        # 'c41': sectionC41,
-        # 'c42': sectionC42,
-        # 'c43': sectionC43,
-    #}
     return 
-    # switcher.get(location,clear)
 
 def opamps():
     #a13
