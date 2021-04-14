@@ -38,8 +38,8 @@ class MyThread(Thread):
 def function_call(location):
     # Andrew, this is where your stuff should go
     clear()
-    #new_part_location(location)
-    part_location(location)
+    new_part_location(location)
+    #part_location(location)
     print(location)
     return
 

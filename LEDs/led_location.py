@@ -636,8 +636,6 @@ def sectionC33():
 
 
 
-
-
 # while True:
 # #     # Comment this line out if you have RGBW/GRBW NeoPixels
 #     sectionA41()
