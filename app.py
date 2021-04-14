@@ -1,5 +1,5 @@
 from flask import Flask, request
-from LEDs.led_location import rainbow_cycle, snake, clear, part_location, new_part_location
+from LEDs.led_location import rainbow_cycle, snake, clear, new_part_location
 from threading import Thread, Event
 import time
 

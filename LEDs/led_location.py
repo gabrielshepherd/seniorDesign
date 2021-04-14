@@ -8,7 +8,7 @@ import neopixel
 CLEAR = (0, 0, 0)  # clear (or second color)
 
 #Color as (R,G,B) - (0,102,51) is Bison green
-COLOR = (0,102,52)
+COLOR = (0,255,0)
 
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
 # NeoPixels must be connected to D10, D12, D18 or D21 to work.
@@ -152,6 +152,7 @@ def new_part_location(code):
         start, end = pair
         for x in range(start, end):
             pixels[x] = COLOR
+
     pixels.show()
 
 #Dictionary of each section location
