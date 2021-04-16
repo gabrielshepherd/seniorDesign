@@ -131,10 +131,10 @@ codes = {
 
     'B11': [(37, 49), (516, 528), (335, 350)],
     'B12': [(49, 61), (504, 516)],
-    'B13': [(61, 73), (492, 504), ()],
+    'B13': [(61, 73), (492, 504), (433, 450)],
     'B21': [(516, 528), (599, 611), (350, 365)],
     'B22': [(504, 516), (610, 623)],
-    'B23': [(492, 504), (622, 635), (430, 445)],
+    'B23': [(492, 504), (622, 635), (427, 443)],
     'B31': [(599, 611), (728, 741), (365, 380)],
     'B32': [(610, 623), (716, 728)],
     'B33': [(622, 635), (704, 716), (412, 427)],
@@ -168,7 +168,7 @@ def part_location(code):
 
 
 # Use below for debugging purposes
-# while True:
+while True:
 
 #     part_location('A11')
 #     time.sleep(1)
@@ -209,45 +209,45 @@ def part_location(code):
 #     time.sleep(1)
 #     clear()
 
-#     part_location('B11')
-#     time.sleep(1)
-#     clear()
-#     part_location('B12')
-#     time.sleep(1)
-#     clear()
-#     part_location('B13')
-#     time.sleep(1)
-#     clear()
+    part_location('B11')
+    time.sleep(1)
+    clear()
+    part_location('B12')
+    time.sleep(1)
+    clear()
+    part_location('B13')
+    time.sleep(1)
+    clear()
 
-#     part_location('B21')
-#     time.sleep(1)
-#     clear()
-#     part_location('B22')
-#     time.sleep(1)
-#     clear()
-#     part_location('B23')
-#     time.sleep(1)
-#     clear()
+    part_location('B21')
+    time.sleep(1)
+    clear()
+    part_location('B22')
+    time.sleep(1)
+    clear()
+    part_location('B23')
+    time.sleep(1)
+    clear()
 
-#     part_location('B31')
-#     time.sleep(1)
-#     clear()
-#     part_location('B32')
-#     time.sleep(1)
-#     clear()
-#     part_location('B33')
-#     time.sleep(1)
-#     clear()
+    part_location('B31')
+    time.sleep(1)
+    clear()
+    part_location('B32')
+    time.sleep(1)
+    clear()
+    part_location('B33')
+    time.sleep(1)
+    clear()
 
-#     part_location('B41')
-#     time.sleep(1)
-#     clear()
-#     part_location('B42')
-#     time.sleep(1)
-#     clear()
-#     part_location('B43')
-#     time.sleep(1)
-#     clear()
+    part_location('B41')
+    time.sleep(1)
+    clear()
+    part_location('B42')
+    time.sleep(1)
+    clear()
+    part_location('B43')
+    time.sleep(1)
+    clear()
 
  
     #rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
