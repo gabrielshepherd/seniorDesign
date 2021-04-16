@@ -138,7 +138,7 @@ codes = {
     'B31': [(599, 611), (728, 741), (365, 380)],
     'B32': [(610, 623), (716, 728)],
     'B33': [(622, 635), (704, 716), (412, 427)],
-    'B41': [(599, 611), (258, 270), (380, 395)],
+    'B41': [(728, 741), (258, 270), (380, 395)],
     'B42': [(610, 623), (246, 258)],
     'B43': [(622, 635), (233, 246), (395, 412)],
 
@@ -170,6 +170,61 @@ def part_location(code):
 # Use below for debugging purposes
 # while True:
 
-part_location('resistors')
+part_location('A11')
+time.sleep(0.5)
+part_location('A12')
+time.sleep(0.5)
+part_location('A13')
+time.sleep(0.5)
+
+part_location('A21')
+time.sleep(0.5)
+part_location('A22')
+time.sleep(0.5)
+part_location('A23')
+time.sleep(0.5)
+
+part_location('A31')
+time.sleep(0.5)
+part_location('A32')
+time.sleep(0.5)
+part_location('A33')
+time.sleep(0.5)
+
+part_location('A41')
+time.sleep(0.5)
+part_location('A42')
+time.sleep(0.5)
+part_location('A43')
+time.sleep(0.5)
+
+part_location('B11')
+time.sleep(0.5)
+part_location('B12')
+time.sleep(0.5)
+part_location('B13')
+time.sleep(0.5)
+
+part_location('B21')
+time.sleep(0.5)
+part_location('B22')
+time.sleep(0.5)
+part_location('B23')
+time.sleep(0.5)
+
+part_location('B31')
+time.sleep(0.5)
+part_location('B32')
+time.sleep(0.5)
+part_location('B33')
+time.sleep(0.5)
+
+part_location('B41')
+time.sleep(0.5)
+part_location('B42')
+time.sleep(0.5)
+part_location('B43')
+time.sleep(0.5)
+
  
     #rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
