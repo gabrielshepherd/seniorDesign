@@ -47,6 +47,7 @@ class MyThread(Thread):
        # variable for rainbow cycle
         rainbow = 0
         while not self.stopped.wait(0.001):
+
             # Runs the rainbow cycle
             if rainbow < 1:
                 rainbow_cycle(0.02, j)
@@ -76,7 +77,7 @@ class MyThread(Thread):
                 b = 457
                 snake(d)
                 d += 1
-            if d == 671:
+            if d == 669:
                 c = 318
                 snake(e)
                 e += 1
@@ -94,6 +95,7 @@ class MyThread(Thread):
                 h -= 1
             if h == 168:
                 g = 289
+                h = 274
                 rainbow = 0
 
 
