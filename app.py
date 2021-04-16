@@ -36,7 +36,7 @@ class MyThread(Thread):
 
         a = 0
         b = 457
-        c = 318
+        c = 303
         d = 566
         e = 137
         f = 672
