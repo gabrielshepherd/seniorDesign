@@ -47,7 +47,7 @@ class MyThread(Thread):
         rainbow = 0
         while not self.stopped.wait(0.01):
             # Runs the rainbow cycle
-            if rainbow == 0:
+            if rainbow < 2:
                 rainbow_cycle(0.02, j)
                 if j == 255:
                     j = 0
