@@ -169,5 +169,7 @@ def part_location(code):
 
 # Use below for debugging purposes
 # while True:
+
+part_location('resistors')
  
     #rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
