@@ -53,16 +53,16 @@ class MyThread(Thread):
                 if j == 255:
                     j = 0
                     rainbow +=1
-                    #clears += 1
+                    clears += 1
                 else:
                     j += 1
 
 
 
 
-            # if clears == 1:
-            #     clear()
-            #     clears = 0
+            if clears == 1:
+                clear()
+                clears = 0
 
             if rainbow == 2:
                 snake(a)
