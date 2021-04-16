@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 #Creates a thread to have an idle mode
 class MyThread(Thread):
-    WAIT_TIME = 1000                        # in 10s of milliseconds
+    WAIT_TIME = 10000                        # in 10s of milliseconds
 
     def __init__(self, event):
         Thread.__init__(self)
