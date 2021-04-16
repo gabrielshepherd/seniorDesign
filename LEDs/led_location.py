@@ -96,6 +96,8 @@ def old_snake():
 
 def snake(start):
     pixels[start] = COLOR
+    pixels.show()
+    time.sleep(0.1)
 
 #Turns off all pixels 
 def clear():
