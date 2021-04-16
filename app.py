@@ -39,7 +39,7 @@ class MyThread(Thread):
         c = 318
         d = 563
         e = 137
-        f = 670
+        f = 669
         g = 289
         h = 274
         clears = 0
@@ -90,7 +90,7 @@ class MyThread(Thread):
                 snake(g)
                 g -= 1
             if g == 273:
-                f = 670
+                f = 669
                 snake(h)
                 h -= 1
             if h == 168:
