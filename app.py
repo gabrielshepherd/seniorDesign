@@ -36,7 +36,7 @@ class MyThread(Thread):
 
         a = 0
         b = 457
-        c = 303
+        c = 320
         d = 566
         e = 137
         f = 672
@@ -75,7 +75,7 @@ class MyThread(Thread):
                 a = 0
                 snake(c)
                 c -= 1
-            if c == 318:
+            if c == 304:
                 b = 457
                 snake(d)
                 d += 1
