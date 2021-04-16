@@ -42,6 +42,7 @@ class MyThread(Thread):
         f = 672
         g = 289
         h = 274
+        clears = 0
 
          # variable for rainbow cycle
         rainbow = 0
@@ -52,11 +53,15 @@ class MyThread(Thread):
                 if j == 255:
                     j = 0
                     rainbow +=1
+                    clears += 1
                 else:
                     j += 1
-            
-            if rainbow == 2:
+
+            if clears == 2:
                 clear()
+                clears = 0
+                
+            if rainbow == 2:
                 snake(a)
                 a+=1
                 if a == 122:
