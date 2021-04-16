@@ -66,7 +66,7 @@ def rainbow_cycle(wait, j):
     # time.sleep(wait)
 
 #Broken snake function
-def snake():
+def old_snake():
     pixels.fill((0,0,0))
     pixels.show()
     for i in range(122):
@@ -94,9 +94,13 @@ def snake():
         pixels[q] = (0,51,102)
         pixels.show()
 
+def snake(start):
+    pixels[start] = COLOR
+
 #Turns off all pixels 
 def clear():
     pixels.fill(CLEAR)
+    
 
 # Dictionary of lists with the key being the location ID with its correspoding LED addresses.
 codes = {
