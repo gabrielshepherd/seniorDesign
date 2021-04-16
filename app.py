@@ -34,66 +34,70 @@ class MyThread(Thread):
         # g = 289,274,-1
         # h = 274,168,-1
 
-        # a = 0
-        # b = 457
-        # c = 303
-        # d = 566
-        # e = 137
-        # f = 672
-        # g = 289
-        # h = 274
+        a = 0
+        b = 457
+        c = 303
+        d = 566
+        e = 137
+        f = 672
+        g = 289
+        h = 274
         # clears = 0
 
-        #  # variable for rainbow cycle
-        # rainbow = 0
+       # variable for rainbow cycle
+        rainbow = 0
         while not self.stopped.wait(0.01):
             # Runs the rainbow cycle
-            rainbow_cycle(0.02, j)
-            if j == 255:
-                j = 0
-                    #rainbow +=1
-                #clears += 1
-            else:
-                j += 1
+            if rainbow < 2:
+                rainbow_cycle(0.02, j)
+                if j == 255:
+                    j = 0
+                    rainbow +=1
+                    #clears += 1
+                else:
+                    j += 1
+
+
+
 
             # if clears == 1:
             #     clear()
             #     clears = 0
 
-            # if rainbow == 1:
-            #     snake(a)
-            #     a+=1
-            # if a == 122:
-            #     rainbow = 3
-            #     snake(b)
-            #     b += 1
-            # if b == 566:
-            #     a = 0
-            #     snake(c)
-            #     c -= 1
-            # if c == 318:
-            #     b = 457
-            #     snake(d)
-            #     d += 1
-            # if d == 671:
-            #     c = 318
-            #     snake(e)
-            #     e += 1
-            # if e == 152:
-            #     d = 457
-            #     snake(f)
-            #     f += 1
-            # if f == 777:
-            #     e = 137
-            #     snake(g)
-            #     g -= 1
-            # if g == 274:
-            #     f = 672
-            #     snake(h)
-            #     h -= 1
-            # if h == 168:
-            #     g = 289
-            #     rainbow = 0
+            if rainbow == 2:
+                snake(a)
+                a+=1
+            if a == 122:
+                rainbow +=1
+                snake(b)
+                b += 1
+            if b == 566:
+                a = 0
+                snake(c)
+                c -= 1
+            if c == 318:
+                b = 457
+                snake(d)
+                d += 1
+            if d == 671:
+                c = 318
+                snake(e)
+                e += 1
+            if e == 152:
+                d = 457
+                snake(f)
+                f += 1
+            if f == 777:
+                e = 137
+                snake(g)
+                g -= 1
+            if g == 274:
+                f = 672
+                snake(h)
+                h -= 1
+            if h == 168:
+                g = 289
+                rainbow = 0
 
 
 
