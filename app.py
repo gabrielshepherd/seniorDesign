@@ -72,7 +72,7 @@ class MyThread(Thread):
                 a = 0
                 snake(c)
                 c -= 1
-            if c == 303:
+            if c == 301:
                 b = 457
                 snake(d)
                 d += 1
