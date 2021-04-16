@@ -85,7 +85,7 @@ class MyThread(Thread):
                 d = 563
                 snake(f)
                 f += 1
-            if f == 774:
+            if f == 775:
                 e = 137
                 snake(g)
                 g -= 1
