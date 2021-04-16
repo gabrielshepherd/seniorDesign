@@ -56,6 +56,7 @@ class MyThread(Thread):
                     j += 1
             
             if rainbow == 2:
+                clear()
                 snake(a)
                 a+=1
                 if a == 122:
