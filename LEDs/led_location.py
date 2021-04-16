@@ -168,7 +168,7 @@ def part_location(code):
 
 
 # Use below for debugging purposes
-while True:
+#while True:
 
 #     part_location('A11')
 #     time.sleep(1)
