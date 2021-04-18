@@ -27,9 +27,19 @@ import send as output
 # say, and the second will contain the location of the LEDS for what was searched.
 RecentlySearchedName = []
 RecentlySearchedLEDLocation = []
-# Functions for adding to list:
-# RecentlySearchedName.append("<Name you want to appear on button>")
-# RecentlySearchedLEDLocation.append("<insert location string here>")
+RecentlySearched = []
+# Function for adding to list:
+# addButtonToList("<Name you want to appear on button>", "<insert location of LEDS here>")
+def addButtonToList(name, location):
+    if name not in RecentlySearchedName:
+        # This keeps the length of the list at 7
+        if len(RecentlySearchedName) == 7:
+            #RecentlySearched.pop()
+            RecentlySearchedLEDLocation.pop()
+            RecentlySearchedName.pop()
+        #RecentlySearched.insert(0, [name, location])
+        RecentlySearchedName.insert(0, name)
+        RecentlySearchedLEDLocation.insert(0, location)
 
 #------Main 3 pages--------
 class SpecificSearch(tkinter.Frame):
@@ -81,10 +91,19 @@ class RecentSearches(tkinter.Frame):
             width = 30, height=2,command=lambda: [RecentlySearchedName.clear(), RecentlySearchedLEDLocation.clear()] )
         self.resetButton.grid(row=12, column=1, pady = 10, sticky="W"+"E")
 
+        #for recent in RecentlySearched:
+        #    b = tkinter.Button(self, text = recent[0], relief = "ridge", font = MainFontStyle,
+        #        #Switch Main.StartPage with recentFrame to go to part page/Call Code to turn LEDS on
+        #         command=lambda: output.data_transmit(recent[1])).grid(row=count+1, column = 1, sticky="W"+"E", pady = 3)
+        #    print(recent[0])
+        #   print(recent[1]])
+        #    count = count + 1
+
         for recentLocation in RecentlySearchedLEDLocation:
             b = tkinter.Button(self, text = RecentlySearchedName[count], relief = "ridge", font = MainFontStyle,
-                #Switch Main.StartPage with recentFrame to go to part page/Call Code to turn LEDS on
                  command=lambda: output.data_transmit(recentLocation)).grid(row=count+1, column = 1, sticky="W"+"E", pady = 3)
+            print(RecentlySearchedName[count])
+            print(recentLocation)
             count = count + 1
 
 class QuickSearch(tkinter.Frame):
@@ -246,18 +265,15 @@ class QuarterWResistors(tkinter.Frame):
         self.backButton.grid(row=9, column=0, pady=10)
 
         self.Range1= tkinter.Button(self, text="1Ω - 360Ω", width=30,font = MainFontStyle,relief = "ridge", 
-                           height=2, command=lambda: [save(self.Range1, 0), RecentlySearchedName.append("1Ω - 360Ω Resistors"),
-                           RecentlySearchedLEDLocation.append("A31"),output.data_transmit("A31")])
+                           height=2, command=lambda: [save(self.Range1, 0), addButtonToList("1Ω - 360Ω Resistors", "A31"), output.data_transmit("A31")])
         self.Range1.grid(row=1, column=0, pady=10)
 
         self.Range2= tkinter.Button(self, text="390Ω - 110kΩ", width=30,font = MainFontStyle,relief = "ridge", 
-                           height=2, command=lambda: [save(self.Range2, 1), RecentlySearchedName.append("390Ω - 110kΩ Resistors"),
-                           RecentlySearchedLEDLocation.append("A32") ,output.data_transmit("A32")])
+                           height=2, command=lambda: [save(self.Range2, 1), addButtonToList("390Ω - 110kΩ Resistors", "A32"), output.data_transmit("A32")])
         self.Range2.grid(row=2, column=0, pady=10, padx = 4)
 
         self.Range3= tkinter.Button(self, text="120kΩ - 25MΩ", width=30,font = MainFontStyle,relief = "ridge", 
-                           height=2, command=lambda: [save(self.Range3, 2), RecentlySearchedName.append("120kΩ - 25MΩ Resistors"),
-                           RecentlySearchedLEDLocation.append("A33") ,output.data_transmit("A33")])
+                           height=2, command=lambda: [save(self.Range3, 2), addButtonToList("120kΩ - 25MΩ Resistors", "A33"), output.data_transmit("A33")])
         self.Range3.grid(row=3, column=0, pady=10, padx = 4)
 
         #This list keeps track of which button is pressed
