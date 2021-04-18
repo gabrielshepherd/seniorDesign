@@ -25,8 +25,8 @@ import send as output
 
 # This is needed for the Recently searched page. The first list contains what the button face will
 # say, and the second will contain the location of the LEDS for what was searched.
-RecentlySearchedName = []
-RecentlySearchedLEDLocation = []
+RecentlySearchedName = [None, None, None, None, None, None, None]
+RecentlySearchedLEDLocation = [None, None, None, None, None, None, None]
 RecentlySearched = []
 # Function for adding to list:
 # addButtonToList("<Name you want to appear on button>", "<insert location of LEDS here>")
@@ -78,11 +78,14 @@ class RecentSearches(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
         count = 0
+        global RecentlySearchedLEDLocation
+        global RecentlySearchedName
         tkinter.Frame.__init__(self, master)
         tkinter.Frame.configure(self,bg='')
         tkinter.Label(self, width = 50, borderwidth=2, relief="solid", bg="#F6B022",text="Recent Searches", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=3)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
         
+        buttons = [None, None, None, None, None, None, None]
         self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", font=MainFontStyle,
             width = 30, height=2, command=lambda: master.switch_frame(Main.StartPage) )
         self.homeButton.grid(row=13, column=1, sticky="W"+"E")
@@ -99,12 +102,31 @@ class RecentSearches(tkinter.Frame):
         #   print(recent[1]])
         #    count = count + 1
 
-        for recentLocation in RecentlySearchedLEDLocation:
-            b = tkinter.Button(self, text = RecentlySearchedName[count], relief = "ridge", font = MainFontStyle,
-                 command=lambda: output.data_transmit(recentLocation)).grid(row=count+1, column = 1, sticky="W"+"E", pady = 3)
-            print(RecentlySearchedName[count])
-            print(recentLocation)
-            count = count + 1
+        #For some reason this does not work with a loop
+        try:
+            b1 = tkinter.Button(self, text = RecentlySearchedName[0], relief = "ridge", font = MainFontStyle,
+            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[0])).grid(row=1, column = 1, sticky="W"+"E", pady = 3)
+            b2 = tkinter.Button(self, text = RecentlySearchedName[1], relief = "ridge", font = MainFontStyle,
+            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[1])).grid(row=2, column = 1, sticky="W"+"E", pady = 3)
+            b3 = tkinter.Button(self, text = RecentlySearchedName[2], relief = "ridge", font = MainFontStyle,
+            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[2])).grid(row=3, column = 1, sticky="W"+"E", pady = 3)
+            b4 = tkinter.Button(self, text = RecentlySearchedName[3], relief = "ridge", font = MainFontStyle,
+            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[3])).grid(row=4, column = 1, sticky="W"+"E", pady = 3)
+            b5 = tkinter.Button(self, text = RecentlySearchedName[4], relief = "ridge", font = MainFontStyle,
+            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[4])).grid(row=5, column = 1, sticky="W"+"E", pady = 3)
+            b6 = tkinter.Button(self, text = RecentlySearchedName[5], relief = "ridge", font = MainFontStyle,
+            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[5])).grid(row=6, column = 1, sticky="W"+"E", pady = 3)
+            b7 = tkinter.Button(self, text = RecentlySearchedName[6], relief = "ridge", font = MainFontStyle,
+            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[6])).grid(row=7, column = 1, sticky="W"+"E", pady = 3)
+        except:
+            print("") #Do nothing essentially
+
+        #for count in range(len(RecentlySearchedName)):
+        #    buttons[count] = tkinter.Button(self, text = RecentlySearchedName[count], relief = "ridge", font = MainFontStyle,
+        #                    command=lambda: output.data_transmit(RecentlySearchedLEDLocation[count])).grid(row=count+1, column = 1, sticky="W"+"E", pady = 3)
+        #    print(RecentlySearchedName[count])
+        #   print(RecentlySearchedLEDLocation[count])
+            
 
 class QuickSearch(tkinter.Frame):
     def __init__(self, master=None):
