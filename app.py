@@ -66,7 +66,7 @@ class MyThread(Thread):
                 count = 0
 
             # Runs the snake cycle
-            if rainbow <= 2:
+            if rainbow == 2:
                 snake(a, color)
                 a+=1
             if a == 122:
@@ -100,11 +100,11 @@ class MyThread(Thread):
             if h == 168:
                 g = 288
                 h = 274
-                rainbow += 1
                 color += 1
                 count += 1
             if count == 2:
                 rainbow = 0
+                
 
             
 
