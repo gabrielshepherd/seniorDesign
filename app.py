@@ -91,13 +91,8 @@ class MyThread(Thread):
             if h == 168:
                 g = 288
                 h = 274
-                count += 1
-            if count == 1:
-                rainbow = 2
-                color = 'yellow'
-            if count == 2:
-                rainbow = 0
-                color = 'green'
+               
+          
                 
 
             
