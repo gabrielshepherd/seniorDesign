@@ -142,7 +142,7 @@ class QuickSearch(tkinter.Frame):
         self.homeButton.grid(row=10, column=0, pady=4, columnspan=2)
 
         self.Resistors= tkinter.Button(self, text="Resistors", width=30,font = MainFontStyle,relief = "ridge", 
-                           height=2, command=lambda: [master.switch_frame(Resistors)])
+                           height=2, command=lambda: [master.switch_frame(Resistors), output.data_transmit("resistors")])
         self.Resistors.grid(row=1, column=0, pady=4)
 
         self.Inductors= tkinter.Button(self, text="Inductors", width=30,font = MainFontStyle,relief = "ridge", 
