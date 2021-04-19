@@ -91,6 +91,7 @@ class MyThread(Thread):
             if h == 168:
                 g = 288
                 h = 274
+                rainbow = 0
                
           
                 
