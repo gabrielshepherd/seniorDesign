@@ -487,17 +487,17 @@ class LogicComponents(tkinter.Frame):
 
         self.CMOSLogic= tkinter.Button(self, text="CMOS Logic", width=30,font = MainFontStyle,relief = "ridge", 
                            height=2, command=lambda: [save(self.CMOSLogic, 0), RecentlySearchedName.append("CMOS Logic"),
-                           RecentlySearchedFrame.append(self),output.data_transmit("A22")])
+                            RecentlySearchedLEDLocation.append("A22"),output.data_transmit("A22")])
         self.CMOSLogic.grid(row=1, column=0, pady=10)
 
         self.TTLLogic= tkinter.Button(self, text="TTL Logic", width=30,font = MainFontStyle,relief = "ridge", 
                            height=2, command=lambda: [save(self.TTLLogic, 1), RecentlySearchedName.append("TTL Logic"),
-                           RecentlySearchedFrame.append(self),output.data_transmit("ttl")])
+                           RecentlySearchedLEDLocation.append("ttl"),output.data_transmit("ttl")])
         self.TTLLogic.grid(row=2, column=0, pady=10, padx = 4)
 
         self.Multiplexors= tkinter.Button(self, text="Multiplexors", width=30,font = MainFontStyle,relief = "ridge", 
                            height=2, command=lambda: [save(self.Multiplexors, 2), RecentlySearchedName.append("Multiplexors"),
-                           RecentlySearchedFrame.append(self),output.data_transmit("B21")])
+                           RecentlySearchedLEDLocation.append("B21"),output.data_transmit("B21")])
         self.Multiplexors.grid(row=3, column=0, pady=10, padx = 4)
 
 
@@ -539,12 +539,12 @@ class OtherComponents(tkinter.Frame):
 
         self.Crystals= tkinter.Button(self, text="Crystals", width=30,font = MainFontStyle,relief = "ridge", 
                            height=2, command=lambda: [save(self.Crystals, 0), RecentlySearchedName.append("Crystals"),
-                           RecentlySearchedFrame.append(self), output.data_transmit("C12")])
+                           RecentlySearchedLEDLocation.append("C12"), output.data_transmit("C12")])
         self.Crystals.grid(row=1, column=0, pady=10)
 
         self.Micros= tkinter.Button(self, text="Microcontrollers", width=30,font = MainFontStyle,relief = "ridge", 
                            height=2, command=lambda: [save(self.Micros, 1), RecentlySearchedName.append("Microcontrollers"),
-                           RecentlySearchedFrame.append(self), output.data_transmit("C13")])
+                           RecentlySearchedLEDLocation.append("C13"), output.data_transmit("C13")])
         self.Micros.grid(row=2, column=0, pady=10, padx = 4)
 
         #This list keeps track of which button is pressed
