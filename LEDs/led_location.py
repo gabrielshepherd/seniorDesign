@@ -94,6 +94,8 @@ codes = {
     'resistors': [(274, 304), (563, 598), (365, 380), (716,740), (214, 271),(692, 705), (189, 201), (396, 412)],
     'bulk': [(728, 741), (226, 238), (380, 396),(716, 728), (214, 226),(692, 705), (189, 201), (396, 412)],
     'quarterwatt': [(289, 304),(741,775),(563,598),(365,380)],
+    'capacitors':[(610,648),(692,717)],
+    'inductors':[(610, 623), (716, 728),(622, 635), (704, 716), (412, 427)],
     
     # The first pair of numbers is the top of the section. Second pair is the bottom. Third pair 
     # is the left or right side depending on if it's in section XX1 or XX3.
