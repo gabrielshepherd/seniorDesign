@@ -146,7 +146,7 @@ class QuickSearch(tkinter.Frame):
         self.Resistors.grid(row=1, column=0, pady=4)
 
         self.Inductors= tkinter.Button(self, text="Inductors", width=30,font = MainFontStyle,relief = "ridge", 
-                           height=2, command=lambda: [master.switch_frame(Inductors)])
+                           height=2, command=lambda: [master.switch_frame(Inductors), output.data_transmit("inductors")])
         self.Inductors.grid(row=2, column=0, pady=4)
 
         self.OpAmps= tkinter.Button(self, text="Op Amps", width=30,font = MainFontStyle,relief = "ridge", 
@@ -165,7 +165,7 @@ class QuickSearch(tkinter.Frame):
         self.VoltageReg.grid(row=5, column=0, pady=4)
 
         self.Capacitors= tkinter.Button(self, text="Capacitors", width=30,font = MainFontStyle,relief = "ridge", 
-                           height=2, command=lambda: [master.switch_frame(Capacitors)])
+                           height=2, command=lambda: [master.switch_frame(Capacitors), output.data_transmit("capacitors")])
         self.Capacitors.grid(row=1, column=1, pady=4)
 
         #May need to break this down more
