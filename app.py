@@ -42,7 +42,7 @@ class MyThread(Thread):
         new_g = 288
         new_h = 274
 
-        
+        count = 0
         clears = 0
         color = 1
 
@@ -63,9 +63,10 @@ class MyThread(Thread):
             if clears == 2:
                 clear()
                 clears = 0
+                count = 0
 
             # Runs the snake cycle
-            if rainbow == 2:
+            if rainbow <= 2:
                 snake(a, color)
                 a+=1
             if a == 122:
@@ -99,45 +100,13 @@ class MyThread(Thread):
             if h == 168:
                 g = 288
                 h = 274
-                rainbow = 3
-                color = 2
-
-            if rainbow == 3:
-                snake(new_a, color)
-                new_a+=1
-            if new_a == 122:
-                rainbow +=1
-                snake(new_b, color)
-                new_b+= 1
-            if new_b == 563:
-                new_a = 0
-                snake(new_c, color)
-                new_c -= 1
-            if new_c == 303:
-                new_b = 457
-                snake(new_d, color)
-                new_d += 1
-            if new_d == 669:
-                new_c = 318
-                snake(new_e, color)
-                e += 1
-            if new_e == 152:
-                new_d = 563
-                snake(new_f, color)
-                new_f += 1
-            if new_f == 775:
-                new_e = 137
-                snake(new_g, color)
-                new_g -= 1
-            if new_g == 273:
-                new_f = 669
-                snake(new_h, color)
-                new_h -= 1
-            if new_h == 168:
-                new_g = 288
-                new_h = 274
+                rainbow += 1
+                color += 1
+                count += 1
+            if count == 2:
                 rainbow = 0
-                color = 1
+
+            
 
  
 
