@@ -33,6 +33,7 @@ class MyThread(Thread):
         g = 288
         h = 274
         clears = 0
+        color = 1
 
        # variable for rainbow cycle
         rainbow = 0
@@ -54,38 +55,38 @@ class MyThread(Thread):
 
             # Runs the snake cycle
             if rainbow == 2:
-                snake(a)
+                snake(a, color)
                 a+=1
             if a == 122:
                 rainbow +=1
-                snake(b)
+                snake(b, color)
                 b += 1
             if b == 563:
                 a = 0
-                snake(c)
+                snake(c, color)
                 c -= 1
             if c == 303:
                 b = 457
-                snake(d)
+                snake(d, color)
                 d += 1
             if d == 669:
                 c = 318
-                snake(e)
+                snake(e, color)
                 e += 1
             if e == 152:
                 d = 563
-                snake(f)
+                snake(f, color)
                 f += 1
             if f == 775:
                 e = 137
-                snake(g)
+                snake(g, color)
                 g -= 1
             if g == 273:
                 f = 669
-                snake(h)
+                snake(h, color)
                 h -= 1
             if h == 168:
-                g = 289
+                g = 288
                 h = 274
                 rainbow = 0
 

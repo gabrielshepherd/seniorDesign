@@ -7,5 +7,5 @@ The LED's need to be connected to a common ground with the Raspberry Pi. There a
 This file holds all of the functions to light up the LED's.  We are using an [Adafruit Industry library](https://github.com/adafruit/Adafruit_CircuitPython_NeoPixel) to change the color, brightness, and index of each LED. We also are using their [wheel function](https://github.com/adafruit/Adafruit_CircuitPython_NeoPixel/blob/master/examples/neopixel_rpi_simpletest.py) to create a rainbow effect of the LED's. Licence is found in the comments. You can find the installation for dependancy's at this webpage: https://circuitpython.readthedocs.io/projects/neopixel/en/latest/
 
 #### led_animation.py
-This file was found from [Raspberry Pi Tutorials, "Connect and Control WS2812 RGB LED Strips via Raspberry Pi."](https://tutorials-raspberrypi.com/connect-control-raspberry-pi-ws2812-rgb-led-strips/). Used to explore different animations.
+This file was found from [Raspberry Pi Tutorials, "Connect and Control WS2812 RGB LED Strips via Raspberry Pi."](https://tutorials-raspberrypi.com/connect-control-raspberry-pi-ws2812-rgb-led-strips/) Used to explore different animations.
 

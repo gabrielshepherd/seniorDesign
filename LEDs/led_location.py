@@ -66,8 +66,11 @@ def rainbow_cycle(wait, j):
     # time.sleep(wait)
 
 
-def snake(start):
-    pixels[start] = COLOR
+def snake(start, color):
+    if color == 1:
+        pixels[start] = (255,255,0) #Yellow
+    if color == 2:
+        pixels[start] = (0,255,0) #Green
     pixels.show()
     time.sleep(0.001)
 
@@ -88,7 +91,7 @@ codes = {
     'voltreg': [(528, 541), (586, 598), (350, 365), (492, 504), (622, 635), (427, 442)],#a23, b23
     'ttl': [(0, 12), (553, 563), (319, 335),(11, 22), (542, 553), (553, 563), (563, 574), (304, 320)], #a11, a12, a21
     'transistors': [(49, 61), (504, 516), (61, 73), (492, 504), (73, 85), (480, 491), (622, 635), (635, 647)], #b12, b13, c11, b23, c21
-    'resistors': [(274, 304), (563, 598), (365, 380), (599, 623), (246, 274), (692, 705), (221, 234), (412, 427)],
+    'resistors': [(274, 304), (563, 598), (365, 380), (716,740), (214, 271),(692, 705), (189, 201), (396, 412)],
     
     # The first pair of numbers is the top of the section. Second pair is the bottom. Third pair 
     # is the left or right side depending on if it's in section XX1 or XX3.
