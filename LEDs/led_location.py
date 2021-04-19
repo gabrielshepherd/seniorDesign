@@ -50,14 +50,14 @@ def wheel(pos):
  
 # Rainbow function for the idle mode
 def rainbow_cycle(wait, j):
-    # pixels.fill(wheel(j & 255))
-    # pixels.show()
-    # time.sleep(wait)
 
+    # All LED's will be the same color
     for i in range(num_pixels):
         pixels[i] = wheel(j & 255)
     pixels.show()
     time.sleep(wait)
+
+    # Each LED is a different color
     # for i in range(335):
     #     pixel_index = (i * 256 // num_pixels) + j
     #     pixels[i] = wheel(pixel_index & 255)
@@ -65,37 +65,14 @@ def rainbow_cycle(wait, j):
     # pixels.show()
     # time.sleep(wait)
 
-#Broken snake function
-def old_snake():
-    pixels.fill((0,0,0))
-    pixels.show()
-    for i in range(122):
-        pixels[i] = (0,51,102)
-        pixels.show()
-    for j in range(457,565):
-        pixels[j] = (0,51,102)
-        pixels.show()
-    for k in range(318,303,-1):
-        pixels[k] = (0,51,102)
-        pixels.show()
-    for l in range(566,671):
-        pixels[l] = (0,51,102)
-        pixels.show()
-    for m in range(137,152):
-        pixels[m] = (0,51,102)
-        pixels.show()
-    for n in range(672,777):
-        pixels[n] = (0,51,102)
-        pixels.show()
-    for p in range(289,274,-1):
-        pixels[p] = (0,51,102)
-        pixels.show()
-    for q in range(274,168,-1):
-        pixels[q] = (0,51,102)
-        pixels.show()
 
 def snake(start):
     pixels[start] = COLOR
+    pixels.show()
+    time.sleep(0.001)
+
+def rainbow_snake(start, color):
+    pixels[start] = wheel(color & 255 )
     pixels.show()
     time.sleep(0.001)
 
@@ -111,7 +88,6 @@ codes = {
     'voltreg': [(528, 541), (586, 598), (350, 365), (492, 504), (622, 635), (427, 442)],#a23, b23
     'ttl': [(0, 12), (553, 563), (319, 335),(11, 22), (542, 553), (553, 563), (563, 574), (304, 320)], #a11, a12, a21
     'transistors': [(49, 61), (504, 516), (61, 73), (492, 504), (73, 85), (480, 491), (622, 635), (635, 647)], #b12, b13, c11, b23, c21
-    #'resistors': [(563, 574),(574, 586),(586, 598),(289, 304),(365,380),(274, 289),(262, 274), (250, 262), (238, 250), (599, 611), (258, 270), (610, 623), (246, 258), (692, 705), (221, 234), (412, 427)],
     'resistors': [(274, 304), (563, 598), (365, 380), (599, 623), (246, 274), (692, 705), (221, 234), (412, 427)],
     
     # The first pair of numbers is the top of the section. Second pair is the bottom. Third pair 

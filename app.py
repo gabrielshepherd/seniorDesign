@@ -1,5 +1,5 @@
 from flask import Flask, request
-from LEDs.led_location import rainbow_cycle, snake, clear, part_location, wheel
+from LEDs.led_location import rainbow_cycle, snake, clear, part_location
 from threading import Thread, Event
 import time
 
@@ -24,16 +24,6 @@ class MyThread(Thread):
         # Do the animation
         clear()
         j = 0 
-        
-        # a = 0,122,1
-        # b = 457,565,1
-        # c = 318,303,-1
-        # d = 566,671,1
-        # e = 137,152,1
-        # f = 672,777,1
-        # g = 289,274,-1
-        # h = 274,168,-1
-
         a = 0
         b = 457
         c = 318
@@ -49,7 +39,7 @@ class MyThread(Thread):
         while not self.stopped.wait(0.001):
 
             # Runs the rainbow cycle
-            if rainbow < 1:
+            if rainbow < 2:
                 rainbow_cycle(0.02, j)
                 if j == 255:
                     j = 0
@@ -58,11 +48,12 @@ class MyThread(Thread):
                 else:
                     j += 1
 
-            if clears == 1:
+            if clears == 2:
                 clear()
                 clears = 0
 
-            if rainbow == 1:
+            # Runs the snake cycle
+            if rainbow == 2:
                 snake(a)
                 a+=1
             if a == 122:
@@ -98,10 +89,11 @@ class MyThread(Thread):
                 h = 274
                 rainbow = 0
 
+ 
 
 
+# Reads from the GUI
 def function_call(location):
-    # Andrew, this is where your stuff should go
     clear()
     part_location(location)
     print(location)
