@@ -30,7 +30,7 @@ class MyThread(Thread):
         d = 563
         e = 137
         f = 669
-        g = 289
+        g = 288
         h = 274
         clears = 0
 
