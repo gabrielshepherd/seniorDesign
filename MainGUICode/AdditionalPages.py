@@ -225,7 +225,7 @@ class Resistors(tkinter.Frame):
         self.backButton.grid(row=10, column=0, pady=20)
 
         self.Quarter= tkinter.Button(self, text="1/4 Watt", width=30,font = MainFontStyle,relief = "ridge", 
-                        height=2, command=lambda: [master.switch_frame(QuarterWResistors)])
+                        height=2, command=lambda: [master.switch_frame(QuarterWResistors), output.data_transmit("quarterwatt")])
         self.Quarter.grid(row=1, column=0, pady=20)
 
         self.Half= tkinter.Button(self, text="1/2 Watt", width=30,font = MainFontStyle,relief = "ridge", 
@@ -245,7 +245,7 @@ class Resistors(tkinter.Frame):
 
             #Going to Bulk Resistors page with 3 Buttons
         self.Bulk= tkinter.Button(self, text="Bulk", width=30,font = MainFontStyle,relief = "ridge", 
-                        height=2, command=lambda: [master.switch_frame(BulkResistors)])
+                        height=2, command=lambda: [master.switch_frame(BulkResistors), output.data_transmit("bulk")])
         self.Bulk.grid(row=3, column=0, pady=20, columnspan=2)
 
 
