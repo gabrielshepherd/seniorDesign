@@ -33,18 +33,9 @@ class MyThread(Thread):
         g = 288
         h = 274
 
-        new_a = 0
-        new_b = 457
-        new_c = 318
-        new_d = 563
-        new_e = 137
-        new_f = 669
-        new_g = 288
-        new_h = 274
-
         count = 0
         clears = 0
-        color = 1
+        color = 'green'
 
        # variable for rainbow cycle
         rainbow = 0
@@ -100,10 +91,13 @@ class MyThread(Thread):
             if h == 168:
                 g = 288
                 h = 274
-                color += 1
                 count += 1
+            if count == 1:
+                rainbow = 2
+                color = 'yellow'
             if count == 2:
                 rainbow = 0
+                color = 'green'
                 
 
             

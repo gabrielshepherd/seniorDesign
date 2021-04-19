@@ -67,9 +67,9 @@ def rainbow_cycle(wait, j):
 
 
 def snake(start, color):
-    if color == 1:
+    if color == 'yellow':
         pixels[start] = (255,255,0) #Yellow
-    if color == 2:
+    if color == 'green':
         pixels[start] = (0,255,0) #Green
     pixels.show()
     time.sleep(0.001)
