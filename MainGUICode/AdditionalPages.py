@@ -219,7 +219,7 @@ class Resistors(tkinter.Frame):
         tkinter.Frame.configure(self,bg="white")
 
         #Setting Up Labels
-        tkinter.Label(self, width = 50, bg="#F6B022",text="Resistors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=2, pady = 20)
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Resistors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=2)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
 
         self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = MainFontStyle,
@@ -280,7 +280,7 @@ class QuarterWResistors(tkinter.Frame):
         tkinter.Frame.configure(self,bg="white")
 
         #Setting Up Labels
-        tkinter.Label(self, width = 50, bg="#F6B022",text="1/4 Watt Resistors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        tkinter.Label(self, width = 50, bg="#F6B022",text="1/4 Watt Resistors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
 
 
@@ -328,7 +328,7 @@ class BulkResistors(tkinter.Frame):
         tkinter.Frame.configure(self,bg="white")
 
         #Setting Up Labels
-        tkinter.Label(self, width = 50, bg="#F6B022",text="Bulk Resistors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Bulk Resistors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
 
 
@@ -380,7 +380,7 @@ class Inductors(tkinter.Frame):
         tkinter.Frame.configure(self,bg="white")
 
         #Setting Up Labels
-        tkinter.Label(self, width = 50, bg="#F6B022",text="Inductors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Inductors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =15)
 
 
@@ -427,7 +427,7 @@ class Capacitors(tkinter.Frame):
         tkinter.Frame.configure(self,bg="white")
 
         #Setting Up Labels
-        tkinter.Label(self, width = 50, bg="#F6B022",text="Capacitors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Capacitors", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
 
 
@@ -479,7 +479,7 @@ class LogicComponents(tkinter.Frame):
         tkinter.Frame.configure(self,bg="white")
 
         #Setting Up Labels
-        tkinter.Label(self, width = 50, bg="#F6B022",text="Logic", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Logic", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
 
 
@@ -531,7 +531,7 @@ class OtherComponents(tkinter.Frame):
         tkinter.Frame.configure(self,bg="white")
 
         #Setting Up Labels
-        tkinter.Label(self, width = 50, bg="#F6B022",text="Other Components", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0, pady = 20)
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Other Components", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
 
 

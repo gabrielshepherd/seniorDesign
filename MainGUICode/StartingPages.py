@@ -6,6 +6,8 @@ import tkinter.font as tkFont
 #Get this installed on Pi
 #from PIL import ImageTk, Image
 import AdditionalPages as AddP
+# For sending data to other pi
+import send as output
 
 #img = ImageTk.PhotoImage(Image.open("NDSU_Logo.png"))
 #-----------------------------Startup and Initialization----------------------------
@@ -39,22 +41,6 @@ class StartPage(tkinter.Frame):
         self.create_greenspace(1,0)
         self.create_greenspace(1,4)
         
-        #--------Making Images-------------------
-        #img1 = Image.open(r"C:\NDSU_Logo2.png")
-        #img1 = img1.resize((100,50), Image.ANTIALIAS)
-        #Logo1 = ImageTk.PhotoImage(img1)
-        #Logo1_label = tkinter.Label(self,image=Logo1, bg="white")
-        #Logo1_label.image = Logo1
-        #Logo1_label.place(x=0, y =10)
-
-        #img2 = Image.open(r"C:\NDSU_Logo.png")
-        #img2 = img2.resize((100,50), Image.ANTIALIAS)
-        #Logo2 = ImageTk.PhotoImage(img2)
-        #Logo2_label = tkinter.Label(self,image=Logo2, bg="white")
-        #Logo2_label.image = Logo2
-        #Logo2_label.place(x=670, y =10)
-        
- 
         #Making the Title and the admin button
         TopLabelfontStyle = tkFont.Font(family = "Lucida Grande", size =25)
         TopLabel = tkinter.Label(self, height=2, width= 50, text="Parts Inventory Display", bg="#F6B022", borderwidth=2, relief="solid", font = TopLabelfontStyle )
@@ -89,7 +75,7 @@ class StartPage(tkinter.Frame):
         self.adminButton.grid(row=5, column=2)
 
         self.AnimationsButton = tkinter.Button(self, width=20, height=2, text="Animations",relief = "ridge", font = SecondfontStyle,
-                                        command=lambda: master.switch_frame(Admin))
+                                        command=lambda: master.switch_frame(Animations))
         self.AnimationsButton.grid(row=5, column=3)
         
 
@@ -103,7 +89,21 @@ class StartPage(tkinter.Frame):
     def create_greenspace(self,rowNum,colNum):
         canvas = tkinter.Canvas(self, width=120, height=400, bg ="green", borderwidth=2, relief="solid")# bg="#0A5640")
         canvas.grid(row=rowNum, column=colNum,rowspan=10, sticky="N"+"S" + "E" + "W")
+    #--------Making Images-------------------
+        #img1 = Image.open(r"C:\NDSU_Logo2.png")
+        #img1 = img1.resize((100,50), Image.ANTIALIAS)
+        #Logo1 = ImageTk.PhotoImage(img1)
+        #Logo1_label = tkinter.Label(self,image=Logo1, bg="white")
+        #Logo1_label.image = Logo1
+        #Logo1_label.place(x=0, y =10)
 
+        #img2 = Image.open(r"C:\NDSU_Logo.png")
+        #img2 = img2.resize((100,50), Image.ANTIALIAS)
+        #Logo2 = ImageTk.PhotoImage(img2)
+        #Logo2_label = tkinter.Label(self,image=Logo2, bg="white")
+        #Logo2_label.image = Logo2
+        #Logo2_label.place(x=670, y =10)
+        
 #------------------------------------------------------------------------------------
 
 class Admin(tkinter.Frame):
@@ -129,15 +129,15 @@ class Admin(tkinter.Frame):
         ]
 
         # place to display search value
-        e = tkinter.Entry(canvas, relief = "solid")
-        e.grid(row=0, column=0, columnspan = 3,  ipady=5, pady = 5)
+        e = tkinter.Entry(canvas, relief = "solid", width = 50)
+        e.grid(row=0, column=0, columnspan = 3,  ipady=10, pady = 5)
 
         # create buttons using `keys`
         for y, row in enumerate(keys, 1):
             for x, key in enumerate(row):
                 # `lambda` inside `for` has to use `val=key:code(val)` 
                 # instead of direct `code(key)`
-                b = tkinter.Button(canvas, text=key, relief = "ridge", width = 10, height =3, command=lambda val=key:self.code(master, val, e))
+                b = tkinter.Button(canvas, text=key, relief = "ridge",font=('Helvetica', 18), width = 10, height =3, command=lambda val=key:self.code(master, val, e))
                 b.grid(row=y, column=x, ipadx=10)
     
     #------------------------Code to Make the Keypad work---------------------------------
@@ -180,14 +180,16 @@ class AdminONLY(tkinter.Frame):
         self.master = master
         tkinter.Frame.__init__(self, master)
         tkinter.Frame.configure(self,bg="white")
-        tkinter.Label(self, width = 45, borderwidth=2, relief="solid", bg="#F6B022",text="Admin ONLY", font=('Helvetica', 18, "bold")).grid(row=0, columnspan=3, pady=4)
+        #Setting Up Labels
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Admin ONLY", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
+        MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
 
-        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge",
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = MainFontStyle,
             command=lambda: master.switch_frame(StartPage))
-        self.homeButton.grid(row=2, column=1, sticky="W"+"E")
+        self.homeButton.grid(row=10, column=0, pady=10)
 
-        L1 = tkinter.Label(self,text = "You are Admin", bg = "white")
-        L1.grid(row=1, column = 1)
+        L1 = tkinter.Label(self,text = "You are Admin", bg = "white", font = MainFontStyle)
+        L1.grid(row=1, column = 0)
 
 class ProjDesc(tkinter.Frame):
 
@@ -197,22 +199,64 @@ class ProjDesc(tkinter.Frame):
         tkinter.Frame.configure(self,bg="white")
 
         #Setting Up Labels
-        tkinter.Label(self, width = 50, bg="#F6B022",text="Project Description", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
+        tkinter.Label(self, width = 50, bg="#F6B022",text="SD2017 - Parts Inventory Display Team - Project Description", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
 
+        T = tkinter.Text(self, height = 15, width = 50, font=MainFontStyle)
+        T.grid(row = 1, column = 0)
+        quote = """This project was created by:
+Dylan Carlson
+Andrew Elliott
+Gabe Shepherd
+Evan Wheeler
+William 
+        
+This project is intended to help those familiar or unfamiliar with the parts inventory
+to be able to quickly and easily find the parts that they need.
+        """
+        T.insert(tkinter.END, quote)
 
         self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = MainFontStyle,
             command=lambda: master.switch_frame(StartPage))
         self.homeButton.grid(row=10, column=0, pady=10)
 
-        
+class Animations(tkinter.Frame):
+
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg="white")
+
+        #Setting Up Labels
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Animations", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
+        MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
+
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 30, height=2, font = MainFontStyle,
+            command=lambda: master.switch_frame(StartPage))
+        self.homeButton.grid(row=10, column=0, pady=10)  
+
+        self.animation1 = tkinter.Button(self, text="Animation 1", relief = "ridge", width = 20, height=2, font = MainFontStyle,
+            command=lambda: [master.switch_frame(StartPage), output.data_transmit("animation1")])
+        self.animation1.grid(row=1, column=0, pady=10) 
+
+        self.animation2 = tkinter.Button(self, text="Animation 2", relief = "ridge", width = 20, height=2, font = MainFontStyle,
+            command=lambda: [master.switch_frame(StartPage), output.data_transmit("animation2")])
+        self.animation2.grid(row=2, column=0, pady=10)
+
+        self.animation3 = tkinter.Button(self, text="Animation 3", relief = "ridge", width = 20, height=2, font = MainFontStyle,
+            command=lambda: [master.switch_frame(StartPage), output.data_transmit("animation3")])
+        self.animation3.grid(row=3, column=0, pady=10)
+
+        self.animation4 = tkinter.Button(self, text="Animation 4", relief = "ridge", width = 20, height=2, font = MainFontStyle,
+            command=lambda: [master.switch_frame(StartPage), output.data_transmit("animation4")])
+        self.animation4.grid(row=4, column=0, pady=10) 
+
+
+
 #---------- Start of Main Function---------------
 
 # create global variable for pin
 pin = '' # empty string
+
 app = Application()
-
 app.mainloop()
-
-
-  
