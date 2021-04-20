@@ -14,7 +14,7 @@ import tkinter as tkinter
 import tkinter.font as tkFont
 from tkinter import messagebox
 # Using the main file that has the main structure of the GUI.
-import MainGUI_WithKeypadEdit as Main
+import StartingPages as Main
 # Needed for parsing excel spreadsheet
 import excel as spreadsheet
 # For sending data to other pi
@@ -134,7 +134,6 @@ class RecentSearches(tkinter.Frame):
         #    print(RecentlySearchedName[count])
         #   print(RecentlySearchedLEDLocation[count])
             
-
 class QuickSearch(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master

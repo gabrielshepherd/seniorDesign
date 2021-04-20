@@ -37,7 +37,7 @@ class StartPage(tkinter.Frame):
         master.title('Parts Inventory Display')
     
         self.create_greenspace(1,0)
-        self.create_greenspace(1,2)
+        self.create_greenspace(1,4)
         
         #--------Making Images-------------------
         #img1 = Image.open(r"C:\NDSU_Logo2.png")
@@ -56,29 +56,42 @@ class StartPage(tkinter.Frame):
         
  
         #Making the Title and the admin button
-        L1fontStyle = tkFont.Font(family = "Lucida Grande", size =25)
-        L1 = tkinter.Label(self, height=2, width= 35, text="Parts Inventory Display", bg="#F6B022", borderwidth=2, relief="solid", font = L1fontStyle )
-        L1.grid( row=0, column=1)
-        self.adminButton = tkinter.Button(self, width=20, height=2, text="Admin",relief = "ridge",
-                                        command=lambda: master.switch_frame(Admin))
-        self.adminButton.grid(row=5, column=1)
+        TopLabelfontStyle = tkFont.Font(family = "Lucida Grande", size =25)
+        TopLabel = tkinter.Label(self, height=2, width= 50, text="Parts Inventory Display", bg="#F6B022", borderwidth=2, relief="solid", font = TopLabelfontStyle )
+        TopLabel.grid( row=0, column=0, columnspan = 5)
 
-        L2fontStyle = tkFont.Font(family = "Lucida Grande", size =20)
-        L2 = tkinter.Label(self, width=82, bg = "#F6B022",borderwidth=2, relief="solid" )
-        L2.grid( row=8, columnspan = 3)
+        BottomLabel = tkinter.Label(self, width=90, bg = "#F6B022",borderwidth=2, relief="solid" )
+        BottomLabel.grid( row=8,column=0, columnspan = 5, pady=2)
+
+        FirstfontStyle = tkFont.Font(family = "Lucida Grande", size =20)
+        SecondfontStyle = tkFont.Font(family = "Lucida Grande", size =12)
+        
 
         #------------------------ Creating buttons -------------------------
-        self.QuickSearch = tkinter.Button(self, text="Quick Search", font = L2fontStyle,  width=30, relief = "ridge", #bg = "#202124",
+        self.QuickSearch = tkinter.Button(self, text="Quick Search", font = FirstfontStyle,  width=30, relief = "ridge", #bg = "#202124",
                            height=3, command=lambda: master.switch_frame(AddP.QuickSearch))
-        self.QuickSearch.grid(row=2, column=1, pady=2)
+        self.QuickSearch.grid(row=2, column=1, pady=2, columnspan=3)
 
-        self.SpecifiedSearch = tkinter.Button(self, width=30, height=3, text="Specified Search",font = L2fontStyle,relief = "ridge",
+        self.SpecifiedSearch = tkinter.Button(self, width=30, height=3, text="Specified Search",font = FirstfontStyle,relief = "ridge",
                                         command=lambda: master.switch_frame(AddP.SpecificSearch))
-        self.SpecifiedSearch.grid(row=3,column=1, pady=2)
+        self.SpecifiedSearch.grid(row=3,column=1, pady=2, columnspan=3)
 
-        self.RecentButton = tkinter.Button(self, width=30, height=3, text="Recent Searches",font = L2fontStyle,relief = "ridge",
+        self.RecentButton = tkinter.Button(self, width=30, height=3, text="Recent Searches",font = FirstfontStyle,relief = "ridge",
                                         command=lambda: master.switch_frame(AddP.RecentSearches))
-        self.RecentButton.grid(row=4, column=1, pady=2)
+        self.RecentButton.grid(row=4, column=1, pady=2, columnspan=3)
+
+        self.ProjDesc = tkinter.Button(self, width=20, height=2, text="Project Description",relief = "ridge",font = SecondfontStyle,
+                                        command=lambda: master.switch_frame(ProjDesc))
+        self.ProjDesc.grid(row=5, column=1)
+
+        self.adminButton = tkinter.Button(self, width=20, height=2, text="Admin",relief = "ridge", font = SecondfontStyle,
+                                        command=lambda: master.switch_frame(Admin))
+        self.adminButton.grid(row=5, column=2)
+
+        self.AnimationsButton = tkinter.Button(self, width=20, height=2, text="Animations",relief = "ridge", font = SecondfontStyle,
+                                        command=lambda: master.switch_frame(Admin))
+        self.AnimationsButton.grid(row=5, column=3)
+        
 
         #-------------------------------------------------------------------
  
@@ -88,8 +101,8 @@ class StartPage(tkinter.Frame):
 
     #will be picture in future
     def create_greenspace(self,rowNum,colNum):
-        canvas = tkinter.Canvas(self, width=120, height=430, bg ="green", borderwidth=2, relief="solid")# bg="#0A5640")
-        canvas.grid(row=rowNum, column=colNum,rowspan=10)
+        canvas = tkinter.Canvas(self, width=120, height=400, bg ="green", borderwidth=2, relief="solid")# bg="#0A5640")
+        canvas.grid(row=rowNum, column=colNum,rowspan=10, sticky="N"+"S" + "E" + "W")
 
 #------------------------------------------------------------------------------------
 
@@ -176,6 +189,23 @@ class AdminONLY(tkinter.Frame):
         L1 = tkinter.Label(self,text = "You are Admin", bg = "white")
         L1.grid(row=1, column = 1)
 
+class ProjDesc(tkinter.Frame):
+
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg="white")
+
+        #Setting Up Labels
+        tkinter.Label(self, width = 50, bg="#F6B022",text="Project Description", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
+        MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
+
+
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = MainFontStyle,
+            command=lambda: master.switch_frame(Main.StartPage))
+        self.homeButton.grid(row=10, column=0, pady=10)
+
+        
 #---------- Start of Main Function---------------
 
 # create global variable for pin
