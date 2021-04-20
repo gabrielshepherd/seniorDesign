@@ -202,7 +202,7 @@ class ProjDesc(tkinter.Frame):
 
 
         self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 20, height=2, font = MainFontStyle,
-            command=lambda: master.switch_frame(Main.StartPage))
+            command=lambda: master.switch_frame(StartPage))
         self.homeButton.grid(row=10, column=0, pady=10)
 
         

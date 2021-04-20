@@ -53,15 +53,15 @@ class SpecificSearch(tkinter.Frame):
         self.L1 = tkinter.Label(self, text = "Enter part here:", bg = "white", font=('Helvetica', 18)).grid(row = 1, column = 1, pady = 10)
 
         value = tkinter.StringVar()
-        e = tkinter.Entry(self, width=40, relief="solid", textvariable=value).grid(row=2, column =1, pady = 20, ipady = 5)
+        e = tkinter.Entry(self, width=40, relief="solid", textvariable=value).grid(row=2, column =1, pady = 40, ipady = 10)
 
         self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 30, height=3,
             font = MainFontStyle, command=lambda: master.switch_frame(Main.StartPage))
-        self.homeButton.grid(row=4, column=1, sticky="W"+"E")
+        self.homeButton.grid(row=4, column=1, pady = 40, sticky="W"+"E")
 
         self.searchButton = tkinter.Button(self, text = "Search", relief = "ridge",width = 30, height=3,
             font = MainFontStyle, command=lambda: [print(value.get()) , spreadsheet.search(value.get()), searchButton_Click()])
-        self.searchButton.grid(row=3, column = 1, pady = 20, sticky="W"+"E")
+        self.searchButton.grid(row=3, column = 1, pady = 40, sticky="W"+"E")
 
         def searchButton_Click():
             returnedString = spreadsheet.search(value.get())
