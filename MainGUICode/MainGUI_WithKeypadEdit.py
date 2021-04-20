@@ -144,7 +144,7 @@ class Admin(tkinter.Frame):
         elif value == 'Enter':
             # check pin
 
-            if pin == "0000":
+            if pin == "4249":
                 print("PIN OK")
                 master.switch_frame(AdminONLY)
             else:

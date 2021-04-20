@@ -18,7 +18,7 @@ def search(input):
       locationdata = {}
 
       #read a row
-      print (first_sheet.row_values(0))
+     # print (first_sheet.row_values(0))
 
 
       # Value of 1st row and 1st column
@@ -228,3 +228,4 @@ def search(input):
       #print (locationdata[1:3])
    except:
       messagebox.showerror("Error", "Item not found")
+      return "BAD"

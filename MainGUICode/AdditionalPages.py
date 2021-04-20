@@ -16,7 +16,7 @@ from tkinter import messagebox
 # Using the main file that has the main structure of the GUI.
 import MainGUI_WithKeypadEdit as Main
 # Needed for parsing excel spreadsheet
-import excel as search
+import excel as spreadsheet
 # For sending data to other pi
 import send as output
 
@@ -60,8 +60,15 @@ class SpecificSearch(tkinter.Frame):
         self.homeButton.grid(row=4, column=1, sticky="W"+"E")
 
         self.searchButton = tkinter.Button(self, text = "Search", relief = "ridge",width = 30, height=3,
-            font = MainFontStyle, command=lambda: [print(value.get()) , search.search(value.get())])
+            font = MainFontStyle, command=lambda: [print(value.get()) , spreadsheet.search(value.get()), searchButton_Click()])
         self.searchButton.grid(row=3, column = 1, pady = 20, sticky="W"+"E")
+
+        def searchButton_Click():
+            returnedString = spreadsheet.search(value.get())
+            #If the item is not found, excel.py will return BAD.
+            #So if the string is bad, don't add it to recently searched.
+            if returnedString != "BAD":
+                addButtonToList(value.get(), returnedString)
         
         #---These lines are for the NDSU Logo at bottom-----
         #img2 = Image.open(r"C:\NDSU_Logo2.png")
@@ -119,7 +126,7 @@ class RecentSearches(tkinter.Frame):
             b7 = tkinter.Button(self, text = RecentlySearchedName[6], relief = "ridge", font = MainFontStyle,
             command=lambda: output.data_transmit(RecentlySearchedLEDLocation[6])).grid(row=7, column = 1, sticky="W"+"E", pady = 3)
         except:
-            print("") #Do nothing essentially
+            messagebox.showerror("Error", "Item not found")
 
         #for count in range(len(RecentlySearchedName)):
         #    buttons[count] = tkinter.Button(self, text = RecentlySearchedName[count], relief = "ridge", font = MainFontStyle,
