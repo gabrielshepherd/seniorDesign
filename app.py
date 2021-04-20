@@ -92,13 +92,7 @@ class MyThread(Thread):
                 g = 288
                 h = 274
                 rainbow = 0
-               
-          
-                
-
             
-
- 
 
 
 # Reads from the GUI
