@@ -82,7 +82,7 @@ def search(input):
 
    #not sure if dinput will work in order to test input strings
    print("Here is dInput: ")
-   dinput = difflib.get_close_matches(input , descriptdata, 2, 0.5)
+   dinput = difflib.get_close_matches(input , descriptdata, 1, 0.5)
    print(dinput)
 
    #loop to parse entire sheet
