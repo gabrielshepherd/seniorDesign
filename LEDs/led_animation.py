@@ -44,7 +44,9 @@ def wheel(pos):
         b = int(255 - pos * 3)
     return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
 
-
+def clear():
+    pixels.fill(CLEAR)
+    
 def theater_mode():
     for j in range(10):
         for q in range(3):
@@ -73,4 +75,5 @@ def theater_mode():
 
 # def random_box():
 while True:
+    clear()
     theater_mode()
