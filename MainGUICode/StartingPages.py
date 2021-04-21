@@ -46,7 +46,7 @@ class StartPage(tkinter.Frame):
         TopLabel = tkinter.Label(self, height=2, width= 50, text="Parts Inventory Display", bg="#F6B022", borderwidth=2, relief="solid", font = TopLabelfontStyle )
         TopLabel.grid( row=0, column=0, columnspan = 5)
 
-        BottomLabel = tkinter.Label(self, width=90, bg = "#F6B022",borderwidth=2, relief="solid" )
+        BottomLabel = tkinter.Label(self, width=84, bg = "#F6B022",borderwidth=2, relief="solid" )
         BottomLabel.grid( row=8,column=0, columnspan = 5, pady=2)
 
         FirstfontStyle = tkFont.Font(family = "Lucida Grande", size =20)
@@ -137,7 +137,7 @@ class Admin(tkinter.Frame):
             for x, key in enumerate(row):
                 # `lambda` inside `for` has to use `val=key:code(val)` 
                 # instead of direct `code(key)`
-                b = tkinter.Button(canvas, text=key, relief = "ridge",font=('Helvetica', 18), width = 10, height =3, command=lambda val=key:self.code(master, val, e))
+                b = tkinter.Button(canvas, text=key, relief = "ridge",font=('Helvetica', 14), width = 10, height =3, command=lambda val=key:self.code(master, val, e))
                 b.grid(row=y, column=x, ipadx=10)
     
     #------------------------Code to Make the Keypad work---------------------------------
@@ -202,7 +202,7 @@ class ProjDesc(tkinter.Frame):
         tkinter.Label(self, width = 50, bg="#F6B022",text="SD2017 - Parts Inventory Display Team - Project Description", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
 
-        T = tkinter.Text(self, height = 15, width = 50, font=MainFontStyle)
+        T = tkinter.Text(self, height = 13, width = 50, font=MainFontStyle)
         T.grid(row = 1, column = 0)
         quote = """This project was created by:
 Dylan Carlson
