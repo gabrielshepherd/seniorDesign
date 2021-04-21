@@ -82,6 +82,7 @@ def rainbow_snake(start, color):
 #Turns off all pixels 
 def clear():
     pixels.fill(CLEAR)
+    pixels.show()
     
 
 # Dictionary of lists with the key being the location ID with its correspoding LED addresses.
