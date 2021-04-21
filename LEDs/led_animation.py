@@ -50,7 +50,7 @@ def theater_mode():
         for q in range(3):
             for i in range(0, num_pixels, 3):
                 pixels[i] = wheel(i%255)
-            
+            pixels.show()
             time.sleep(0.02)
             for i in range(0, num_pixels, 3):
                 pixels[i] = wheel(i%255)
