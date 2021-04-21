@@ -72,5 +72,5 @@ def theater_mode():
 
 
 # def random_box():
-while true:
+while True:
     theater_mode()
