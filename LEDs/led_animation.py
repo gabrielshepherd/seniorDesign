@@ -76,4 +76,5 @@ def theater_mode():
 
 # def random_box():
 clear()
+theater_mode()
 #     theater_mode()
