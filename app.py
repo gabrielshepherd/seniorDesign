@@ -1,5 +1,6 @@
 from flask import Flask, request
 from LEDs.led_location import rainbow_cycle, snake, clear, part_location
+from LEDs.led_animation import theater_mode
 from threading import Thread, Event
 import time
 
@@ -98,6 +99,12 @@ class MyThread(Thread):
 # Reads from the GUI
 def function_call(location):
     clear()
+    if location == 'animation1':
+        theater_mode()
+    # if location == 'animation2':
+    # if location == 'animation3':
+    # if locaiton == 'animation4':
+        
     part_location(location)
     print(location)
     return
