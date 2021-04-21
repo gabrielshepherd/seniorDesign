@@ -152,7 +152,6 @@ def part_location(code):
 
 # Use below for debugging purposes
 #while True:
-
 #     part_location('A11')
 #     time.sleep(1)
 #     clear()

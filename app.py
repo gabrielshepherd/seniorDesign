@@ -35,7 +35,7 @@ class MyThread(Thread):
 
         count = 0
         clears = 0
-        color = 'green'
+        color = 'yellow'
 
        # variable for rainbow cycle
         rainbow = 0
