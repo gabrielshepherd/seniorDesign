@@ -50,7 +50,7 @@ def clear():
 
 def theater_mode():
     for j in range(50):
-        for q in range(5):
+        for q in range(2):
             for i in range(0,334, 3):
                 pixels[i+q] = wheel((i+j) & 255)
             pixels.show()
