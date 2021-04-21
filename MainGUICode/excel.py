@@ -27,7 +27,7 @@ def search(input):
       locationdata = {}
 
       #read a row
-      print (first_sheet.row_values(0))
+      #print (first_sheet.row_values(0))
 
 
       # Value of 1st row and 1st column
@@ -44,44 +44,45 @@ def search(input):
             cellE = first_sheet.cell(row, 4) 
             descriptdata[cellE] = {}
             #print(cellE.value)
-            
-            #this is the difflib get closest match statements. Ive taken strings from the quick search buttons to add into here to try and help the user with the searches.
+          
+      #this is the difflib get closest match statements. Ive taken strings from the quick search buttons to add into here to try and help the user with the searches.
 
-            #I need to test how this looks rigt now because if these can get working all I need to do is to take the cellE.data input and before parsing for location send it 
-            #through the get closest match to find an appropriate string from the sheet. Then that string can be sent as the cellE data input to look for location.
-            #Testing from home is hard but these are example strings
-            dResistor = difflib.get_close_matches('Resistor', descriptdata, 5, 0.5)
+      #I need to test how this looks rigt now because if these can get working all I need to do is to take the cellE.data input and before parsing for location send it 
+      #through the get closest match to find an appropriate string from the sheet. Then that string can be sent as the cellE data input to look for location.
+      #Testing from home is hard but these are example strings
+      print(descriptdata) 
+      dResistor = difflib.get_close_matches('Resistor', descriptdata, 5, 0.5)
+      
+      dOpamp = difflib.get_close_matches('Op amp', descriptdata, 5, 0.5)
             
-            dOpamp = difflib.get_close_matches('Op amp', descriptdata, 5, 0.5)
+      dVReg = difflib.get_close_matches('V Reg', descriptdata, 5, 0.5)
             
-            dVReg = difflib.get_close_matches('V Reg', descriptdata, 5, 0.5)
+      dInductor = difflib.get_close_matches('Inductor', descriptdata, 5, 0.5)
             
-            dInductor = difflib.get_close_matches('Inductor', descriptdata, 5, 0.5)
+      dDiode = difflib.get_close_matches('Diode', descriptdata, 5, 0.5)
             
-            dDiode = difflib.get_close_matches('Diode', descriptdata, 5, 0.5)
+      dCapacitor = difflib.get_close_matches('Capacitor', descriptdata, 5, 0.5)
             
-            dCapacitor = difflib.get_close_matches('Capacitor', descriptdata, 5, 0.5)
+      dZener = difflib.get_close_matches('Zener', descriptdata, 5, 0.5)
             
-            dZener = difflib.get_close_matches('Zener', descriptdata, 5, 0.5)
+      dCmosLogic = difflib.get_close_matches('Cmos Logic', descriptdata, 5, 0.5)
             
-            dCmosLogic = difflib.get_close_matches('Cmos Logic', descriptdata, 5, 0.5)
+      dTTLLogic = difflib.get_close_matches('TTL Logic', descriptdata, 5, 0.5)
             
-            dTTLLogic = difflib.get_close_matches('TTL Logic', descriptdata, 5, 0.5)
+      dMultiplexer = difflib.get_close_matches('Multiplexer', descriptdata, 5, 0.5)
             
-            dMultiplexer = difflib.get_close_matches('Multiplexer', descriptdata, 5, 0.5)
+      dFlipFlop = difflib.get_close_matches('Flip-Flop', descriptdata, 5, 0.5)
             
-            dFlipFlop = difflib.get_close_matches('Flip-Flop', descriptdata, 5, 0.5)
+      dCrystal = difflib.get_close_matches('Crystal', descriptdata, 5, 0.5)
             
-            dCrystal = difflib.get_close_matches('Crystal', descriptdata, 5, 0.5)
-            
-            dMicrocontrollers = difflib.get_close_matches('Microcontrollers', descriptdata, 5, 0.5)
+      dMicrocontrollers = difflib.get_close_matches('Microcontrollers', descriptdata, 5, 0.5)
 
-            #not sure if dinput will work in order to test input strings
-            dinput = difflib.get_close_matches(input , descriptdata, 5, 0.5)
-   
+      #not sure if dinput will work in order to test input strings
+      dinput = difflib.get_close_matches(input , descriptdata, 5, 0.5)
+      print("This is dinput: ")
    
       #loop to parse entire sheet
-      for row in range(rows):
+      for row in range(rows): 
          for col in range(cols):
             cellB = first_sheet.cell(row, 1) 
             cellE = first_sheet.cell(row, 4) 
@@ -147,7 +148,7 @@ def search(input):
 
             locationdata[cellB] = {}
             #print(cellB.value)
-
+      
       #0-59 is 1 60-120 is 2 121-180 is 3
 
       #A1x
@@ -324,6 +325,7 @@ def search(input):
       print (location)
 
       #print (locationdata[1:3])
-   except:
+   except Exception as e:
+      print(e.__class__)
       messagebox.showerror("Error", "Item not found")
       return "BAD"
