@@ -100,7 +100,7 @@ def search(input):
          if dinput.__contains__(cellE.value) :
             location = cellB.value
             break
-'''
+
          if dFlipFlop.__contains__(cellE.value) :
             location = cellB.value
             break
@@ -152,7 +152,7 @@ def search(input):
          if cellE.value == dCrystal :
             location = cellB.value
             break
- '''  
+ 
 
          #locationdata[cellB] = {}
          #print(cellB.value)
