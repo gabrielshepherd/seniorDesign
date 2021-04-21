@@ -55,6 +55,7 @@ def theater_mode():
                 pixels[i] = wheel(i & 255)
             pixels.show()
             time.sleep(0.05)
+            clear()
             for i in range(0, num_pixels, 3):
                 pixels[i] = wheel(i & 255)
 # boxes = {
