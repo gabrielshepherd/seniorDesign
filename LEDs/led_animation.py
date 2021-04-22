@@ -1,6 +1,7 @@
 import time
 import board
 import neopixel
+import random
  
 CLEAR = (0, 0, 0)  # clear (or second color)
 
@@ -57,24 +58,49 @@ def theater_mode():
             time.sleep(0.05)
             for i in range(0, 333, 4):
                 pixels[i+q] = (0,0,0)
-# boxes = {
-#     1: [()],
-#     2: [()],
-#     3: [()],
-#     4: [()],
-#     5: [()],
-#     6: [()],
-#     7: [()],
-#     8: [()],
-#     9: [()],
-#     10: [()],
-#     11: [()],
-#     12: [()],
+boxes = {
+    1: [(0,35),(528,563),(319,335),(335,350)],
+    2: [(528,563),(563,598),(305,320),(350,365)],
+    3: [(563,598),(741,774),(289,304),(365,380)],
+    4: [(741,774),(238,274),(274,289),(380,395)],
+    5: [(37,73),(492,528),(335,350),(442,457)],
+    6: [(492,528),(599,635),(350,365),(427,442)],
+    7: [(599,635),(704,741),(365,380),(412,427)],
+    8: [(704,741),(201,238),(380,396),(396,412)],
+    9: [(73,110),(457,491),(442,457),(110,122)],
+    10: [(457,492),(635,669),(427,442),(121,137)],
+    11: [(635,669),(669,705),(412,427),(137,152)],
+    12: [(669,705),(165,201),(396,412),(152,165)],
+}
+def random_color():
+    red = random.randint(0,255)
+    green = random.randint(0,255)
+    blue = random.randint(0,255)
+    return (red,green,blue)
 
-# }
+def random_box():
+    level = 0
+    for number_of_cycles in range(12):
+        number = random.randint(1,12)
+        rangesForCode = boxes[number]
+        
+        for brighter in range(100):
+            level += 0.01
+            for pair in rangesForCode:
+                start, end = pair
+                for x in range(start,end):
+                    pixels[x] = (level*random_color())
+            pixels.show()
+            time.sleep(0.01)
 
+        for dimmer in range(100):
+            level -= 0.01
+            for pair in rangesForCode:
+                start, end = pair
+                for x in range(start,end):
+                    pixels[x] = (level*random_color())
+            pixels.show()
+            time.sleep(0.01)
 
-# # def random_box():
-# clear()
-# theater_mode()
-#     theater_mode()
+        
+random_box()
