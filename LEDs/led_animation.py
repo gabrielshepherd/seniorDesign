@@ -94,7 +94,7 @@ def colors(color, index):
 def random_box():
     for number_of_cycles in range(10):
         number = random.randint(1,12)
-        new_color = random.randint(1,8)
+        new_color = random.randint(1,7)
         rangesForCode = boxes[number]
         for brighter in range(255):
             for pair in rangesForCode:
