@@ -92,7 +92,7 @@ def random_box():
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
-                    pixels[x] = (randColor[0] // level, randColor[1]// level, randColor[2],level)
+                    pixels[x] = (randColor[0] // level, randColor[1] // level, randColor[2] // level)
             pixels.show()
             time.sleep(0.01)
 
@@ -101,7 +101,7 @@ def random_box():
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
-                    pixels[x] = (randColor[0] // level, randColor[1]// level, randColor[2],level)
+                    pixels[x] = (randColor[0] // level, randColor[1] // level, randColor[2] // level)
             pixels.show()
             time.sleep(0.01)
 
