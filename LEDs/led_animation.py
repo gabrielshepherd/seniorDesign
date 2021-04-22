@@ -73,35 +73,43 @@ boxes = {
     11: [(635,669),(669,705),(412,427),(137,152)],
     12: [(669,705),(165,201),(396,412),(152,165)],
 }
-def random_color():
-    r = random.randint(0,255)
-    g = random.randint(0,255)
-    b = random.randint(0,255)
 
-    return r,g,b
+def colors(color, index):
+    if color == 1:                  #red
+        return (index,0,0)
+    if color == 2 :                 #green   
+        return (0,index,0)
+    if color == 3:                  #blue
+        return (0,0,index)
+    if color == 4:                  #yellow
+        return (index,index,0)
+    if color == 5 :                 #purple   
+        return (index,0,index)
+    if color == 6:                  #aqua
+        return (0,index,index)
+    if color == 7:                  #white
+        return (index,index,index)
+
 
 def random_box():
-    level = 100
-    for number_of_cycles in range(12):
+    for number_of_cycles in range(10):
         number = random.randint(1,12)
+        new_color = random.randint(1,8)
         rangesForCode = boxes[number]
-        randColor = random_color()
-        
-        for brighter in range(99):
-            level += 1
+        for brighter in range(255):
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
-                    pixels[x] = (randColor[0] + level, randColor[1] + level, randColor[2] + level)
+                    pixels[x] = colors(new_color, brighter)
             pixels.show()
             time.sleep(0.005)
 
-        for dimmer in range(99):
+        for dimmer in range(255,-1,-1):
             level -= 1
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
-                    pixels[x] = (randColor[0] * level, randColor[1] * level, randColor[2] * level)
+                    pixels[x] = colors(new_color, dimmer)
             pixels.show()
             time.sleep(0.005)
 
