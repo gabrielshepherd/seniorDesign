@@ -94,9 +94,9 @@ def random_box():
                 for x in range(start,end):
                     pixels[x] = (randColor[0] // level, randColor[1] // level, randColor[2] // level)
             pixels.show()
-            time.sleep(0.01)
+            time.sleep(0.005)
 
-        for dimmer in range(100):
+        for dimmer in range(99):
             level += 1
             for pair in rangesForCode:
                 start, end = pair
