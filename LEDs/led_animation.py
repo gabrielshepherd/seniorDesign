@@ -2,6 +2,7 @@ import time
 import board
 import neopixel
 import random
+import array
  
 CLEAR = (0, 0, 0)  # clear (or second color)
 
@@ -73,23 +74,25 @@ boxes = {
     12: [(669,705),(165,201),(396,412),(152,165)],
 }
 def random_color():
-    red = random.randint(0,255)
-    green = random.randint(0,255)
-    blue = random.randint(0,255)
-    return red,green,blue
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
+
+    return r,g,b
 
 def random_box():
     level = 100
     for number_of_cycles in range(12):
         number = random.randint(1,12)
         rangesForCode = boxes[number]
+        randColor = random_color()
         
         for brighter in range(100):
             level -= 1
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
-                    pixels[x] = (random_color() // level)
+                    pixels[x] = (randColor[0] // level, randColor[1]// level, randColor[2],level)
             pixels.show()
             time.sleep(0.01)
 
@@ -98,7 +101,7 @@ def random_box():
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
-                    pixels[x] = (random_color() // level)
+                    pixels[x] = (randColor[0] // level, randColor[1]// level, randColor[2],level)
             pixels.show()
             time.sleep(0.01)
 
