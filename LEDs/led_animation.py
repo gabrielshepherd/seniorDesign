@@ -114,5 +114,10 @@ def random_box():
             time.sleep(0.005)
 
 
+# snake = {
+
+# }
+# def vertical_snake():
+
 
         #random_box()
