@@ -88,11 +88,11 @@ def random_box():
         randColor = random_color()
         
         for brighter in range(99):
-            level += 0.1
+            level += 1
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
-                    pixels[x] = (randColor[0] * level, randColor[1] * level, randColor[2] * level)
+                    pixels[x] = (randColor[0] + level, randColor[1] + level, randColor[2] + level)
             pixels.show()
             time.sleep(0.005)
 
@@ -105,5 +105,4 @@ def random_box():
             pixels.show()
             time.sleep(0.005)
 
-        
-random_box()
+        #random_box()
