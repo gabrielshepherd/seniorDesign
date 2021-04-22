@@ -105,7 +105,6 @@ def random_box():
             time.sleep(0.005)
 
         for dimmer in range(255,-1,-1):
-            level -= 1
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
@@ -114,10 +113,24 @@ def random_box():
             time.sleep(0.005)
 
 
-# snake = {
+snake = [(0,35),(335,395),(201,238),(396,457),(73,110)]
 
-# }
-# def vertical_snake():
+def vertical_snake():
+    light = 0
+    for pair in snake:
+        start, end = pair
+        for x in range(start, end):
+            pixels[x] = (255,0,0)
+            light +=1
+            pixels.show()
+            if light > 8:
+                pixels[x - 8] = (0,0,0)
+            pixels.show()
+
+        
 
 
-        #random_box()
+
+
+
+        
