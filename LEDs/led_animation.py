@@ -79,26 +79,26 @@ def random_color():
     return (red,green,blue)
 
 def random_box():
-    level = 0
+    level = 100
     for number_of_cycles in range(12):
         number = random.randint(1,12)
         rangesForCode = boxes[number]
         
         for brighter in range(100):
-            level += 0.01
+            level -= 1
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
-                    pixels[x] = (level*random_color())
+                    pixels[x] = (random_color() // level)
             pixels.show()
             time.sleep(0.01)
 
         for dimmer in range(100):
-            level -= 0.01
+            level += 1
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
-                    pixels[x] = (level*random_color())
+                    pixels[x] = (random_color() // level)
             pixels.show()
             time.sleep(0.01)
 
