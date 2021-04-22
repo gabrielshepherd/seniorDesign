@@ -87,7 +87,7 @@ def random_box():
         rangesForCode = boxes[number]
         randColor = random_color()
         
-        for brighter in range(100):
+        for brighter in range(99):
             level -= 1
             for pair in rangesForCode:
                 start, end = pair
