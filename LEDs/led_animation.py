@@ -103,7 +103,7 @@ def random_box():
                 for x in range(start,end):
                     pixels[x] = (randColor[0] // level, randColor[1] // level, randColor[2] // level)
             pixels.show()
-            time.sleep(0.01)
+            time.sleep(0.005)
 
         
 random_box()
