@@ -125,17 +125,18 @@ snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,343,1)]
 
 def vertical_snake(stop):
     for i in range(2):
+        new_color = random.randint(1,7)
         light = 0
         light2 = 0
         light3 = 0
         light4 = 210
         light5 = 448
         light6 = 73
-        light7 = 327
+
         for tup in snake:
             start, end, increment = tup
             for x in range(start, end, increment):
-                pixels[x] = (255,0,0)
+                pixels[x] = colors(new_color, 255)
                 light +=1
                 light2 = light + 300
                 light3 = light + 142
