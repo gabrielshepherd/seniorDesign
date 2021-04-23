@@ -47,7 +47,28 @@ class SpecificSearch(tkinter.Frame):
         self.master = master
         tkinter.Frame.__init__(self, master)
         tkinter.Frame.configure(self,bg="white")
-        tkinter.Label(self, width = 50, borderwidth=2, relief="solid", bg="#F6B022",text="Specified Search", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=3, pady=4)
+        tkinter.Label(self, width = 50, borderwidth=2, relief="solid", bg="#F6B022",text="Specific Search", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=3, pady=4)
+     
+        MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
+
+        self.descButton = tkinter.Button(self, text="Description Search", relief = "ridge", width = 30, height=3,
+            font = MainFontStyle, command=lambda: master.switch_frame(SpecificSearchDesc))
+        self.descButton.grid(row=2, column=1, pady = 30, sticky="W"+"E")
+
+        self.partNumButton = tkinter.Button(self, text="Part Number Search", relief = "ridge", width = 30, height=3,
+            font = MainFontStyle, command=lambda: master.switch_frame(SpecificSearchPartNum))
+        self.partNumButton.grid(row=3, column=1, pady = 30, sticky="W"+"E")
+
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 30, height=3,
+            font = MainFontStyle, command=lambda: master.switch_frame(Main.StartPage))
+        self.homeButton.grid(row=4, column=1, pady = 30, sticky="W"+"E")
+
+class SpecificSearchPartNum(tkinter.Frame):
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg="white")
+        tkinter.Label(self, width = 50, borderwidth=2, relief="solid", bg="#F6B022",text="Part Number Search", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=3, pady=4)
      
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
         self.L1 = tkinter.Label(self, text = "Enter part here:", bg = "white", font=('Helvetica', 18)).grid(row = 1, column = 1, pady = 10)
@@ -60,11 +81,39 @@ class SpecificSearch(tkinter.Frame):
         self.homeButton.grid(row=4, column=1, pady = 30, sticky="W"+"E")
 
         self.searchButton = tkinter.Button(self, text = "Search", relief = "ridge",width = 30, height=3,
-            font = MainFontStyle, command=lambda: [print(value.get()) , spreadsheet.search(value.get()), searchButton_Click()])
+            font = MainFontStyle, command=lambda: [print(value.get()) , searchButton_Click()])
         self.searchButton.grid(row=3, column = 1, pady = 30, sticky="W"+"E")
 
         def searchButton_Click():
-            returnedString = spreadsheet.search(value.get())
+            returnedString = spreadsheet.search_part_num(value.get())
+            #If the item is not found, excel.py will return BAD.
+            #So if the string is bad, don't add it to recently searched.
+            if returnedString != "BAD":
+                addButtonToList(value.get(), returnedString)
+
+class SpecificSearchDesc(tkinter.Frame):
+    def __init__(self, master=None):
+        self.master = master
+        tkinter.Frame.__init__(self, master)
+        tkinter.Frame.configure(self,bg="white")
+        tkinter.Label(self, width = 50, borderwidth=2, relief="solid", bg="#F6B022",text="Description Search", font=('Helvetica', 25, "bold")).grid(row=0, columnspan=3, pady=4)
+     
+        MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
+        self.L1 = tkinter.Label(self, text = "Enter part here:", bg = "white", font=('Helvetica', 18)).grid(row = 1, column = 1, pady = 10)
+
+        value = tkinter.StringVar()
+        e = tkinter.Entry(self, width=40, relief="solid", textvariable=value).grid(row=2, column =1, pady = 40, ipady = 10)
+
+        self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 30, height=3,
+            font = MainFontStyle, command=lambda: master.switch_frame(Main.StartPage))
+        self.homeButton.grid(row=4, column=1, pady = 30, sticky="W"+"E")
+
+        self.searchButton = tkinter.Button(self, text = "Search", relief = "ridge",width = 30, height=3,
+            font = MainFontStyle, command=lambda: [print(value.get()) , searchButton_Click()])
+        self.searchButton.grid(row=3, column = 1, pady = 30, sticky="W"+"E")
+
+        def searchButton_Click():
+            returnedString = spreadsheet.search_desc(value.get())
             #If the item is not found, excel.py will return BAD.
             #So if the string is bad, don't add it to recently searched.
             if returnedString != "BAD":
@@ -80,6 +129,7 @@ class SpecificSearch(tkinter.Frame):
         #--------------------------------------------------
         
         #Logo2_label.place(x=100, y =10)
+
 #Future addition - Have the sender also send the leds to light up. Change the button to light up leds insead
 class RecentSearches(tkinter.Frame):
     def __init__(self, master=None):
@@ -97,9 +147,9 @@ class RecentSearches(tkinter.Frame):
             width = 30, height=2, command=lambda: master.switch_frame(Main.StartPage) )
         self.homeButton.grid(row=13, column=1, sticky="W"+"E")
 
-        self.resetButton = tkinter.Button(self, text="Reset", relief = "ridge", font=MainFontStyle,
-            width = 30, height=2,command=lambda: [RecentlySearchedName.clear(), RecentlySearchedLEDLocation.clear()] )
-        self.resetButton.grid(row=12, column=1, pady = 10, sticky="W"+"E")
+        #self.resetButton = tkinter.Button(self, text="Reset", relief = "ridge", font=MainFontStyle,
+        #    width = 30, height=2,command=lambda: [RecentlySearchedName.clear(), RecentlySearchedLEDLocation.clear()] )
+        #self.resetButton.grid(row=12, column=1, pady = 10, sticky="W"+"E")
 
         #for recent in RecentlySearched:
         #    b = tkinter.Button(self, text = recent[0], relief = "ridge", font = MainFontStyle,

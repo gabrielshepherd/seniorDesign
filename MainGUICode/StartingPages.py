@@ -59,7 +59,7 @@ class StartPage(tkinter.Frame):
                            height=3, command=lambda: master.switch_frame(AddP.QuickSearch))
         self.QuickSearch.grid(row=2, column=1, pady=2, columnspan=3)
 
-        self.SpecifiedSearch = tkinter.Button(self, width=30, height=3, text="Specified Search",font = FirstfontStyle,relief = "ridge",
+        self.SpecifiedSearch = tkinter.Button(self, width=30, height=3, text="Specific Search",font = FirstfontStyle,relief = "ridge",
                                         command=lambda: master.switch_frame(AddP.SpecificSearch))
         self.SpecifiedSearch.grid(row=3,column=1, pady=2, columnspan=3)
 
@@ -210,7 +210,7 @@ Dylan Carlson
 Andrew Elliott
 Gabe Shepherd
 Evan Wheeler
-William 
+William Halfmann
         
 This project is intended to help those familiar or unfamiliar with the parts inventory
 to be able to quickly and easily find the parts that they need.
