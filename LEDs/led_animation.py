@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
+# SPDX-License-Identifier: MIT
+
 import time
 import board
 import neopixel
@@ -102,7 +105,7 @@ def random_box():
                 for x in range(start,end):
                     pixels[x] = colors(new_color, brighter)
             pixels.show()
-            time.sleep(0.005)
+            time.sleep(0.01)
 
         for dimmer in range(255,-1,-1):
             for pair in rangesForCode:
@@ -110,7 +113,7 @@ def random_box():
                 for x in range(start,end):
                     pixels[x] = colors(new_color, dimmer)
             pixels.show()
-            time.sleep(0.005)
+            time.sleep(0.01)
 
 
 snake = [(0,35),(335,395),(201,238),(396,457),(73,110)]
