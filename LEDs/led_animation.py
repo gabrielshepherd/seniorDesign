@@ -59,7 +59,7 @@ def theater_mode(stop):
             for i in range(0,332, 4):
                 pixels[i+q] = wheel((i+j) & 255)
                 if stop == 'STOP':
-                    break
+                    return
             pixels.show()
             time.sleep(0.05)
             for i in range(0, 332, 4):
@@ -107,7 +107,7 @@ def random_box(stop):
                 for x in range(start,end):
                     pixels[x] = colors(new_color, brighter)
                     if stop == 'STOP':
-                        break
+                        return         
             pixels.show()
             time.sleep(0.005)
 
@@ -118,7 +118,6 @@ def random_box(stop):
                     pixels[x] = colors(new_color, dimmer)
             pixels.show()
             time.sleep(0.005)
-
 
 snake = [(0,35,1),(335,395,1),(238,201,-1),(396,457,1),(73,110,1)]
 
