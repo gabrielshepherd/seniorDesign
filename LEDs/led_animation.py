@@ -181,7 +181,7 @@ def vertical_snake(stop):
                     light6 += 1
                     
                 pixels.show()
-    #clear()
+    clear()
     
         
 
