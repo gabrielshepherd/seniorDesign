@@ -3,9 +3,15 @@
 import xlrd 
 import xlwt 
 import difflib
+
 import send as output
+
 import tkinter as tkinter
 from tkinter import messagebox
+
+import fuzzywuzzy
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 
 #Currently working on getting difflib to find nearest match searches from the user so instead of needing an exact string the user can type in what they want.
 #Future Updates could include making the get closest string functionality more efficent and effective.
@@ -54,36 +60,19 @@ def search(input):
    #through the get closest match to find an appropriate string from the sheet. Then that string can be sent as the cellE data input to look for location.
    #Testing from home is hard but these are example strings
    
-   dResistor = difflib.get_close_matches('Resistor', descriptdata, 5, 0.5)
-   
-   dOpamp = difflib.get_close_matches('Op amp', descriptdata, 5, 0.5)
-         
-   dVReg = difflib.get_close_matches('V Reg', descriptdata, 5, 0.5)
-         
-   dInductor = difflib.get_close_matches('Inductor', descriptdata, 5, 0.5)
-         
-   dDiode = difflib.get_close_matches('Diode', descriptdata, 5, 0.5)
-         
-   dCapacitor = difflib.get_close_matches('Capacitor', descriptdata, 5, 0.5)
-         
-   dZener = difflib.get_close_matches('Zener', descriptdata, 5, 0.5)
-         
-   dCmosLogic = difflib.get_close_matches('Cmos Logic', descriptdata, 5, 0.5)
-         
-   dTTLLogic = difflib.get_close_matches('TTL Logic', descriptdata, 5, 0.5)
-         
-   dMultiplexer = difflib.get_close_matches('Multiplexer', descriptdata, 5, 0.5)
-         
-   dFlipFlop = difflib.get_close_matches('Flip-Flop', descriptdata, 5, 0.5)
-         
-   dCrystal = difflib.get_close_matches('Crystal', descriptdata, 5, 0.5)
-         
-   dMicrocontrollers = difflib.get_close_matches('Microcontrollers', descriptdata, 5, 0.5)
+   #dResistor = difflib.get_close_matches('Resistor', descriptdata, 5, 0.5)
 
+   
    #not sure if dinput will work in order to test input strings
-   print("Here is dInput: ")
-   dinput = difflib.get_close_matches(input , descriptdata, 50, .01)
-   print(dinput)
+   
+   #print("Here is dInput: ")
+   #dinput = difflib.get_close_matches(input , descriptdata )#3, 0.5)
+   #print(dinput)
+
+   print("Here is fuzzywuzzy result: ")
+   fwreturnVal = process.extract(input, descriptdata, limit=2)
+   print(fwreturnVal)
+
 
    #loop to parse entire sheet
    for row in range(rows): 
@@ -96,63 +85,14 @@ def search(input):
          if cellE.value == input :
             location = cellB.value
             break
-
-         if dinput.__contains__(cellE.value) :
+         
+         if fwreturnVal.__contains__(cellE.value):
             location = cellB.value
             break
 
-         if dFlipFlop.__contains__(cellE.value) :
-            location = cellB.value
-            break
-
-         if cellE.value == dMicrocontrollers :
-            location = cellB.value
-            break
-
-         if cellE.value == dMultiplexer:
-            location = cellB.value
-            break
-
-         if cellE.value == dOpamp :
-            location = cellB.value
-            break
-
-         if cellE.value == dResistor :
-            location = cellB.value
-            break
-
-         if cellE.value == dVReg :
-            location = cellB.value
-            break
-
-         if cellE.value == dInductor :
-            location = cellB.value
-            break
-
-         if cellE.value == dDiode :
-            location = cellB.value
-            break
-
-         if cellE.value == dCapacitor :
-            location = cellB.value
-            break
-
-         if cellE.value == dZener :
-            location = cellB.value
-            break
-
-         if cellE.value == dCmosLogic :
-            location = cellB.value
-            break
-
-         if cellE.value == dTTLLogic :
-            location = cellB.value
-            break
-
-         if cellE.value == dCrystal :
-            location = cellB.value
-            break
- 
+         #if dinput.__contains__(cellE.value) :
+         #   location = cellB.value
+         #   break
 
          #locationdata[cellB] = {}
          #print(cellB.value)
