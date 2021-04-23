@@ -131,7 +131,7 @@ def vertical_snake(stop):
         for x in range(start, end, increment):
             pixels[x] = (255,0,0)
             light +=1
-            light2 = light + 335
+            light2 = light + 300
             if light >= 8 and light < 35:
                 pixels[light - 8] = (0,0,0)
             if light >= 35 and light < 43: 
