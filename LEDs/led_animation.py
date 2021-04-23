@@ -131,7 +131,7 @@ def vertical_snake(stop):
             pixels[x] = (255,0,0)
             #light +=1
         pixels.show()
-        time.sleep(0.05)
+        time.sleep(0.1)
             # if light > 15:
             #     pixels[x - 8] = (0,0,0)
             # pixels.show()
