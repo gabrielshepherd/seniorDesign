@@ -24,7 +24,7 @@ num_pixels = 800
 ORDER = neopixel.GRB
  
 pixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=0.5, auto_write=False, pixel_order=ORDER
+    pixel_pin, num_pixels, brightness=1, auto_write=False, pixel_order=ORDER
 )
 
 # Wheel function found online 
@@ -105,7 +105,7 @@ def random_box():
                 for x in range(start,end):
                     pixels[x] = colors(new_color, brighter)
             pixels.show()
-            time.sleep(0.01)
+            time.sleep(0.005)
 
         for dimmer in range(70,-1,-1):
             for pair in rangesForCode:
@@ -113,7 +113,7 @@ def random_box():
                 for x in range(start,end):
                     pixels[x] = colors(new_color, dimmer)
             pixels.show()
-            time.sleep(0.01)
+            time.sleep(0.005)
 
 
 snake = [(0,35),(335,395),(201,238),(396,457),(73,110)]
