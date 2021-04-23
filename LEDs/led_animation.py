@@ -218,7 +218,7 @@ def roulette_wheel():
             start, end = pair
             for x in range(start,end):
                 pixels[x] = colors(randomColor, 255)
-        
+        pixels.show()
     
     
         
