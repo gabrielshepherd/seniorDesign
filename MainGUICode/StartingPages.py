@@ -253,7 +253,7 @@ class Animations(tkinter.Frame):
         self.animation4.grid(row=4, column=0, pady=10) 
 
         def call(location):
-            res = mb.askquestion("Run Animation", "Animation will take approximately 10 seconds.\nWould you like to run the animation?")
+            res = mb.askquestion("Run Animation", "Running the animation will lock you out temporarily.\nWould you still like to run the animation?")
 
             if res == "yes":
                 output.data_transmit(location)
