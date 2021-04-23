@@ -64,6 +64,7 @@ def theater_mode(stop):
             time.sleep(0.05)
             for i in range(0, 332, 4):
                 pixels[i+q] = (0,0,0)
+    return
 boxes = {
     1: [(0,35),(528,563),(319,335),(335,350)],
     2: [(528,563),(563,598),(305,320),(350,365)],
@@ -118,6 +119,7 @@ def random_box(stop):
                     pixels[x] = colors(new_color, dimmer)
             pixels.show()
             time.sleep(0.005)
+    return
 
 snake = [(0,35,1),(335,395,1),(238,201,-1),(396,457,1),(73,110,1)]
 
@@ -128,7 +130,8 @@ def vertical_snake(stop):
         for x in range(start, end, increment):
             pixels[x] = (255,0,0)
             #light +=1
-            pixels.show()
+        pixels.show()
+        time.sleep(0.05)
             # if light > 15:
             #     pixels[x - 8] = (0,0,0)
             # pixels.show()
