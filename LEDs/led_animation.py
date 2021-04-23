@@ -121,7 +121,7 @@ def random_box(stop):
             time.sleep(0.005)
     return
 
-snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,335,1)]
+snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,343,1)]
 
 def vertical_snake(stop):
     for i in range(2):
@@ -137,7 +137,10 @@ def vertical_snake(stop):
         for tup in snake:
             start, end, increment = tup
             for x in range(start, end, increment):
-                pixels[x] = colors(new_color, 255)
+                if x >335 and x<=343:
+                    pixels[x] = (0,0,0)
+                else:
+                    pixels[x] = colors(new_color, 255)
                 light +=1
                 light2 = light + 300
                 light3 = light + 142
