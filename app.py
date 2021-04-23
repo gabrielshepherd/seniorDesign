@@ -1,6 +1,6 @@
 from flask import Flask, request
 from LEDs.led_location import rainbow_cycle, snake, clear, part_location
-from LEDs.led_animation import theater_mode, random_box
+from LEDs.led_animation import theater_mode, random_box, vertical_snake
 from threading import Thread, Event
 import time
 
@@ -103,7 +103,9 @@ def function_call(location):
         theater_mode()
     if location == 'animation2':
         random_box()
-    # if location == 'animation2':
+    if location == 'animation3':
+        vertical_snake()
+
     # if location == 'animation3':
     # if locaiton == 'animation4':
         
