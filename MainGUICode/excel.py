@@ -13,6 +13,8 @@ import fuzzywuzzy
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
+#If Jeff has a better spreadsheet (all descriptions are filled out) the search functionaility will increase substaintially
+
 #Currently working on getting difflib to find nearest match searches from the user so instead of needing an exact string the user can type in what they want.
 #Future Updates could include making the get closest string functionality more efficent and effective.
 
