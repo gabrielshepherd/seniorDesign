@@ -154,7 +154,7 @@ def vertical_snake(stop):
             if light >= 103 and light < 131:
                 pixels[x +8] = (0,0,0)
             #Transistion
-            if light >= 131 and light < 139:
+            if light >= 131 and light < 140:
                 pixels[light4] = (0,0,0)
                 light4 -= 1
             #Section going up
