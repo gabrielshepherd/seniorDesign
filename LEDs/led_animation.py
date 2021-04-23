@@ -196,7 +196,7 @@ def bouncing_led():
 def roulette_wheel():
     
     randomColor = random.randint(1,7)
-    wait = 0.01
+    wait = 0.1
     for i in range(20):
         randomNumber = random.randint(1,12)
         randomBox = boxes[randomNumber] 
