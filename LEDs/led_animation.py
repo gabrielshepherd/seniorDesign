@@ -185,7 +185,7 @@ def vertical_snake(stop):
 
 def bouncing_led():
     randomColor = random.randint(1,7)
-    for i in range(300):
+    for i in range(600):
         randomLED = random.randint(1,780)
         pixels[randomLED] = colors(randomColor, 250)
         pixels.show()
