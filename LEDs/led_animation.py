@@ -147,6 +147,7 @@ def vertical_snake(stop):
                 
                 #First section
                 if light >= 8 and light < 35:
+                    pixels[335-x] = (0,0,0)
                     pixels[light - 8] = (0,0,0)
                 #Transistion
                 if light >= 35 and light < 43: 
