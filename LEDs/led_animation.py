@@ -99,7 +99,7 @@ def random_box():
         number = random.randint(1,12)
         new_color = random.randint(1,7)
         rangesForCode = boxes[number]
-        for brighter in range(255):
+        for brighter in range(150):
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
@@ -107,7 +107,7 @@ def random_box():
             pixels.show()
             time.sleep(0.01)
 
-        for dimmer in range(255,-1,-1):
+        for dimmer in range(150,-1,-1):
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
