@@ -124,7 +124,7 @@ def random_box(stop):
 snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,335,1)]
 
 def vertical_snake(stop):
-    for i in range(2):
+    for i in range(5):
         new_color = random.randint(1,7)
         light = 0
         light2 = 0
@@ -144,10 +144,12 @@ def vertical_snake(stop):
                 light +=1
                 light2 = light + 300
                 light3 = light + 142
+                if light <= 8:
+                    pixels[335-x] = (0,0,0)
                 
                 #First section
                 if light >= 8 and light < 35:
-                    pixels[335-x] = (0,0,0)
+                    
                     pixels[light - 8] = (0,0,0)
                 #Transistion
                 if light >= 35 and light < 43: 
