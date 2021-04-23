@@ -138,7 +138,7 @@ def vertical_snake(stop):
             start, end, increment = tup
             for x in range(start, end, increment):
                 if x >335 and x<=343:
-                    pixels[x] = (0,0,0)
+                    pixels[x-8] = (0,0,0)
                 else:
                     pixels[x] = colors(new_color, 255)
                 light +=1
