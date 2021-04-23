@@ -127,6 +127,7 @@ def vertical_snake(stop):
     light = 0
     light2 = 0
     light3 = 0
+    light4 = 209
     for tup in snake:
         start, end, increment = tup
         for x in range(start, end, increment):
@@ -134,6 +135,7 @@ def vertical_snake(stop):
             light +=1
             light2 = light + 300
             light3 = light + 142
+            
             #First section
             if light >= 8 and light < 35:
                 pixels[light - 8] = (0,0,0)
@@ -151,7 +153,12 @@ def vertical_snake(stop):
             #Bottom Section
             if light >= 103 and light < 131:
                 pixels[x +8] = (0,0,0)
-            if light >= 131 and light < 192:
+            #Transistion
+            if light >= 131 and light < 139:
+                pixels[light4] = (0,0,0)
+                light4 -= 1
+            #Section going up
+            if light >= 139 and light < 192:
                 pixels[x-8] = (0,0,0)
 
             pixels.show()
