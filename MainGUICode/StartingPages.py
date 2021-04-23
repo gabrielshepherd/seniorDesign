@@ -237,26 +237,26 @@ class Animations(tkinter.Frame):
         self.homeButton.grid(row=10, column=0, pady=10)  
 
         self.animation1 = tkinter.Button(self, text="Animation 1", relief = "ridge", width = 20, height=2, font = MainFontStyle,
-            command=lambda: [output.data_transmit("animation1"),call()])
+            command=lambda: [call("animation1")])
         self.animation1.grid(row=1, column=0, pady=10) 
 
         self.animation2 = tkinter.Button(self, text="Animation 2", relief = "ridge", width = 20, height=2, font = MainFontStyle,
-            command=lambda: [output.data_transmit("animation2"),call()])
+            command=lambda: [call("animation2")])
         self.animation2.grid(row=2, column=0, pady=10)
 
         self.animation3 = tkinter.Button(self, text="Animation 3", relief = "ridge", width = 20, height=2, font = MainFontStyle,
-            command=lambda: [output.data_transmit("animation3"),call()])
+            command=lambda: [call("animation3")])
         self.animation3.grid(row=3, column=0, pady=10)
 
         self.animation4 = tkinter.Button(self, text="Animation 4", relief = "ridge", width = 20, height=2, font = MainFontStyle,
-            command=lambda: [output.data_transmit("animation4"),call()])
+            command=lambda: [call("animation4")])
         self.animation4.grid(row=4, column=0, pady=10) 
 
-        def call():
-            res = mb.askquestion("Exit Animation", "Animation is currently running.\nWould you like to quit the animation?")
+        def call(location):
+            res = mb.askquestion("Run Animation", "Animation will take approximately 10 seconds.\nWould you like to run the animation?")
 
             if res == "yes":
-                output.data_transmit("STOP")
+                output.data_transmit(location)
 
 
 
