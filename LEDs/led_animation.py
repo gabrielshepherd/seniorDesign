@@ -53,11 +53,13 @@ def clear():
     pixels.fill(CLEAR)
     pixels.show()
 
-def theater_mode():
+def theater_mode(stop):
     for j in range(70):
         for q in range(4):
             for i in range(0,332, 4):
                 pixels[i+q] = wheel((i+j) & 255)
+                if stop == 'STOP':
+                    break
             pixels.show()
             time.sleep(0.05)
             for i in range(0, 332, 4):
@@ -94,7 +96,7 @@ def colors(color, index):
         return (index,index,index)
 
 
-def random_box():
+def random_box(stop):
     for number_of_cycles in range(10):
         number = random.randint(1,12)
         new_color = random.randint(1,7)
@@ -104,6 +106,8 @@ def random_box():
                 start, end = pair
                 for x in range(start,end):
                     pixels[x] = colors(new_color, brighter)
+                    if stop == 'STOP':
+                        break
             pixels.show()
             time.sleep(0.005)
 
@@ -116,19 +120,20 @@ def random_box():
             time.sleep(0.005)
 
 
-snake = [(0,35),(335,395),(201,238),(396,457),(73,110)]
+snake = [(0,35,1),(335,395,1),(238,201,-1),(396,457,1),(73,110,1)]
 
-def vertical_snake():
+def vertical_snake(stop):
     light = 0
-    for pair in snake:
-        start, end = pair
-        for x in range(start, end):
+    for tup in snake:
+        start, end, increment = tup
+        for x in range(start, end, increment):
             pixels[x] = (255,0,0)
             light +=1
             pixels.show()
-            if light > 8:
+            if light > 15:
                 pixels[x - 8] = (0,0,0)
             pixels.show()
+
     clear()
         
 
