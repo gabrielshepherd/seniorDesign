@@ -121,13 +121,15 @@ def random_box(stop):
             time.sleep(0.005)
     return
 
-snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,110,1)]
+snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,335,1)]
 
 def vertical_snake(stop):
     light = 0
     light2 = 0
     light3 = 0
     light4 = 210
+    light5 = 449
+    light6 = 327
     for tup in snake:
         start, end, increment = tup
         for x in range(start, end, increment):
@@ -160,7 +162,13 @@ def vertical_snake(stop):
             #Section going up
             if light >= 139 and light < 192:
                 pixels[x-8] = (0,0,0)
-
+            #Transistion
+            if light >= 192 and light < 208:
+                pixels[light5] = (0,0,0)
+                light5 += 1
+            if light >= 208:
+                pixels[x-8] = (0,0,0)
+                
             pixels.show()
     #clear()
     
