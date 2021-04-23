@@ -133,22 +133,22 @@ def vertical_snake(stop):
             pixels[x] = (255,0,0)
             light +=1
             light2 = light + 300
-            light3 = light + 202
+            light3 = light + 142
             if light >= 8 and light < 35:
                 pixels[light - 8] = (0,0,0)
             if light >= 35 and light < 43: 
                 pixels[light - 8] = (0,0,0)
                 pixels[light2 - 8] = (0,0,0)
-            if light >= 43 and light < 103:
+            if light >= 43 and light < 95:
                 pixels[light2 - 8] = (0,0,0)
-            if light >=103 and light < 111:
+            if light >=95 and light < 103:
                 pixels[light2 - 8] = (0,0,0)
                 pixels[light3 +8] = (0,0,0)
-            if light >= 111 and light < 139:
+            if light >= 103 and light < 131:
                 pixels[light3 +8] = (0,0,0)
-                
+
             pixels.show()
-    clear()
+    #clear()
     
         
 
