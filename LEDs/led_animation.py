@@ -127,7 +127,7 @@ def vertical_snake(stop):
     light = 0
     light2 = 0
     light3 = 0
-    light4 = 209
+    light4 = 210
     for tup in snake:
         start, end, increment = tup
         for x in range(start, end, increment):
