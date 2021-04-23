@@ -205,11 +205,20 @@ def roulette_wheel():
             for x in range(start,end):
                 pixels[x] = colors(randomColor, 255)
         pixels.show()
-        wait *= 1.15
+        wait *= 1.13
         time.sleep(wait)
         if i < 19:
             pixels.fill((0,0,0))
             pixels.show()
+
+    for flash in range(5):
+        clear()
+        time.sleep(0.1)
+        for pair in randomBox:
+            start, end = pair
+            for x in range(start,end):
+                pixels[x] = colors(randomColor, 255)
+        
     
     
         
