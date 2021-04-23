@@ -144,6 +144,9 @@ def vertical_snake(stop):
             if light >=103 and light < 111:
                 pixels[light2 - 8] = (0,0,0)
                 pixels[light3 +8] = (0,0,0)
+            if light >= 111 and light < 139:
+                pixels[light3 +8] = (0,0,0)
+                
             pixels.show()
     clear()
     
