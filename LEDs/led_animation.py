@@ -127,11 +127,11 @@ def vertical_snake(stop):
         start, end, increment = tup
         for x in range(start, end, increment):
             pixels[x] = (255,0,0)
-            light +=1
+            #light +=1
             pixels.show()
-            if light > 15:
-                pixels[x - 8] = (0,0,0)
-            pixels.show()
+            # if light > 15:
+            #     pixels[x - 8] = (0,0,0)
+            # pixels.show()
 
     clear()
         
