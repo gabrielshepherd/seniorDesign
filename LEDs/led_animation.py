@@ -172,7 +172,9 @@ def vertical_snake(stop):
                     light5 += 1
                 if light >= 192 and light < 462:
                     pixels[light7-8] = (0,0,0)
-                    light7 += 1
+                    light6 += 1
+                if light7 == 335:
+                    light7 = 327
                  
                 pixels.show()
     #clear()
