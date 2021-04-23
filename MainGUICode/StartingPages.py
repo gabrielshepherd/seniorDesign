@@ -8,6 +8,7 @@ import tkinter.font as tkFont
 import AdditionalPages as AddP
 # For sending data to other pi
 import send as output
+from tkinter import messagebox as mb
 
 #img = ImageTk.PhotoImage(Image.open("NDSU_Logo.png"))
 #-----------------------------Startup and Initialization----------------------------
@@ -236,20 +237,26 @@ class Animations(tkinter.Frame):
         self.homeButton.grid(row=10, column=0, pady=10)  
 
         self.animation1 = tkinter.Button(self, text="Animation 1", relief = "ridge", width = 20, height=2, font = MainFontStyle,
-            command=lambda: [master.switch_frame(StartPage), output.data_transmit("animation1")])
+            command=lambda: [output.data_transmit("animation1"),call()])
         self.animation1.grid(row=1, column=0, pady=10) 
 
         self.animation2 = tkinter.Button(self, text="Animation 2", relief = "ridge", width = 20, height=2, font = MainFontStyle,
-            command=lambda: [master.switch_frame(StartPage), output.data_transmit("animation2")])
+            command=lambda: [output.data_transmit("animation2"),call()])
         self.animation2.grid(row=2, column=0, pady=10)
 
         self.animation3 = tkinter.Button(self, text="Animation 3", relief = "ridge", width = 20, height=2, font = MainFontStyle,
-            command=lambda: [master.switch_frame(StartPage), output.data_transmit("animation3")])
+            command=lambda: [output.data_transmit("animation3"),call()])
         self.animation3.grid(row=3, column=0, pady=10)
 
         self.animation4 = tkinter.Button(self, text="Animation 4", relief = "ridge", width = 20, height=2, font = MainFontStyle,
-            command=lambda: [master.switch_frame(StartPage), output.data_transmit("animation4")])
+            command=lambda: [output.data_transmit("animation4"),call()])
         self.animation4.grid(row=4, column=0, pady=10) 
+
+        def call():
+            res = mb.askquestion("Exit Animation", "Animation is currently running.\nWould you like to quit the animation?")
+
+            if res == "yes":
+                output.data_transmit("STOP")
 
 
 
