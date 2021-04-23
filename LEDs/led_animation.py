@@ -139,7 +139,7 @@ def vertical_snake(stop):
             if light2 >= 43:
                 pixels[light2 - 8] = (0,0,0)
             pixels.show()
-
+    clear()
     
         
 
