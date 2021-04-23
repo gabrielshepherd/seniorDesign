@@ -121,7 +121,7 @@ def random_box(stop):
             time.sleep(0.005)
     return
 
-snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,335,1)]
+snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,343,1)]
 
 def vertical_snake(stop):
     for i in range(2):
@@ -132,11 +132,12 @@ def vertical_snake(stop):
         light4 = 210
         light5 = 448
         light6 = 73
+        light7 = 327
 
         for tup in snake:
             start, end, increment = tup
             for x in range(start, end, increment):
-                pixels[x] = colors(new_color, 255)
+                #pixels[x] = colors(new_color, 255)
                 light +=1
                 light2 = light + 300
                 light3 = light + 142
@@ -144,36 +145,46 @@ def vertical_snake(stop):
                 #First section
                 if light >= 8 and light < 35:
                     pixels[light - 8] = (0,0,0)
+                    pixels[x] = colors(new_color, 255)
                 #Transistion
                 if light >= 35 and light < 43: 
                     pixels[light - 8] = (0,0,0)
                     pixels[light2 - 8] = (0,0,0)
+                    pixels[x] = colors(new_color, 255)
                 #Second section
                 if light >= 43 and light < 95:
                     pixels[light2 - 8] = (0,0,0)
+                    pixels[x] = colors(new_color, 255)
                 #Transistion
                 if light >=95 and light < 103:
                     pixels[light2 - 8] = (0,0,0)
                     pixels[light3 +8] = (0,0,0)
+                    pixels[x] = colors(new_color, 255)
                 #Bottom Section
                 if light >= 103 and light < 131:
                     pixels[x +8] = (0,0,0)
+                    pixels[x] = colors(new_color, 255)
                 #Transistion
                 if light >= 131 and light < 140:
                     pixels[light4] = (0,0,0)
                     light4 -= 1
+                    pixels[x] = colors(new_color, 255)
                 #Section going up
                 if light >= 139 and light < 192:
                     pixels[x-8] = (0,0,0)
+                    pixels[x] = colors(new_color, 255)
                 #Transistion
                 if light >= 192 and light < 208:
                     pixels[light5] = (0,0,0)
                     light5 += 1
+                    pixels[x] = colors(new_color, 255)
                 if light >= 192 and light < 462:
                     pixels[x-8] = (0,0,0)
                     light6 += 1
-                 
-                pixels.show()
+                    pixels[x] = colors(new_color, 255)
+                if light >= 462:
+                    pixels[x-8] = (0,0,0)
+                
     #clear()
     
         
