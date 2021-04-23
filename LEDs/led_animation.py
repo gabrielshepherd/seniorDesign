@@ -56,11 +56,11 @@ def clear():
 def theater_mode():
     for j in range(70):
         for q in range(4):
-            for i in range(0,333, 4):
+            for i in range(0,332, 4):
                 pixels[i+q] = wheel((i+j) & 255)
             pixels.show()
             time.sleep(0.05)
-            for i in range(0, 333, 4):
+            for i in range(0, 332, 4):
                 pixels[i+q] = (0,0,0)
 boxes = {
     1: [(0,35),(528,563),(319,335),(335,350)],
