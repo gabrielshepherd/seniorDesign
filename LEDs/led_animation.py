@@ -186,13 +186,31 @@ def vertical_snake(stop):
 def bouncing_led():
     clear()
     randomColor = random.randint(1,7)
-    for i in range(100):
+    for i in range(500):
         randomLED = random.randint(1,780)
         pixels[randomLED] = colors(randomColor, 255)
         pixels.show()
         time.sleep(0.01)
     clear()
 
+def roulette_wheel():
+    
+    randomColor = random.randint(1,7)
+       
+    wait = 0.01
+    for i in range(20):
+        randomNumber = random.randint(1,12)
+        randomBox = boxes[randomNumber] 
+        for pair in randomBox:
+            start, end = pair
+            for x in range(start,end):
+                pixels[x] = colors(randomColor, 255)
+        pixels.show()
+        time.sleep(wait*2)
+        if i < 20:
+            pixels.fill(0,0,0)
+            pixels.show()
+        
     
         
 
