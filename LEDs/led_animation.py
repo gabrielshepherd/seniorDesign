@@ -28,6 +28,7 @@ pixels = neopixel.NeoPixel(
 )
 
 # Wheel function found online 
+# https://github.com/adafruit/Adafruit_CircuitPython_NeoPixel/blob/master/examples/neopixel_simpletest.py
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
@@ -49,22 +50,25 @@ def wheel(pos):
         b = int(255 - pos * 3)
     return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
 
+# Clears all of the pixels
 def clear():
     pixels.fill(CLEAR)
     pixels.show()
 
-def theater_mode(stop):
+# Theater function found online
+# https://tutorials-raspberrypi.com/connect-control-raspberry-pi-ws2812-rgb-led-strips
+def theater_mode():
     for j in range(70):
         for q in range(4):
             for i in range(0,332, 4):
                 pixels[i+q] = wheel((i+j) & 255)
-                if stop == 'STOP':
-                    return
             pixels.show()
             time.sleep(0.05)
             for i in range(0, 332, 4):
                 pixels[i+q] = (0,0,0)
     return
+
+# list of tuples that contain the addresses to the LEDs for the 12 boxes
 boxes = {
     1: [(0,35),(528,563),(319,335),(335,350)],
     2: [(528,563),(563,598),(305,320),(350,365)],
@@ -80,6 +84,7 @@ boxes = {
     12: [(669,705),(165,201),(396,412),(152,165)],
 }
 
+# Function picks a color and changes intensity
 def colors(color, index):
     if color == 1:                  #red
         return (index,0,0)
@@ -96,23 +101,25 @@ def colors(color, index):
     if color == 7:                  #white
         return (index,index,index)
 
-
-def random_box(stop):
+# Lights up a random box and with a brighter then dimmer transition
+def random_box():
+    # Cycle 10 times
     for number_of_cycles in range(10):
         number = random.randint(1,12)
         new_color = random.randint(1,7)
         rangesForCode = boxes[number]
+        #Increase color intensity to 70 out of 255
         for brighter in range(70):
+            #Parse the tuples
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
-                    pixels[x] = colors(new_color, brighter)
-                    if stop == 'STOP':
-                        return         
+                    pixels[x] = colors(new_color, brighter)       
             pixels.show()
             time.sleep(0.005)
-
+        #Decrease color intensity
         for dimmer in range(70,-1,-1):
+            #Parse the tuples
             for pair in rangesForCode:
                 start, end = pair
                 for x in range(start,end):
@@ -121,22 +128,27 @@ def random_box(stop):
             time.sleep(0.005)
     return
 
+# List of tuples for the vertical_snake function.
 snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,335,1)]
 
-def vertical_snake(stop):
+# Snake runs vertically with a width of 8 LEDs
+def vertical_snake():
+    # Run 5 times. New snake color each time
     for i in range(5):
         new_color = random.randint(1,7)
-        light = 0
-        light2 = 0
-        light3 = 0
+        light = 0                       # keeps track of where the head is at the beginning
+        light2 = 0                      # keeps track of where the head is after first transition
+        light3 = 0                      # 
         light4 = 210
         light5 = 448
         light6 = 73
         light7 = 327
 
+        #Parse snake tuple
         for tup in snake:
             start, end, increment = tup
             for x in range(start, end, increment):
+                # This if statement is never called. 
                 if light >= 462:
                     pixels[x - 8] = (0,0,0)
                 else:
@@ -182,7 +194,9 @@ def vertical_snake(stop):
                     
                 pixels.show()
     clear()
+    return
 
+# Picks a random LEDs to light up
 def bouncing_led():
     clear()
     randomColor = random.randint(1,7)
@@ -193,23 +207,28 @@ def bouncing_led():
         time.sleep(0.01)
     clear()
 
+# Betting game which selects a random box with a roulette wheel transition
 def roulette_wheel():
     randomColor = random.randint(1,7)
     wait = 0.1
+    # Bounce between boxes 20 times
     for i in range(20):
         randomNumber = random.randint(1,12)
         randomBox = boxes[randomNumber] 
+        # Parse boxes tuples
         for pair in randomBox:
             start, end = pair
             for x in range(start,end):
                 pixels[x] = colors(randomColor, 255)
         pixels.show()
+        #Slowly increase the wait to slow down the transistions
         wait *= 1.13
         time.sleep(wait)
         if i < 19:
             pixels.fill((0,0,0))
             pixels.show()
 
+    # Winning box flashes 5 times
     for flash in range(5):
         clear()
         time.sleep(0.1)

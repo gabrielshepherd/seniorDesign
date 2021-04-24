@@ -26,6 +26,7 @@ pixels = neopixel.NeoPixel(
 )
 
 # Wheel function found online 
+# https://github.com/adafruit/Adafruit_CircuitPython_NeoPixel/blob/master/examples/neopixel_simpletest.py
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.

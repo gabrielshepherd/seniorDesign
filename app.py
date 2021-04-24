@@ -100,12 +100,11 @@ class MyThread(Thread):
 def function_call(location):
     clear()
     if location == 'animation1':
-        theater_mode(location)
+        theater_mode()
     if location == 'animation2':
-        random_box(location)
+        random_box()
     if location == 'animation3':
-        vertical_snake(location)
-
+        vertical_snake()
     if location == 'animation4':
         roulette_wheel()
     # if locaiton == 'animation4':
