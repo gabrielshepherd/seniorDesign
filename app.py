@@ -96,7 +96,7 @@ class MyThread(Thread):
             
 
 
-# Reads from the GUI
+# Reads incoming message from the GUI
 def function_call(location):
     clear()
     if location == 'animation1':
@@ -107,7 +107,6 @@ def function_call(location):
         vertical_snake()
     if location == 'animation4':
         roulette_wheel()
-    # if locaiton == 'animation4':
         
     part_location(location)
     print(location)
