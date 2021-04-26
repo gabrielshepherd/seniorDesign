@@ -34,14 +34,12 @@ def addButtonToList(name, location):
     if name not in RecentlySearchedName:
         # This keeps the length of the list at 7
         if len(RecentlySearchedName) == 7:
-            #RecentlySearched.pop()
             RecentlySearchedLEDLocation.pop()
             RecentlySearchedName.pop()
-        #RecentlySearched.insert(0, [name, location])
         RecentlySearchedName.insert(0, name)
         RecentlySearchedLEDLocation.insert(0, location)
 
-#------Main 3 pages--------
+#------Main pages--------
 class SpecificSearch(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
@@ -73,12 +71,12 @@ class SpecificSearchPartNum(tkinter.Frame):
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
         self.L1 = tkinter.Label(self, text = "Enter part here:", bg = "white", font=('Helvetica', 18)).grid(row = 1, column = 1, pady = 10)
 
-        value = tkinter.StringVar()
-        e = tkinter.Entry(self, width=40, relief="solid", textvariable=value).grid(row=2, column =1, pady = 40, ipady = 10)
-
         self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", width = 30, height=3,
             font = MainFontStyle, command=lambda: master.switch_frame(Main.StartPage))
         self.homeButton.grid(row=4, column=1, pady = 30, sticky="W"+"E")
+
+        value = tkinter.StringVar()
+        e = tkinter.Entry(self, width=40, relief="solid", textvariable=value).grid(row=2, column =1, pady = 40, ipady = 10)
 
         self.searchButton = tkinter.Button(self, text = "Search", relief = "ridge",width = 30, height=3,
             font = MainFontStyle, command=lambda: [print(value.get()) , searchButton_Click()])
@@ -130,7 +128,6 @@ class SpecificSearchDesc(tkinter.Frame):
         
         #Logo2_label.place(x=100, y =10)
 
-#Future addition - Have the sender also send the leds to light up. Change the button to light up leds insead
 class RecentSearches(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
@@ -145,45 +142,32 @@ class RecentSearches(tkinter.Frame):
         buttons = [None, None, None, None, None, None, None]
         self.homeButton = tkinter.Button(self, text="Home", relief = "ridge", font=MainFontStyle,
             width = 30, height=2, command=lambda: master.switch_frame(Main.StartPage) )
-        self.homeButton.grid(row=13, column=1, sticky="W"+"E")
+        self.homeButton.grid(row=13, column=1, sticky="W"+"E", pady = 10)
 
         #self.resetButton = tkinter.Button(self, text="Reset", relief = "ridge", font=MainFontStyle,
         #    width = 30, height=2,command=lambda: [RecentlySearchedName.clear(), RecentlySearchedLEDLocation.clear()] )
         #self.resetButton.grid(row=12, column=1, pady = 10, sticky="W"+"E")
 
-        #for recent in RecentlySearched:
-        #    b = tkinter.Button(self, text = recent[0], relief = "ridge", font = MainFontStyle,
-        #        #Switch Main.StartPage with recentFrame to go to part page/Call Code to turn LEDS on
-        #         command=lambda: output.data_transmit(recent[1])).grid(row=count+1, column = 1, sticky="W"+"E", pady = 3)
-        #    print(recent[0])
-        #   print(recent[1]])
-        #    count = count + 1
-
         #For some reason this does not work with a loop
         try:
-            b1 = tkinter.Button(self, text = RecentlySearchedName[0], relief = "ridge", font = MainFontStyle,
-            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[0])).grid(row=1, column = 1, sticky="W"+"E", pady = 3)
-            b2 = tkinter.Button(self, text = RecentlySearchedName[1], relief = "ridge", font = MainFontStyle,
-            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[1])).grid(row=2, column = 1, sticky="W"+"E", pady = 3)
-            b3 = tkinter.Button(self, text = RecentlySearchedName[2], relief = "ridge", font = MainFontStyle,
-            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[2])).grid(row=3, column = 1, sticky="W"+"E", pady = 3)
-            b4 = tkinter.Button(self, text = RecentlySearchedName[3], relief = "ridge", font = MainFontStyle,
-            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[3])).grid(row=4, column = 1, sticky="W"+"E", pady = 3)
-            b5 = tkinter.Button(self, text = RecentlySearchedName[4], relief = "ridge", font = MainFontStyle,
-            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[4])).grid(row=5, column = 1, sticky="W"+"E", pady = 3)
-            b6 = tkinter.Button(self, text = RecentlySearchedName[5], relief = "ridge", font = MainFontStyle,
-            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[5])).grid(row=6, column = 1, sticky="W"+"E", pady = 3)
-            b7 = tkinter.Button(self, text = RecentlySearchedName[6], relief = "ridge", font = MainFontStyle,
-            command=lambda: output.data_transmit(RecentlySearchedLEDLocation[6])).grid(row=7, column = 1, sticky="W"+"E", pady = 3)
+            self.b1 = tkinter.Button(self, text = RecentlySearchedName[0], relief = "ridge", font = MainFontStyle,
+            command=lambda:  output.data_transmit(RecentlySearchedLEDLocation[0])).grid(row=1, column = 1, sticky="W"+"E", pady = 3)
+            self.b2 = tkinter.Button(self, text = RecentlySearchedName[1], relief = "ridge", font = MainFontStyle,
+            command=lambda:  output.data_transmit(RecentlySearchedLEDLocation[1])).grid(row=2, column = 1, sticky="W"+"E", pady = 3)
+            self.b3 = tkinter.Button(self, text = RecentlySearchedName[2], relief = "ridge", font = MainFontStyle,
+            command=lambda:  output.data_transmit(RecentlySearchedLEDLocation[2])).grid(row=3, column = 1, sticky="W"+"E", pady = 3)
+            self.b4 = tkinter.Button(self, text = RecentlySearchedName[3], relief = "ridge", font = MainFontStyle,
+            command=lambda:  output.data_transmit(RecentlySearchedLEDLocation[3])).grid(row=4, column = 1, sticky="W"+"E", pady = 3)
+            self.b5 = tkinter.Button(self, text = RecentlySearchedName[4], relief = "ridge", font = MainFontStyle,
+            command=lambda:  output.data_transmit(RecentlySearchedLEDLocation[4])).grid(row=5, column = 1, sticky="W"+"E", pady = 3)
+            self.b6 = tkinter.Button(self, text = RecentlySearchedName[5], relief = "ridge", font = MainFontStyle,
+            command=lambda:  output.data_transmit(RecentlySearchedLEDLocation[5])).grid(row=6, column = 1, sticky="W"+"E", pady = 3)
+            self.b7 = tkinter.Button(self, text = RecentlySearchedName[6], relief = "ridge", font = MainFontStyle,
+            command=lambda:  output.data_transmit(RecentlySearchedLEDLocation[6])).grid(row=7, column = 1, sticky="W"+"E", pady = 3)
         except:
             messagebox.showerror("Error", "Item not found")
 
-        #for count in range(len(RecentlySearchedName)):
-        #    buttons[count] = tkinter.Button(self, text = RecentlySearchedName[count], relief = "ridge", font = MainFontStyle,
-        #                    command=lambda: output.data_transmit(RecentlySearchedLEDLocation[count])).grid(row=count+1, column = 1, sticky="W"+"E", pady = 3)
-        #    print(RecentlySearchedName[count])
-        #   print(RecentlySearchedLEDLocation[count])
-            
+  
 class QuickSearch(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
@@ -254,8 +238,9 @@ class QuickSearch(tkinter.Frame):
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
                 #Set all other buttons to off / unpressed
-                for x in range(4):
+                for x in range(5):
                     if x != buttonNum:
+                        pressed[x] = False
                         Buttons[x].config(relief="ridge", bg = orig_color)
             else:
                 button.config(relief="ridge", bg = orig_color)
@@ -285,18 +270,15 @@ class Resistors(tkinter.Frame):
         self.Quarter.grid(row=1, column=0, pady=20)
 
         self.Half= tkinter.Button(self, text="1/2 Watt", width=30,font = MainFontStyle,relief = "ridge", 
-                        height=2, command=lambda: [save(self.Half, 0), RecentlySearchedName.append("1/2 Watt"),
-                        RecentlySearchedLEDLocation.append("A41") ,output.data_transmit("A41")])
+                        height=2, command=lambda: [save(self.Half, 0), addButtonToList("1/2 Watt Resistors", "A41") ,output.data_transmit("A41")])
         self.Half.grid(row=1, column=1, pady=20, padx = 4)
         
         self.OneW= tkinter.Button(self, text="1 Watt", width=30,font = MainFontStyle,relief = "ridge", 
-                            height=2, command=lambda: [save(self.OneW, 1), RecentlySearchedName.append("1 Watt Resistors"),
-                            RecentlySearchedLEDLocation.append("A42") ,output.data_transmit("A42")])
+                            height=2, command=lambda: [save(self.OneW, 1), addButtonToList("1 Watt Resistors", "A42") ,output.data_transmit("A42")])
         self.OneW.grid(row=2, column=0, pady=20, padx = 4)
 
         self.TwoW = tkinter.Button(self, text="2 Watt", width=30,font = MainFontStyle,relief = "ridge", 
-                        height=2, command=lambda: [save(self.TwoW, 2), RecentlySearchedName.append("2 Watt"),
-                        RecentlySearchedLEDLocation.append("A43"),output.data_transmit("A43")])
+                        height=2, command=lambda: [save(self.TwoW, 2), addButtonToList("2 Watt Resistors", "A43"),output.data_transmit("A43")])
         self.TwoW.grid(row=2, column=1, pady=20, padx = 4)
 
             #Going to Bulk Resistors page with 3 Buttons
@@ -316,8 +298,9 @@ class Resistors(tkinter.Frame):
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
                 #Set all other buttons to off / unpressed
-                for x in range(2):
+                for x in range(3):
                     if x != buttonNum:
+                        pressed[x] = False
                         Buttons[x].config(relief="ridge", bg = orig_color)
             else:
                 button.config(relief="ridge", bg = orig_color)
@@ -364,8 +347,9 @@ class QuarterWResistors(tkinter.Frame):
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
                 #Set all other buttons to off / unpressed
-                for x in range(2):
+                for x in range(3):
                     if x != buttonNum:
+                        pressed[x] = False
                         Buttons[x].config(relief="ridge", bg = orig_color)
             else:
                 button.config(relief="ridge", bg = orig_color)
@@ -416,8 +400,9 @@ class BulkResistors(tkinter.Frame):
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
                 #Set all other buttons to off / unpressed
-                for x in range(2):
+                for x in range(3):
                     if x != buttonNum:
+                        pressed[x] = False
                         Buttons[x].config(relief="ridge", bg = orig_color)
             else:
                 button.config(relief="ridge", bg = orig_color)
@@ -463,8 +448,9 @@ class Inductors(tkinter.Frame):
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
                 #Set all other buttons to off / unpressed
-                for x in range(1):
+                for x in range(2):
                     if x != buttonNum:
+                        pressed[x] = False
                         Buttons[x].config(relief="ridge", bg = orig_color)
             else:
                 button.config(relief="ridge", bg = orig_color)
@@ -514,8 +500,9 @@ class Capacitors(tkinter.Frame):
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
                 #Set all other buttons to off / unpressed
-                for x in range(2):
+                for x in range(3):
                     if x != buttonNum:
+                        pressed[x] = False
                         Buttons[x].config(relief="ridge", bg = orig_color)
             else:
                 button.config(relief="ridge", bg = orig_color)
@@ -567,8 +554,9 @@ class LogicComponents(tkinter.Frame):
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
                 #Set all other buttons to off / unpressed
-                for x in range(2):
+                for x in range(3):
                     if x != buttonNum:
+                        pressed[x] = False
                         Buttons[x].config(relief="ridge", bg = orig_color)
             else:
                 button.config(relief="ridge", bg = orig_color)
@@ -613,8 +601,9 @@ class OtherComponents(tkinter.Frame):
                 button.config(relief="sunken", bg = "green")
                 pressed[buttonNum] = True
                 #Set all other buttons to off / unpressed
-                for x in range(1):
+                for x in range(2):
                     if x != buttonNum:
+                        pressed[x] = False
                         Buttons[x].config(relief="ridge", bg = orig_color)
             else:
                 button.config(relief="ridge", bg = orig_color)
