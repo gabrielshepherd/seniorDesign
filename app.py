@@ -1,8 +1,8 @@
 from flask import Flask, request
 from LEDs.led_location import rainbow_cycle, snake, clear, part_location
-from LEDs.led_animation import theater_mode, random_box, vertical_snake,colors, roulette_wheel
+from LEDs.led_animation import theater_mode, random_box, vertical_snake, bouncing_led, roulette_wheel
 from threading import Thread, Event
-import time, random
+import time
 
 
 # init flask app
@@ -40,13 +40,11 @@ class MyThread(Thread):
 
        # variable for rainbow cycle
         rainbow = 0
-       # variable for the snake cycle
-        randomColor = 0
         while not self.stopped.wait(0.001):
+
             # Runs the rainbow cycle
             if rainbow < 2:
                 rainbow_cycle(0.02, j)
-                randomColor = random.randint(1,3)
                 if j == 255:
                     j = 0
                     rainbow +=1
@@ -65,31 +63,31 @@ class MyThread(Thread):
                 a+=1
             if a == 122:
                 rainbow +=1
-                snake(b, colors(randomColor, 255))
+                snake(b, color)
                 b += 1
             if b == 563:
                 a = 0
-                snake(c, colors(randomColor, 255))
+                snake(c, color)
                 c -= 1
             if c == 303:
                 b = 457
-                snake(d, colors(randomColor, 255))
+                snake(d, color)
                 d += 1
             if d == 669:
                 c = 318
-                snake(e, colors(randomColor, 255))
+                snake(e, color)
                 e += 1
             if e == 152:
                 d = 563
-                snake(f, colors(randomColor, 255))
+                snake(f, color)
                 f += 1
             if f == 775:
                 e = 137
-                snake(g, colors(randomColor, 255))
+                snake(g, color)
                 g -= 1
             if g == 273:
                 f = 669
-                snake(h, colors(randomColor, 255))
+                snake(h, color)
                 h -= 1
             if h == 168:
                 g = 288
@@ -103,12 +101,16 @@ def function_call(location):
     clear()
     if location == 'animation1':
         theater_mode()
+        return
     if location == 'animation2':
         random_box()
+        return
     if location == 'animation3':
         vertical_snake()
+        return
     if location == 'animation4':
         roulette_wheel()
+        return
         
     part_location(location)
     print(location)
