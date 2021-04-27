@@ -134,6 +134,7 @@ snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,335,1)]
 # Snake runs vertically with a width of 8 LEDs
 def vertical_snake():
     # Run 5 times. New snake color each time
+    clear()
     for i in range(2):
         new_color = random.randint(1,7)
         light = 0                       # keeps track of where the head is at the beginning
