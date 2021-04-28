@@ -84,3 +84,48 @@ sudo pip3 install xlrd
 ```bash
 sudo pip3 install xlwt
 ```
+```bash
+cd Documents
+```
+```bash
+sudo git clone https://github.com/gabrielshepherd/seniorDesign.git
+```
+```bash
+cd ..
+```
+```bash
+sudo nano /lib/systemd/system/ledcontroller.service
+```
+```bash
+[Unit]
+Description=LED Controller
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/pi/seniorDesign/app.py
+RemainAfterExit=yes
+StandardOutput=journal+console
+
+[Install]
+WantedBy=multi-user.target
+```
+```bash
+sudo systemctl daemon-reload
+```
+```bash
+sudo systemctl enable ledcontroller.service
+```
+```bash
+sudo reboot now
+```
+```bash
+sudo cp /media/pi/Samsung USB/StorageRoomData.xls /home/pi/Documents/seniorDesign/MainGUICode
+```
+```bash
+#! /bin/bash
+sudo python3 /home/pi/Documents/seniorDesign/MainGUICode/AdditionalPages.py
+```
+```bash
+chmod u+x StartGUI.sh
+```
