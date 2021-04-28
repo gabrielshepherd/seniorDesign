@@ -1,5 +1,5 @@
 # LED's For Parts Inventory System
-##### Written by Andrew Elliott 
+ 
 ### Overview
 We are using [WS_2812B RGB LED Strips](https://www.amazon.com/Programmable-Aclorol-Individually-Addressable-Raspberry/dp/B07BKNS7DJ/ref=sr_1_1?dchild=1&keywords=B07BKNS7DJ&qid=1618847458&sr=8-1). There are 6 strips connected in series on the shelf. The LED's are currently connected to GPIO18 (Pin 12) PWM on the Raspberry Pi. 
 ### Setup
