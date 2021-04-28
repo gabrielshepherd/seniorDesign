@@ -203,17 +203,23 @@ class ProjDesc(tkinter.Frame):
         tkinter.Label(self, width = 50, bg="#F6B022",text="SD2017 - Parts Inventory Display Team - Project Description", relief = "solid", font=('Helvetica', 25, "bold")).grid(row=0)
         MainFontStyle = tkFont.Font(family = "Helvetica", size =18)
 
-        T = tkinter.Text(self, height = 13, width = 50, font=MainFontStyle)
+        T = tkinter.Text(self, height = 15, width = 70, font=MainFontStyle)
         T.grid(row = 1, column = 0)
-        quote = """This project was created by:
-Dylan Carlson
-Andrew Elliott
-Gabe Shepherd
-Evan Wheeler
-William Halfmann
+        quote = """
+This project was created by:
+
+(Future) Engineers:      Role:
+Dylan Carlson		    - GUI Creation
+Andrew Elliott		    - LED Programming/LED Layout
+William Halfmann       - Specific Search/GUI Creation
+Gabe Shepherd 		    - Wireless comminucation/Anything with the Pi's
+Evan Wheeler		    - PCB Creation/LED Layout
         
 This project is intended to help those familiar or unfamiliar with the parts inventory
 to be able to quickly and easily find the parts that they need.
+The project required extensive python programming, wireless communication 
+via wifi, hardware design, PCB Fabrication/Population, Github usage,
+and effective team communication.
         """
         T.insert(tkinter.END, quote)
 

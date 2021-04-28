@@ -4,6 +4,7 @@
 # This file contains the additional pages used in the GUI for the Parts Inventory Display Team.
 # All of the contents are for the Quick Search, Specific Search, and Recently Searched.
 #
+# Last Edit: 4/27/2021
 # Author: Dylan Carlson
 
 
@@ -166,8 +167,7 @@ class RecentSearches(tkinter.Frame):
             command=lambda:  output.data_transmit(RecentlySearchedLEDLocation[6])).grid(row=7, column = 1, sticky="W"+"E", pady = 3)
         except:
             messagebox.showerror("Error", "Item not found")
-
-  
+ 
 class QuickSearch(tkinter.Frame):
     def __init__(self, master=None):
         self.master = master
