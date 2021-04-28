@@ -58,7 +58,7 @@ def clear():
 # Theater function found online
 # https://tutorials-raspberrypi.com/connect-control-raspberry-pi-ws2812-rgb-led-strips
 def theater_mode():
-    for j in range(70):
+    for j in range(35):
         for q in range(4):
             for i in range(0,332, 4):
                 pixels[i+q] = wheel((i+j) & 255)
@@ -104,7 +104,7 @@ def colors(color, index):
 # Lights up a random box and with a brighter then dimmer transition
 def random_box():
     # Cycle 10 times
-    for number_of_cycles in range(10):
+    for number_of_cycles in range(5):
         number = random.randint(1,12)
         new_color = random.randint(1,7)
         rangesForCode = boxes[number]
@@ -134,7 +134,8 @@ snake = [(0,35,1),(335,395,1),(237,201,-1),(396,457,1),(73,335,1)]
 # Snake runs vertically with a width of 8 LEDs
 def vertical_snake():
     # Run 5 times. New snake color each time
-    for i in range(5):
+    clear()
+    for i in range(2):
         new_color = random.randint(1,7)
         light = 0                       # keeps track of where the head is at the beginning
         light2 = 0                      # keeps track of where the head is after first transition
@@ -142,7 +143,6 @@ def vertical_snake():
         light4 = 210
         light5 = 448
         light6 = 73
-        light7 = 327
 
         #Parse snake tuple
         for tup in snake:

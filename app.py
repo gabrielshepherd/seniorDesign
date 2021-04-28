@@ -101,12 +101,16 @@ def function_call(location):
     clear()
     if location == 'animation1':
         theater_mode()
+        return
     if location == 'animation2':
         random_box()
+        return
     if location == 'animation3':
         vertical_snake()
+        return
     if location == 'animation4':
         roulette_wheel()
+        return
         
     part_location(location)
     print(location)
