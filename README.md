@@ -127,5 +127,8 @@ sudo cp /media/pi/Samsung USB/StorageRoomData.xls /home/pi/Documents/seniorDesig
 sudo python3 /home/pi/Documents/seniorDesign/MainGUICode/AdditionalPages.py
 ```
 ```bash
+cd Desktop
+```
+```bash
 chmod u+x StartGUI.sh
 ```
