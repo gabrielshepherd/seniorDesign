@@ -120,7 +120,7 @@ sudo systemctl enable ledcontroller.service
 sudo reboot now
 ```
 ```bash
-sudo cp /media/pi/Samsung USB/StorageRoomData.xls /home/pi/Documents/seniorDesign/MainGUICode
+sudo cp /media/pi/Samsung\ USB/StorageRoomData.xls /home/pi/Documents/seniorDesign/MainGUICode
 ```
 ```bash
 #! /bin/bash
