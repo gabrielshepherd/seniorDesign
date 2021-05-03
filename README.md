@@ -43,6 +43,8 @@ country=US
 network={
         ssid="PartsInventory"
         psk="sd4032017"
+        mode=2
+        frequency=2437
         key_mgmt=WPA-PSK
 }
 ```
@@ -131,4 +133,13 @@ cd Desktop
 ```
 ```bash
 chmod u+x StartGUI.sh
+```
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt-get install git
+```
+```bash
+sudo apt-get install python3-pip
 ```
