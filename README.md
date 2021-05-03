@@ -143,3 +143,6 @@ sudo apt-get install git
 ```bash
 sudo apt-get install python3-pip
 ```
+```bash
+sudo pip3 install fuzzywuzzy
+```
