@@ -245,8 +245,8 @@ def roulette_wheel():
             for x in range(start,end):
                 pixels[x] = colors(randomColor, 255)
         pixels.show()
-        time.sleep(3)
-        clear()
+    time.sleep(3)
+    clear()
     
     
         
