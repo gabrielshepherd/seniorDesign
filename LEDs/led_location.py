@@ -1,3 +1,9 @@
+# This file contains idle mode animations and LED addresses for each component for
+# the Parts Inventory System at NDSU ECE Parts Inventory room.
+#
+# Author: Andrew Elliott
+# Last Edited: 04/27/2021
+#
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
 
