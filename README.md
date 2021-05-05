@@ -135,6 +135,7 @@ cd Desktop
 chmod u+x StartGUI.sh
 ```
 ```bash
+<<<<<<< Updated upstream
 sudo apt-get update
 ```
 ```bash
@@ -146,3 +147,10 @@ sudo apt-get install python3-pip
 ```bash
 sudo pip3 install fuzzywuzzy
 ```
+=======
+network{
+  ssid="PartsInventory"
+  psk="sd4032017"
+  key_mgmt=WPA-PSK
+}
+>>>>>>> Stashed changes
