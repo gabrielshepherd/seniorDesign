@@ -127,7 +127,7 @@ sudo cp /media/pi/Samsung\ USB/StorageRoomData.xls /home/pi/seniorDesign/MainGUI
 ```bash
 #! /bin/bash
 cd /home/pi/seniorDesign/MainGUICode
-sudo python 3 ./AdditionalPages.py
+sudo python3 ./AdditionalPages.py
 ```
 ```bash
 cd Desktop
