@@ -216,6 +216,7 @@ def bouncing_led():
 
 # Betting game which selects a random box with a roulette wheel transition
 def roulette_wheel():
+    clear()
     randomColor = random.randint(1,7)
     wait = 0.1
     # Bounce between boxes 20 times
