@@ -1,4 +1,4 @@
-# This file contains idle mode animations and LED addresses for each component for
+# This file contains idle mode animations and LED addresses for each section for
 # the Parts Inventory System at NDSU ECE Parts Inventory room.
 #
 # Author: Andrew Elliott
