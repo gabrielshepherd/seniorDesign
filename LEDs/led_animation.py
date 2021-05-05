@@ -104,6 +104,7 @@ def colors(color, index):
 # Lights up a random box and with a brighter then dimmer transition
 def random_box():
     # Cycle 10 times
+    clear()
     for number_of_cycles in range(5):
         number = random.randint(1,12)
         new_color = random.randint(1,7)
