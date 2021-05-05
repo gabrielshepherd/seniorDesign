@@ -1,3 +1,9 @@
+# This file establishes a connection between two Raspberry Pi's using a flask server. 
+# This file also contains an idle mode that executes animations after 10 seconds of no user input
+# 
+# Author: Andrew Elliott and Gabriel Shephard
+# Last Edited: 04/27/21
+
 from flask import Flask, request
 from LEDs.led_location import rainbow_cycle, snake, clear, part_location
 from LEDs.led_animation import theater_mode, random_box, vertical_snake, bouncing_led, roulette_wheel
