@@ -1,3 +1,9 @@
+# This file contains various LED animations for the Parts Inventory System for the 
+# NDSU ECE Parts Inventory room.\
+#
+# Author: Andrew Elliott
+# Last Edited: 04/27/2021
+#
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
 
