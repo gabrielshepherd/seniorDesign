@@ -1,7 +1,7 @@
 # This file establishes a connection between two Raspberry Pi's using a flask server. 
 # This file also contains an idle mode that executes animations after 10 seconds of no user input
 # 
-# Author: Andrew Elliott and Gabriel Shephard
+# Author: Andrew Elliott and Gabriel Shepherd
 # Last Edited: 04/27/21
 
 from flask import Flask, request
